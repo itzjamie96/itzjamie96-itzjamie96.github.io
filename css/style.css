@@ -2,7 +2,7 @@
  *       Override CSS Framework
  * --------------------------------- */
 html {
-  font-size: 14px;
+  font-size: 15px;
 }
 body {
   background-color: #f7f7f7;
@@ -107,6 +107,8 @@ img.thumbnail {
   display: flex;
   align-items: center;
   padding: 1.25rem 0.75rem;
+  font-weight: bold;
+  font-size: larger;
 }
 .navbar-main .navbar-item.is-active {
   color: #3273dc;
