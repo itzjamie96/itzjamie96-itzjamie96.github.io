@@ -164,6 +164,9 @@ img.thumbnail {
 .breadcrumb a {
   color: #e91e63;
 }
+.card-content .tag:not(body).is-link {
+  background-color: #e91e63;
+}
 .pagination .pagination-link:not(.is-current),
 .pagination .pagination-previous,
 .pagination .pagination-next {
