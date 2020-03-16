@@ -347,6 +347,7 @@ img.thumbnail {
 }
 .has-link-grey,
 .has-link-black-ter {
+  font-weight: 500;
   transition: 0.2s ease;
 }
 .has-link-grey:hover,
@@ -383,13 +384,17 @@ img.thumbnail {
 /* ---------------------------------
  *        Fix content elements
  * --------------------------------- */
-.content h1,
 .content h2,
-.content h3,
-.content h4,
 .content h5,
 .content h6 {
   font-weight: 400;
+}
+.content h1 {
+  font-weight: 600;
+}
+.content h3,
+.content h4 {
+  font-weight: 550;
 }
 .content h1 {
   font-size: 1.75em;
