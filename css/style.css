@@ -153,13 +153,16 @@ img.thumbnail {
 .widget .has-text-centered figure.image {
   margin: auto;
 }
-.widget .level a {
+.widget .level a.level-item {
   background-color: #e91e63;
 }
-.widget .level a:hover {
+.widget .level a.level-item:hover {
   background-color: #e91e63;
   box-shadow: 0 4px 10px rgba(0,0,0,0.17);
   transition: box-shadow 500ms;
+}
+.breadcrumb a {
+  color: #e91e63;
 }
 .pagination .pagination-link:not(.is-current),
 .pagination .pagination-previous,
