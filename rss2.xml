@@ -9,8 +9,33 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Wed, 18 Mar 2020 14:24:32 GMT</pubDate>
+    <pubDate>Thu, 19 Mar 2020 13:27:40 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Spring Framework 개요</title>
+      <link>https://itzjamie96.github.io/2020/03/19/Spring-Dependency-Injection/</link>
+      <guid>https://itzjamie96.github.io/2020/03/19/Spring-Dependency-Injection/</guid>
+      <pubDate>Thu, 19 Mar 2020 11:02:51 GMT</pubDate>
+      <description>
+      
+        &lt;hr&gt;
+
+&lt;h2 id=&quot;Spring-Framework&quot;&gt;&lt;a href=&quot;#Spring-Framework&quot; class=&quot;headerlink&quot; title=&quot;Spring Framework&quot;&gt;&lt;/a&gt;Spring Framework&lt;/h2&gt;&lt;p&gt;Spring Framework는 Java 어플리케이션을 쉽고 빠르게 개발할 수 있도록 도와주는 &lt;code&gt;오픈 소스 프레임워크&lt;/code&gt;다. 스프링은 &lt;code&gt;lightweight = 경량&lt;/code&gt;  프레임워크로, Java 어플리케이션을 개발할 때 필요한 다양한 모듈을 제공한다.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;여기서 모듈이란 프로그램을 구성하는 &lt;code&gt;구성 요소&lt;/code&gt;다. 기계에서 &lt;code&gt;부품&lt;/code&gt;이라고 생각하면 될 것 같다.&lt;br&gt;어떤 프로그램을 기능별로 나눈 후, 그 기능들을 다른 프로그램에 쓸 수 있다 = 모듈! &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;br&gt;
+
+&lt;p&gt;스프링에서 제공하는 모듈:&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<hr><h2 id="Spring-Framework"><a href="#Spring-Framework" class="headerlink" title="Spring Framework"></a>Spring Framework</h2><p>Spring Framework는 Java 어플리케이션을 쉽고 빠르게 개발할 수 있도록 도와주는 <code>오픈 소스 프레임워크</code>다. 스프링은 <code>lightweight = 경량</code>  프레임워크로, Java 어플리케이션을 개발할 때 필요한 다양한 모듈을 제공한다.</p><blockquote><p>여기서 모듈이란 프로그램을 구성하는 <code>구성 요소</code>다. 기계에서 <code>부품</code>이라고 생각하면 될 것 같다.<br>어떤 프로그램을 기능별로 나눈 후, 그 기능들을 다른 프로그램에 쓸 수 있다 = 모듈! </p></blockquote><br><p>스프링에서 제공하는 모듈: <a id="more"></a></p><table><thead><tr><th>Modules</th><th>Features</th></tr></thead><tbody><tr><td>spring-core</td><td>스프링의 핵심인 DI(Dependcy Injection)와 IoC (Inversion of Control) 제공</td></tr><tr><td>spring-aop</td><td>AOP 구현 기능 제공</td></tr><tr><td>spring-jdbc</td><td>DB를 쉽게 다룰 수 있는 기능 제공</td></tr><tr><td>spring-tx</td><td>스프링에서 제공하는 트랜잭션 관련 기능 제공</td></tr><tr><td>spring-webmvc</td><td>스프링에서 제공하는 Controller와 View를 이용한 SpringMVC 구현 기능 제공</td></tr></tbody></table><p>프로젝트에 필요한 모듈들은 원격 어딘가의 라이브러리에 저장돼있다. pom.xml파일에 필요한 모듈을 적으면 저 멀리 원격 repository에 있는 라이브러리가 알아서 프로젝트에 다운된다!</p><h3 id="pom-xml"><a href="#pom-xml" class="headerlink" title="pom.xml"></a>pom.xml</h3><p><img src="/img/20200319_pom.png" alt="pom.xml"></p><p>pom.xml 파일 작성 후 Maven &gt; Update Project를 실행하면 <strong>Maven Dependencies</strong> 폴더 안에 관련 모듈들이 알맞은 버전으로 생긴다.<br><br></p><hr><h2 id="Spring-IoC-Container"><a href="#Spring-IoC-Container" class="headerlink" title="Spring IoC Container"></a>Spring IoC Container</h2><p>스프링 프레임워크에는 컨테이너가 하나 있다. 바로 객체를 생성하고 조립하는 컨테이너로 편하게 스프링 컨테이너라고 부르고, 여기서 생성된 객체를 <code>Bean</code>이라고 부른다. </p><blockquote><p>왜 Bean일까?<br>처음 스프링을 공부했을 때부터 항상 궁금했다. 왜 그동안은 object나 instance라고 부르다가 갑자기 bean일까?? 구글링을 백번해도 나오지 않는 Bean이라는 단어의 유래…<br>내 추측은 콩 껍질 안에 콩이 여러개 있는 모양이 스프링 프레임워크의 구조와 비슷해서 그렇게 지었나 싶다. 그럼 Container나 BeanFactory가 아니라 Pod여야하는 것 아닌가? 알 수 없군…</p></blockquote><p>Bean을 만드는 순서는:</p><ol><li>applicationContext.xml에 property등을 적어 bean을 만든다.</li><li>스프링 컨테이너에서 bean을 생성하고 조립한다.</li><li>필요한 bean을 가져다 써서 어플리케이션을 구현한다. </li></ol><h3 id="ApplicationContext-xml"><a href="#ApplicationContext-xml" class="headerlink" title="ApplicationContext.xml"></a>ApplicationContext.xml</h3><p>이 파일이 바로 Bean을 만들어주는 스프링 컨테이너다. 원래 객체를 생성할 때 <code>New</code>를 통해서 객체를 메모리에 로딩시킨다. 하지만 xml 파일로 Bean을 생성하면 메모리 어딘가에 스프링 컨테이너가 있고, 그곳에서 Bean이 생성되는 것이다. </p><p><img src="/img/20200319_applicationcontext.png" alt="applicationcontext.xml"></p><h3 id="Bean을-사용하는-방법"><a href="#Bean을-사용하는-방법" class="headerlink" title="Bean을 사용하는 방법"></a>Bean을 사용하는 방법</h3><p>생성된 Bean을 사용하는 법은 꽤 간단하다. </p><ol><li><code>GenericXmlApplicationContext</code>를 통해 어떤 xml을 사용할지 알려준다.</li><li><code>.getBean()</code>을 통해 컨테이너에서 생성된 Bean 중 어떤 Bean을 가져올지 알려준다.</li><li>Bean을 사용한다.</li><li>xml 파일을 통해 가져온 Bean은 외부 자원이니 반납해준다.<br><img src="/img/20200319_getBean.png" alt=".getBean"></li></ol><hr><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://dzone.com/articles/spring-framework-tutorial-for-beginners-2">Spring Framework for Beginners</a><br><a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC_renew">[인프런] 자바 스프링 프레임워크 강의</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
+      
+      <comments>https://itzjamie96.github.io/2020/03/19/Spring-Dependency-Injection/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Java HashMap</title>
