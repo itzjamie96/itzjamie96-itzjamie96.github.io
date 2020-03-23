@@ -174,7 +174,7 @@
 <blockquote>
 <p><a href="https://www.techiediaries.com/jekyll-hugo-hexo/">참고: How to Choose the Right Static Generator: Jekyll vs. Hugo vs. Hexo</a></p>
 </blockquote>
-<p>근데 이ㅣ중에서 내가 고를 수 있는 건 <Strong>Hexo</Strong>밖에 없었다. <code>저기 있는 기술 중 node.js밖에 안써봐서ㅎ</code> 그래도 하나라도 아는 게 어딘가! 그리고 Hexo는 그 중 테마도 예쁜 게 제일 많았다! 나는 예쁜 게 좋은 사람이니 이게 제일 좋았다. </p>
+<p>근데 이ㅣ중에서 내가 고를 수 있는 건 <strong>Hexo</strong>밖에 없었다. <code>저기 있는 기술 중 node.js밖에 안써봐서ㅎ</code> 그래도 하나라도 아는 게 어딘가! 그리고 Hexo는 그 중 테마도 예쁜 게 제일 많았다! 나는 예쁜 게 좋은 사람이니 이게 제일 좋았다. </p>
 <br>
 
 <h4 id="Hexo-처음-써본-간략한-후기"><a href="#Hexo-처음-써본-간략한-후기" class="headerlink" title="Hexo 처음 써본 간략한 후기"></a>Hexo 처음 써본 간략한 후기</h4><p>내 개발실력은 “실력”이라고 할 것도 없고 그냥 이제 막 “개발”에 발가락을 담궈본 수준이다. node.js도 써본 적만 있지 잘 아는 것도 아니었다. 그 상태로 나름 따라해본다고 이것 저것 검색해보고 만든 후, 커스터마이징 하려고 테마 폴더를 열어봤는데 그냥 기절할 뻔했다. <code>하나도 모르겠어!</code> 흑흑 공부할게 아주 한참 남았구나 싶은 순간이었다. CSS도 나름 자신있다고 생각했는 데 절대 아니었다. 어디서 개발한다고 하지 말아야지…개발은 무슨 응애다. 그래도 어찌저찌 커마는 했다…<br><br></p>
@@ -186,7 +186,25 @@
 
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>블로그 만들 때 참고한 자료들:<br><a href="https://www.youtube.com/watch?v=Onglr1_Kgls">YouTube DesignCourse: The Hexo Static Site (Blog) Generator - Beginner’s Crash Course</a></p>
 <p><a href="https://www.youtube.com/watch?v=8uRgIwgumqA">YouTube 카인드패밀리: 오늘 부터 나도 github.io 블로그 운영자다!! | github pages , goormide, hexo</a></p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -286,7 +304,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            4
+                            5
                         </p>
                     </a>
                 </div>
@@ -391,7 +409,7 @@
                 <span class="level-item">Spring</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li>
             </ul>
@@ -404,6 +422,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T07:28:08.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/Spring-Auto-DI/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spring 의존객체 자동주입</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -474,7 +505,7 @@
                     <span class="level-item">March 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>

@@ -150,46 +150,64 @@
 <br>
 
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Create a <code>HashMap</code> object called <em>capitalCities</em> that will store <code>String</code> keys and <code>Integer</code> values: </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap; <span class="comment">// import the HashMap class</span></span><br><span class="line"></span><br><span class="line">HashMap&lt;String, String&gt; capitalCities = <span class="keyword">new</span> HashMap&lt;String, String&gt;();  </span><br></pre></td></tr></table></figure> 
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap; <span class="comment">// import the HashMap class</span></span><br><span class="line"></span><br><span class="line">HashMap&lt;String, String&gt; capitalCities = <span class="keyword">new</span> HashMap&lt;String, String&gt;();  </span><br></pre></td></tr></tbody></table></figure> 
 
 <br>
 <a id="more"></a>
 ### Add Items
 To add items, use the `put()` method: 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.put(<span class="string">"Korea"</span>, <span class="string">"Seoul"</span>);</span><br><span class="line">capitalCities.put(<span class="string">"Poland"</span>, <span class="string">"Warsaw"</span>);</span><br><span class="line">capitalCities.put(<span class="string">"Germany"</span>, <span class="string">"Berlin"</span>);</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">&#123;Korea=Seoul, Poland=Warsaw, Germany=Berlin&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.put(<span class="string">"Korea"</span>, <span class="string">"Seoul"</span>);</span><br><span class="line">capitalCities.put(<span class="string">"Poland"</span>, <span class="string">"Warsaw"</span>);</span><br><span class="line">capitalCities.put(<span class="string">"Germany"</span>, <span class="string">"Berlin"</span>);</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">{Korea=Seoul, Poland=Warsaw, Germany=Berlin}</span><br></pre></td></tr></tbody></table></figure>
 
 <br>
 
 <h3 id="Access-an-Item"><a href="#Access-an-Item" class="headerlink" title="Access an Item"></a>Access an Item</h3><p>To access a value in the <code>HashMap</code>, use the <code>get()</code> method and <strong>refer to its key</strong>:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String city = capitalCities.get(<span class="string">"Korea"</span>);</span><br><span class="line">System.out.println(city);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">Seoul</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String city = capitalCities.get(<span class="string">"Korea"</span>);</span><br><span class="line">System.out.println(city);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">Seoul</span><br></pre></td></tr></tbody></table></figure>
 
 <br>
 
 <h3 id="Remove-an-Item"><a href="#Remove-an-Item" class="headerlink" title="Remove an Item"></a>Remove an Item</h3><p>To remove an item, use the <code>remove()</code> method and <strong>refer to its key</strong>:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.remove(<span class="string">"Germany"</span>);</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">&#123;Korea=Seoul, Poland=Warsaw&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.remove(<span class="string">"Germany"</span>);</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">{Korea=Seoul, Poland=Warsaw}</span><br></pre></td></tr></tbody></table></figure>
 
 <p>To remove <strong>ALL ITEMS</strong>, use the <code>clear()</code> method:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.clear();</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.clear();</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">{}</span><br></pre></td></tr></tbody></table></figure>
 
 <br>
 
 <h3 id="HashMap-Size"><a href="#HashMap-Size" class="headerlink" title="HashMap Size"></a>HashMap Size</h3><p>To find out how many items there are, use the <code>size()</code> method:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> size = capitalCities.size();</span><br><span class="line">System.out.println(size);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> size = capitalCities.size();</span><br><span class="line">System.out.println(size);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></tbody></table></figure>
 
 <br>
 
 <h3 id="Loop-Through-a-HashMap"><a href="#Loop-Through-a-HashMap" class="headerlink" title="Loop Through a HashMap"></a>Loop Through a HashMap</h3><p>Loop through the items with a <strong>for-each</strong> loop.<br><strong>Note:</strong> use the <code>keySet()</code> method for <strong>keys</strong>, and use the <code>values()</code> method for <strong>values</strong>:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (String s : capitalCities.keySet()) &#123;</span><br><span class="line">    <span class="comment">// process each key in turn </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String s : capitalCities.values()) &#123;</span><br><span class="line">    <span class="comment">// process each value in turn </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (String s : capitalCities.keySet()) {</span><br><span class="line">    <span class="comment">// process each key in turn </span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String s : capitalCities.values()) {</span><br><span class="line">    <span class="comment">// process each value in turn </span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
 <br>
 
 <h3 id="Loop-Through-to-FIND-a-key"><a href="#Loop-Through-to-FIND-a-key" class="headerlink" title="Loop Through to FIND a key"></a>Loop Through to FIND a key</h3><p>Check if the HashMap includes a given key with <code>containsKey()</code> method: </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> USA = capitalCities.containsKey(<span class="string">"USA"</span>);</span><br><span class="line">System.out.println(USA);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line"><span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> USA = capitalCities.containsKey(<span class="string">"USA"</span>);</span><br><span class="line">System.out.println(USA);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line"><span class="keyword">false</span></span><br></pre></td></tr></tbody></table></figure>
 
 <br>
 
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="http://www.dukelearntoprogram.com/course3/doc/#hashmap">Duke Learn to Program: Java Documentation</a><br><a href="https://www.w3schools.com/java/java_hashmap.asp">w3schools.com</a></p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -296,7 +314,7 @@ To add items, use the `put()` method:
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            4
+                            5
                         </p>
                     </a>
                 </div>
@@ -413,7 +431,7 @@ To add items, use the `put()` method:
                 <span class="level-item">Spring</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li>
             </ul>
@@ -426,6 +444,19 @@ To add items, use the `put()` method:
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-23T07:28:08.000Z">2020-03-23</time></div>
+                    <a href="/2020/03/23/Spring-Auto-DI/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spring 의존객체 자동주입</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -496,7 +527,7 @@ To add items, use the `put()` method:
                     <span class="level-item">March 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">4</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>

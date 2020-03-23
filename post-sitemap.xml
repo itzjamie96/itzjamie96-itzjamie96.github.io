@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://itzjamie96.github.io/2020/03/23/Spring-Auto-DI/</loc>
+        <lastmod>2020-03-23T07:42:21.924Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://itzjamie96.github.io/2020/03/20/Spring-DI/</loc>
-        <lastmod>2020-03-23T07:25:35.063Z</lastmod>
+        <lastmod>2020-03-23T07:41:52.194Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,16 +32,16 @@
     </url>
 
     <url>
-        <loc>https://itzjamie96.github.io/2020/03/14/I-made-a-blog-with-hexo/</loc>
-        <lastmod>2020-03-18T14:24:40.146Z</lastmod>
+        <loc>https://itzjamie96.github.io/2020/03/18/Java-HashMap/</loc>
+        <lastmod>2020-03-19T10:33:48.291Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://itzjamie96.github.io/2020/03/18/Java-HashMap/</loc>
-        <lastmod>2020-03-18T14:24:32.442Z</lastmod>
+        <loc>https://itzjamie96.github.io/2020/03/14/I-made-a-blog-with-hexo/</loc>
+        <lastmod>2020-03-18T14:25:43.514Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
