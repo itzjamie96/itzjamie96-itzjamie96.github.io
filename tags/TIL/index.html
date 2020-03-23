@@ -134,6 +134,57 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-20T13:09:02.000Z">2020-03-20</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/03/20/Spring-DI/">Spring의 DI</a>
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<h2 id="Dependency-Injection-의존성-주입"><a href="#Dependency-Injection-의존성-주입" class="headerlink" title="Dependency Injection (의존성 주입)"></a>Dependency Injection (의존성 주입)</h2><p>스프링에서 의존성 주입이란, 말 그대로 필요한 객체를 주입한다는 뜻이다. 좀 더 쉽게 살펴보기 위해 <code>건전지를 넣어야하는 장난감</code>을 예제로 들어보자. 장난감이 작동하기 위해서는 배터리가 필수다. 다시 말해 <strong>장난감이 배터리에 의존</strong>하기 때문에 <strong>배터리를 장난감에 주입</strong>해야 한다. </p>
+<p>먼저 건전지를 분리할 수 없는 배터리 일체형 장난감을 생각해보자.</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ElectricToyCar</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> Battery battery;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ElectricToyCar</span><span class="params">()</span> </span>{</span><br><span class="line">        battery = <span class="keyword">new</span> Battery();    </span><br><span class="line">        <span class="comment">//공장에서 장난감을 만들 때 배터리를 주입한 상태로 만든다!</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/03/20/Spring-DI/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-03-19T11:02:51.000Z">2020-03-19</time>
                 
                 <div class="level-item">
@@ -147,7 +198,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/03/19/Spring-Dependency-Injection/">Spring Framework 개요</a>
+                <a class="has-link-black-ter" href="/2020/03/19/Spring-Framework/">Spring Framework 개요</a>
             
         </h1>
         <div class="content">
@@ -166,7 +217,7 @@
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/19/Spring-Dependency-Injection/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2020/03/19/Spring-Framework/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -277,7 +328,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            3
+                            4
                         </p>
                     </a>
                 </div>
@@ -350,7 +401,7 @@
                 <span class="level-item">Spring</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li>
             </ul>
@@ -368,8 +419,21 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-20T13:09:02.000Z">2020-03-20</time></div>
+                    <a href="/2020/03/20/Spring-DI/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spring의 DI</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-19T11:02:51.000Z">2020-03-19</time></div>
-                    <a href="/2020/03/19/Spring-Dependency-Injection/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spring Framework 개요</a>
+                    <a href="/2020/03/19/Spring-Framework/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Spring Framework 개요</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
                     </p>
@@ -420,7 +484,7 @@
                     <span class="level-item">March 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">3</span>
+                    <span class="level-item tag">4</span>
                 </span>
             </a>
         </li>

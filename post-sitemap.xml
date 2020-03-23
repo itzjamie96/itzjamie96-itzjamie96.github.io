@@ -8,8 +8,16 @@
     </url>
 
     <url>
-        <loc>https://itzjamie96.github.io/2020/03/19/Spring-Dependency-Injection/</loc>
-        <lastmod>2020-03-19T13:27:40.207Z</lastmod>
+        <loc>https://itzjamie96.github.io/2020/03/20/Spring-DI/</loc>
+        <lastmod>2020-03-23T07:25:35.063Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/03/19/Spring-Framework/</loc>
+        <lastmod>2020-03-23T05:43:27.580Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
