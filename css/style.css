@@ -12,7 +12,7 @@ button,
 input,
 select,
 textarea {
-  font-family: "Ubuntu", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif;
+  font-family: "Noto Sans KR", "Ubuntu", "Roboto", "Open Sans", "Microsoft YaHei", sans-serif;
 }
 @media screen and (min-width: 1280px) {
   .is-1-column .container,
@@ -80,6 +80,7 @@ img.thumbnail {
   max-height: 1.75rem;
 }
 .navbar-main {
+  font-family: "Ubuntu";
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 .navbar-main .navbar-menu,
@@ -152,6 +153,9 @@ img.thumbnail {
 }
 .widget .has-text-centered figure.image {
   margin: auto;
+}
+.widget .level {
+  font-family: "Ubuntu";
 }
 .widget .level a.level-item {
   background-color: #e91e63;
@@ -234,6 +238,9 @@ img.thumbnail {
 .article .content a {
   word-wrap: break-word;
   color: #e91e63;
+}
+.article .content p {
+  line-height: 1.6;
 }
 .rtl {
   direction: rtl;
@@ -364,7 +371,7 @@ img.thumbnail {
   color: #7a7a7a !important;
 }
 .has-link-black-ter {
-  color: #242424 !important;
+  color: #333 !important;
 }
 @media screen and (max-width: 768px) {
   .has-text-centered-mobile {
@@ -417,24 +424,33 @@ img.thumbnail {
 .content h5 {
   font-size: 1em;
 }
-.content code,
-.content pre {
-  font-family: "Source Code Pro", monospace, "Microsoft YaHei";
-}
 .content pre {
   font-size: 0.85em;
+  font-family: "Source Code Pro", "Noto Sans KR", monospace, "Microsoft YaHei";
 }
 .content code {
   padding: 0;
   background: transparent;
+  font-family: "Source Code Pro", "Noto Sans KR", monospace, "Microsoft YaHei";
 }
 .content > code,
 .content :not(pre) > code {
-  font-size: 0.85em;
+  font-size: 1em;
   color: #ff3860;
+}
+.content blockquote {
+  border-left: 5px solid rgba(255,56,119,0.3);
+  font-size: 1rem;
 }
 .content blockquote footer strong + cite {
   margin-left: 0.5em;
+}
+.content del {
+  text-decoration: none;
+  border-bottom: 2px solid rgba(255,56,119,0.5);
+  color: #262626;
+  display: inline-block;
+  line-height: 1.1;
 }
 /* ---------------------------------
  *        Fix code highlight
@@ -486,7 +502,7 @@ figure.highlight figcaption {
 }
 figure.highlight figcaption span {
   font-weight: 500;
-  font-family: "Source Code Pro", monospace, "Microsoft YaHei";
+  font-family: "Source Code Pro", "Noto Sans KR", monospace, "Microsoft YaHei";
 }
 figure.highlight figcaption .fold,
 figure.highlight figcaption a {

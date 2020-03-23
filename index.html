@@ -69,6 +69,10 @@
     
 
 
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+
+
 <link rel="stylesheet" href="/css/style.css">
 <link rel="alternate" href="/rss2.xml" title="Jaylogue" type="application/rss+xml">
 </head>
@@ -143,7 +147,7 @@
         <div class="content">
             <hr>
 
-<h2 id="의존객체-자동-주입"><a href="#의존객체-자동-주입" class="headerlink" title="의존객체 자동 주입"></a>의존객체 자동 주입</h2><p>의존객체 자동 주입이란, Spring 2.5부터 생긴 기능으로 <code>&lt;constructor-arg&gt;</code> 또는 <code>&lt;property&gt;</code> 등의 태그로 의존 대상 객체를 명시하지 않아도 스프링 컨테이너가 자동으로 필요한 의존 대상 객체를 찾아서 객체가 필요한 객체에 주입해주는 기능이다.<br>구현할 때는 <code>@Autowired</code> 와 <code>@Resource</code> 어노테이션을 이용한다. </p>
+<h2 id="의존객체-자동-주입"><a href="#의존객체-자동-주입" class="headerlink" title="의존객체 자동 주입"></a>의존객체 자동 주입</h2><p>의존객체 자동 주입이란, Spring 2.5부터 생긴 기능으로 <code>&lt;constructor-arg&gt;</code> 또는 <code>&lt;property&gt;</code> 등의 태그로 의존 대상 객체를 명시하지 않아도 스프링 컨테이너가 자동으로 필요한 의존 대상 객체를 찾아서 객체가 필요한 객체에 주입해주는 기능이다. 구현할 때는 <code>@Autowired</code> 와 <code>@Resource</code> 어노테이션을 이용한다. </p>
         </div>
         
         
@@ -192,7 +196,7 @@
         <div class="content">
             <hr>
 
-<h2 id="Dependency-Injection-의존성-주입"><a href="#Dependency-Injection-의존성-주입" class="headerlink" title="Dependency Injection (의존성 주입)"></a>Dependency Injection (의존성 주입)</h2><p>스프링에서 의존성 주입이란, 말 그대로 필요한 객체를 주입한다는 뜻이다. 좀 더 쉽게 살펴보기 위해 <code>건전지를 넣어야하는 장난감</code>을 예제로 들어보자. 장난감이 작동하기 위해서는 배터리가 필수다. 다시 말해 <strong>장난감이 배터리에 의존</strong>하기 때문에 <strong>배터리를 장난감에 주입</strong>해야 한다. </p>
+<h2 id="Dependency-Injection-의존성-주입"><a href="#Dependency-Injection-의존성-주입" class="headerlink" title="Dependency Injection (의존성 주입)"></a>Dependency Injection (의존성 주입)</h2><p>스프링에서 의존성 주입이란, 말 그대로 필요한 객체를 주입한다는 뜻이다. 좀 더 쉽게 살펴보기 위해 <del>건전지를 넣어야하는 장난감</del>을 예제로 들어보자. 장난감이 작동하기 위해서는 배터리가 필수다. 다시 말해 <del>장난감이 배터리에 의존</del>하기 때문에 <del>배터리를 장난감에 주입</del>해야 한다. </p>
 <p>먼저 건전지를 분리할 수 없는 배터리 일체형 장난감을 생각해보자.</p>
 <figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ElectricToyCar</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> Battery battery;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ElectricToyCar</span><span class="params">()</span> </span>{</span><br><span class="line">        battery = <span class="keyword">new</span> Battery();    </span><br><span class="line">        <span class="comment">//공장에서 장난감을 만들 때 배터리를 주입한 상태로 만든다!</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
         </div>
@@ -243,9 +247,9 @@
         <div class="content">
             <hr>
 
-<h2 id="Spring-Framework"><a href="#Spring-Framework" class="headerlink" title="Spring Framework"></a>Spring Framework</h2><p>Spring Framework는 Java 어플리케이션을 쉽고 빠르게 개발할 수 있도록 도와주는 <code>오픈 소스 프레임워크</code>다. 스프링은 <code>lightweight = 경량</code>  프레임워크로, Java 어플리케이션을 개발할 때 필요한 다양한 모듈을 제공한다.</p>
+<h2 id="Spring-Framework"><a href="#Spring-Framework" class="headerlink" title="Spring Framework"></a>Spring Framework</h2><p>Spring Framework는 Java 어플리케이션을 쉽고 빠르게 개발할 수 있도록 도와주는 <del>오픈 소스 프레임워크</del>다. 스프링은 <del>lightweight = 경량</del>  프레임워크로, Java 어플리케이션을 개발할 때 필요한 다양한 모듈을 제공한다.</p>
 <blockquote>
-<p>여기서 모듈이란 프로그램을 구성하는 <code>구성 요소</code>다. 기계에서 <code>부품</code>이라고 생각하면 될 것 같다.<br>어떤 프로그램을 기능별로 나눈 후, 그 기능들을 다른 프로그램에 쓸 수 있다 = 모듈! </p>
+<p>여기서 모듈이란 프로그램을 구성하는 <del>구성 요소</del>다. 기계에서 <del>부품</del>이라고 생각하면 될 것 같다.<br>어떤 프로그램을 기능별로 나눈 후, 그 기능들을 다른 프로그램에 쓸 수 있다 = 모듈! </p>
 </blockquote>
 <br>
 
@@ -298,7 +302,7 @@
         <div class="content">
             <hr>
 
-<h3 id="Java-HashMap"><a href="#Java-HashMap" class="headerlink" title="Java HashMap"></a>Java HashMap</h3><p>Arrays store items as an ordered collection and in order to access the items an index number (<code>int</code> type) is needed. A <code>HashMap</code> however, stores items in <strong>key/value</strong> pairs and you can access the value using the <strong>key</strong>. The <code>&lt; &gt;</code> notation tells the type of object used as keys and values. </p>
+<h3 id="Java-HashMap"><a href="#Java-HashMap" class="headerlink" title="Java HashMap"></a>Java HashMap</h3><p>Arrays store items as an ordered collection and in order to access the items an index number (<code>int</code> type) is needed. A <code>HashMap</code> however, stores items in <del>key/value</del> pairs and you can access the value using the <del>key</del>. The <code>&lt; &gt;</code> notation tells the type of object used as keys and values. </p>
 <br>
 
 <h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Create a <code>HashMap</code> object called <em>capitalCities</em> that will store <code>String</code> keys and <code>Integer</code> values: </p>
