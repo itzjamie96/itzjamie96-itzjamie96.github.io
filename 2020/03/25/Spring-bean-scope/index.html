@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/2020/03/18/java-hashmap/"/>
+<link rel="canonical" href="https://itzjamie96.github.io/2020/03/25/spring-bean-scope/"/>
 
-<title>Java HashMap - Jaylogue</title>
+<title>Bean의 범위 - Singleton과 Prototype - Jaylogue</title>
 
 
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/ublog.png" alt="Java HashMap" height="28">
+                <img src="/images/ublog.png" alt="Bean의 범위 - Singleton과 Prototype" height="28">
             
             </a>
         </div>
@@ -131,10 +131,10 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-18T13:12:02.000Z">2020-03-18</time>
+                <time class="level-item has-text-grey" datetime="2020-03-25T13:57:58.000Z">2020-03-25</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java/">Java</a>
+                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
                 </div>
                 
                 
@@ -144,55 +144,46 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Java HashMap
+                Bean의 범위 - Singleton과 Prototype
             
         </h1>
         <div class="content">
             <hr>
 
-<h3 id="Java-HashMap"><a href="#Java-HashMap" class="headerlink" title="Java HashMap"></a>Java HashMap</h3><p>Arrays store items as an ordered collection and in order to access the items an index number (<code>int</code> type) is needed. A <code>HashMap</code> however, stores items in <del>key/value</del> pairs and you can access the value using the <del>key</del>. The <code>&lt; &gt;</code> notation tells the type of object used as keys and values. </p>
-<br>
-
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Create a <code>HashMap</code> object called <em>capitalCities</em> that will store <code>String</code> keys and <code>Integer</code> values: </p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap; <span class="comment">// import the HashMap class</span></span><br><span class="line"></span><br><span class="line">HashMap&lt;String, String&gt; capitalCities = <span class="keyword">new</span> HashMap&lt;String, String&gt;();  </span><br></pre></td></tr></tbody></table></figure> 
-
-<br>
+<h2 id="Bean의-범위-scope"><a href="#Bean의-범위-scope" class="headerlink" title="Bean의 범위(scope)"></a>Bean의 범위(scope)</h2><p>스프링에서 생성되는 bean의 범위(scope)란, 사실상 bean의 생명주기와 같다. 말 그대로 bean이 생성될 때부터 소멸할 때까지의 범위를 의미한다. 스프링은 기본적으로 모든 bean을 <del>Singleton</del>으로 생성해서 관리한다. 그렇다면 singleton이 대체 무엇인가?<br><br></p>
+<h2 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h2><p>우선 단어에서 대충 감이 잡힌다. <del>Single</del>ton. <del>SINGLE!</del> 단어 자체에서 유추할 수 있다시피 singleton은 스프링 컨테이너에서 bean이 생성될 때 그 bean을 딱! <del>한 개</del>만 생성한다. 따라서 그 bean을 사용하는 모든 request는 해당 bean만 참조하게 된다. </p>
 <a id="more"></a>
-### Add Items
-To add items, use the `put()` method: 
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.put(<span class="string">"Korea"</span>, <span class="string">"Seoul"</span>);</span><br><span class="line">capitalCities.put(<span class="string">"Poland"</span>, <span class="string">"Warsaw"</span>);</span><br><span class="line">capitalCities.put(<span class="string">"Germany"</span>, <span class="string">"Berlin"</span>);</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">{Korea=Seoul, Poland=Warsaw, Germany=Berlin}</span><br></pre></td></tr></tbody></table></figure>
 
+<blockquote>
+<p>  Singleton의 사전적 정의를 보면 내가 생각했던 싱글이 맞는 것 같다!<br>    1. (단독) 개체<br>    2. 독신자 (결혼을 안 했거나 애인이 없는 사람)<br>    3. (쌍둥이가 아닌) 외둥이<br>출처: 네이버 영어사전</p>
+</blockquote>
+<p>기존의 Java 프로젝트에서는 <code>new</code>를 통해 새로운 객체를 생성했는데, 같은 이름을 가진 새로운 객체들을 여러 개 생성할 수 있었다. </p>
+<figure class="highlight java"><figcaption><span>new를 통한 객체 생성 예시</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Shape s1 = <span class="keyword">new</span> Shape();</span><br><span class="line">Shape s2 = <span class="keyword">new</span> Shape();</span><br><span class="line">Shape s3 = <span class="keyword">new</span> Shape();</span><br><span class="line"></span><br><span class="line">System.out.println(s1);    </span><br><span class="line">System.out.println(s2);     </span><br><span class="line">System.out.println(s3);   </span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>결과:<br>test01.Shape@573f2bb1<br>test01.Shape@5ae9a829<br>test01.Shape@6d8a00e3</p>
+</blockquote>
+<p>볼 수 있다시피 3개의 각기 다른 객체가 생성됐기 때문에 <del>주소가 모두 다른</del> 것을 알 수 있다. </p>
+<p>이와 반대로 singleton은 스프링 컨테이너에서 bean을 <del>딱 한 개!</del>만 생성하기 때문에 <code>.getBean()</code>을 딱 하나의 bean만 참조하게 된다. </p>
+<figure class="highlight java"><figcaption><span>Singleton Bean</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Shape sq1 = ctx.getBean(<span class="string">"square"</span>, Shape<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">Shape sq2 = ctx.getBean(<span class="string">"square"</span>, Shape<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">Shape sq3 = ctx.getBean(<span class="string">"square"</span>, Shape<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line">System.out.println(sq1);</span><br><span class="line">System.out.println(sq2);</span><br><span class="line">System.out.println(sq3); </span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>결과:<br>test01.Shape@573f2bb1<br>test01.Shape@573f2bb1<br>test01.Shape@573f2bb1</p>
+</blockquote>
+<p>결과에서 알 수 있다시피 각 객체마다 하나의 bean을 참조하고 있다. </p>
 <br>
 
-<h3 id="Access-an-Item"><a href="#Access-an-Item" class="headerlink" title="Access an Item"></a>Access an Item</h3><p>To access a value in the <code>HashMap</code>, use the <code>get()</code> method and <del>refer to its key</del>:</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String city = capitalCities.get(<span class="string">"Korea"</span>);</span><br><span class="line">System.out.println(city);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">Seoul</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h2><p>기본적으로 스프링에서 bean을 불러오면 매번 같은 객체를 반환한다. 하지만 가끔 하나의 bean으로 여러 객체를 만들어 사용해야할 때가 있다 (마치 <code>new</code>를 쓰는 것 처럼). 이럴 땐 <del>Prototype</del>으로 설정해주면 된다.</p>
+<p>Prototype으로 bean을 설정하는 방법은 다음과 같다. </p>
+<figure class="highlight"><figcaption><span>ApplicationContext.xml</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean class="com.shape.sqaure" scope="prototype"&gt;&lt;/bean&gt;</span><br></pre></td></tr></tbody></table></figure>
 
-<br>
+<p>위와 같이 XML 파일에서 <code>scope=prototype</code>을 설정해 주면 된다. 혹은 어노테이션을 통해 bean의 범위를 설정해줄 수도 있다. </p>
+<figure class="highlight java"><figcaption><span>Square.class</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Scope</span>(<span class="string">"prototype"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Square</span> </span>{</span><br><span class="line">    </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
-<h3 id="Remove-an-Item"><a href="#Remove-an-Item" class="headerlink" title="Remove an Item"></a>Remove an Item</h3><p>To remove an item, use the <code>remove()</code> method and <del>refer to its key</del>:</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.remove(<span class="string">"Germany"</span>);</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">{Korea=Seoul, Poland=Warsaw}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>To remove <del>ALL ITEMS</del>, use the <code>clear()</code> method:</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.clear();</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">{}</span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-
-<h3 id="HashMap-Size"><a href="#HashMap-Size" class="headerlink" title="HashMap Size"></a>HashMap Size</h3><p>To find out how many items there are, use the <code>size()</code> method:</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> size = capitalCities.size();</span><br><span class="line">System.out.println(size);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-
-<h3 id="Loop-Through-a-HashMap"><a href="#Loop-Through-a-HashMap" class="headerlink" title="Loop Through a HashMap"></a>Loop Through a HashMap</h3><p>Loop through the items with a <del>for-each</del> loop.<br><strong>Note:</strong> use the <code>keySet()</code> method for <del>keys</del>, and use the <code>values()</code> method for <del>values</del>:</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (String s : capitalCities.keySet()) {</span><br><span class="line">    <span class="comment">// process each key in turn </span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String s : capitalCities.values()) {</span><br><span class="line">    <span class="comment">// process each value in turn </span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-
-<h3 id="Loop-Through-to-FIND-a-key"><a href="#Loop-Through-to-FIND-a-key" class="headerlink" title="Loop Through to FIND a key"></a>Loop Through to FIND a key</h3><p>Check if the HashMap includes a given key with <code>containsKey()</code> method: </p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> USA = capitalCities.containsKey(<span class="string">"USA"</span>);</span><br><span class="line">System.out.println(USA);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line"><span class="keyword">false</span></span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="http://www.dukelearntoprogram.com/course3/doc/#hashmap">Duke Learn to Program: Java Documentation</a><br><a href="https://www.w3schools.com/java/java_hashmap.asp">w3schools.com</a></p>
+<blockquote>
+<p>대부분의 경우 <code>new</code>로 객체를 생성하면 되지만, 스프링 컨테이너의 DI 기능을 사용하고 싶은 경우에 Prototype scope bean을 설정한다고 한다. </p>
+</blockquote>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC_renew">[인프런] 자바 스프링 프레임워크 강의</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -218,7 +209,7 @@ To add items, use the `put()` method:
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/TIL/" rel="tag">TIL</a>
+                    <a class="has-link-grey -link" href="/tags/Spring/" rel="tag">Spring</a>, <a class="has-link-grey -link" href="/tags/TIL/" rel="tag">TIL</a>
                 </div>
             </div>
         </div>
@@ -235,17 +226,10 @@ To add items, use the `put()` method:
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/19/Spring-Framework/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Spring Framework 개요</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/14/I-made-a-blog-with-hexo/">
-                <span class="level-item">Hexo로 블로그를 만들어봤다</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/23/Spring-Auto-DI/">
+                <span class="level-item">Spring 의존객체 자동주입</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -266,7 +250,7 @@ To add items, use the `put()` method:
     var gitalk = new Gitalk({
         clientID: '8d463ac7ecca969a30b3',
         clientSecret: 'be5d7c29ac4519590b8d5dd000fddf06b6d20bf0',
-        id: '15cfa460ee465c464b8999ca3c84efda',
+        id: '6fb36242ba9a51a8d85715fc93246ef7',
         repo: 'itzjamie96.github.io',
         owner: 'itzjamie96',
         admin: "itzjamie96",
@@ -368,36 +352,20 @@ To add items, use the `put()` method:
                     Catalogue
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#Java-HashMap">
+        <a class="is-flex" href="#Bean의-범위-scope">
         <span class="has-mr-6">1</span>
-        <span>Java HashMap</span>
+        <span>Bean의 범위(scope)</span>
         </a></li><li>
-        <a class="is-flex" href="#Example">
+        <a class="is-flex" href="#Singleton">
         <span class="has-mr-6">2</span>
-        <span>Example</span>
+        <span>Singleton</span>
         </a></li><li>
-        <a class="is-flex" href="#Access-an-Item">
+        <a class="is-flex" href="#Prototype">
         <span class="has-mr-6">3</span>
-        <span>Access an Item</span>
-        </a></li><li>
-        <a class="is-flex" href="#Remove-an-Item">
-        <span class="has-mr-6">4</span>
-        <span>Remove an Item</span>
-        </a></li><li>
-        <a class="is-flex" href="#HashMap-Size">
-        <span class="has-mr-6">5</span>
-        <span>HashMap Size</span>
-        </a></li><li>
-        <a class="is-flex" href="#Loop-Through-a-HashMap">
-        <span class="has-mr-6">6</span>
-        <span>Loop Through a HashMap</span>
-        </a></li><li>
-        <a class="is-flex" href="#Loop-Through-to-FIND-a-key">
-        <span class="has-mr-6">7</span>
-        <span>Loop Through to FIND a key</span>
+        <span>Prototype</span>
         </a></li><li>
         <a class="is-flex" href="#Reference">
-        <span class="has-mr-6">8</span>
+        <span class="has-mr-6">4</span>
         <span>Reference</span>
         </a></li></ul>
             </div>
@@ -558,7 +526,7 @@ To add items, use the `put()` method:
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/ublog.png" alt="Java HashMap" height="28">
+                    <img src="/images/ublog.png" alt="Bean의 범위 - Singleton과 Prototype" height="28">
                 
                 </a>
                 <p class="is-size-7">

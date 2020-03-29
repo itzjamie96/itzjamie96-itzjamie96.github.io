@@ -8,8 +8,8 @@
     </url>
 
     <url>
-        <loc>https://itzjamie96.github.io/2020/03/18/Java-HashMap/</loc>
-        <lastmod>2020-03-23T18:00:36.962Z</lastmod>
+        <loc>https://itzjamie96.github.io/2020/03/25/Spring-bean-scope/</loc>
+        <lastmod>2020-03-29T04:57:34.269Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +17,7 @@
 
     <url>
         <loc>https://itzjamie96.github.io/2020/03/19/Spring-Framework/</loc>
-        <lastmod>2020-03-23T17:58:12.337Z</lastmod>
+        <lastmod>2020-03-25T14:00:54.659Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -25,7 +25,7 @@
 
     <url>
         <loc>https://itzjamie96.github.io/2020/03/20/Spring-DI/</loc>
-        <lastmod>2020-03-23T17:44:22.726Z</lastmod>
+        <lastmod>2020-03-25T14:00:51.054Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,7 +33,15 @@
 
     <url>
         <loc>https://itzjamie96.github.io/2020/03/23/Spring-Auto-DI/</loc>
-        <lastmod>2020-03-23T17:43:43.619Z</lastmod>
+        <lastmod>2020-03-25T14:00:40.552Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/03/18/Java-HashMap/</loc>
+        <lastmod>2020-03-25T13:59:17.581Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
