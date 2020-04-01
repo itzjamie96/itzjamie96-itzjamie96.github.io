@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/tags/til/"/>
+<link rel="canonical" href="https://itzjamie96.github.io/2020/04/01/java-implement-an-interface/"/>
 
-<title>Tag: TIL - 영문학도의 코딩로그</title>
+<title>Java에서 Interface(인터페이스)를 Implement한다는 건 - 영문학도의 코딩로그</title>
 
 
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/ublog.png" alt="영문학도의 코딩로그" height="28">
+                <img src="/images/ublog.png" alt="Java에서 Interface(인터페이스)를 Implement한다는 건" height="28">
             
             </a>
         </div>
@@ -107,6 +107,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -120,18 +124,7 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">TIL</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
@@ -151,7 +144,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/04/01/Java-Implement-an-Interface/">Java에서 Interface(인터페이스)를 Implement한다는 건</a>
+                Java에서 Interface(인터페이스)를 Implement한다는 건
             
         </h1>
         <div class="content">
@@ -162,221 +155,60 @@
 <blockquote>
 <p>서로 다른 두 개의 시스템, 장치 사이에서 정보나 신호를 주고받는 경우의 접점이나 경계면이다. 즉, 사용자가 기기를 쉽게 동작시키는데 도움을 주는 시스템을 의미한다.<br><a href="https://ko.wikipedia.org/wiki/%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4_(%EC%BB%B4%ED%93%A8%ED%8C%85)">출처: 위키백과</a></p>
 </blockquote>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/04/01/Java-Implement-an-Interface/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
+<a id="more"></a>
 
+<p>이 의미를 Java의 <code>Interface</code>에 대입하면 “어떤 객체를 쉽게 구현하기 위해 도와주는 클래스”라고 생각하면 될 것 같다. 흔히 보이는 인터페이스는 어떤 객체와 연관된 메소드들이 모여있는 구조다. 다만, 메소드에 <del>구현부가 없다</del>.</p>
+<figure class="highlight java"><figcaption><span>Interface Example</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Bicycle</span> </span>{</span><br><span class="line">    <span class="comment">//method signatures</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">changeGear</span><span class="params">(<span class="keyword">int</span> newValue)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">speedUp</span><span class="params">(<span class="keyword">int</span> increment)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">applyBrakes</span><span class="params">(<span class="keyword">int</span> decrement)</span></span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure> 
+<br>
 
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-25T13:57:58.000Z">2020-03-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/25/Spring-bean-scope/">Bean의 범위 - Singleton과 Prototype</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<h2 id="Bean의-범위-scope"><a href="#Bean의-범위-scope" class="headerlink" title="Bean의 범위(scope)"></a>Bean의 범위(scope)</h2><p>스프링에서 생성되는 bean의 범위(scope)란, 사실상 bean의 생명주기와 같다. 말 그대로 bean이 생성될 때부터 소멸할 때까지의 범위를 의미한다. 스프링은 기본적으로 모든 bean을 <del>Singleton</del>으로 생성해서 관리한다. 그렇다면 singleton이 대체 무엇인가?<br><br></p>
-<h2 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h2><p>우선 단어에서 대충 감이 잡힌다. <del>Single</del>ton. <del>SINGLE!</del> 단어 자체에서 유추할 수 있다시피 singleton은 스프링 컨테이너에서 bean이 생성될 때 그 bean을 딱! <del>한 개</del>만 생성한다. 따라서 그 bean을 사용하는 모든 request는 해당 bean만 참조하게 된다. </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/25/Spring-bean-scope/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-23T07:28:08.000Z">2020-03-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/23/Spring-Auto-DI/">Spring 의존객체 자동주입</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<h2 id="의존객체-자동-주입"><a href="#의존객체-자동-주입" class="headerlink" title="의존객체 자동 주입"></a>의존객체 자동 주입</h2><p>의존객체 자동 주입이란, Spring 2.5부터 생긴 기능으로 <code>&lt;constructor-arg&gt;</code> 또는 <code>&lt;property&gt;</code> 등의 태그로 의존 대상 객체를 명시하지 않아도 스프링 컨테이너가 자동으로 필요한 의존 대상 객체를 찾아서 객체가 필요한 객체에 주입해주는 기능이다. 구현할 때는 <code>@Autowired</code> 와 <code>@Resource</code> 어노테이션을 이용한다. </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/23/Spring-Auto-DI/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-20T13:09:02.000Z">2020-03-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/20/Spring-DI/">Spring의 DI</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<h2 id="Dependency-Injection-의존성-주입"><a href="#Dependency-Injection-의존성-주입" class="headerlink" title="Dependency Injection (의존성 주입)"></a>Dependency Injection (의존성 주입)</h2><p>스프링에서 의존성 주입이란, 말 그대로 필요한 객체를 주입한다는 뜻이다. 좀 더 쉽게 살펴보기 위해 <del>건전지를 넣어야하는 장난감</del>을 예제로 들어보자. 장난감이 작동하기 위해서는 배터리가 필수다. 다시 말해 <del>장난감이 배터리에 의존</del>하기 때문에 <del>배터리를 장난감에 주입</del>해야 한다. </p>
-<p>먼저 건전지를 분리할 수 없는 배터리 일체형 장난감을 생각해보자.</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ElectricToyCar</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> Battery battery;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ElectricToyCar</span><span class="params">()</span> </span>{</span><br><span class="line">        battery = <span class="keyword">new</span> Battery();    </span><br><span class="line">        <span class="comment">//공장에서 장난감을 만들 때 배터리를 주입한 상태로 만든다!</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/20/Spring-DI/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-19T11:02:51.000Z">2020-03-19</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/19/Spring-Framework/">Spring Framework 개요</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<h2 id="Spring-Framework"><a href="#Spring-Framework" class="headerlink" title="Spring Framework"></a>Spring Framework</h2><p>Spring Framework는 Java 어플리케이션을 쉽고 빠르게 개발할 수 있도록 도와주는 <del>오픈 소스 프레임워크</del>다. 스프링은 <del>lightweight = 경량</del>  프레임워크로, Java 어플리케이션을 개발할 때 필요한 다양한 모듈을 제공한다.</p>
+<p>실제로 인터페이스는 상수, method signiture, default method, static method, 중첩 클래스만 가질 수 있다. 앞서 말한 흔한 인터페이스의 구조는 method signature (메소드 이름 + 파라미터)만 가지고 있는 형태다. </p>
 <blockquote>
-<p>여기서 모듈이란 프로그램을 구성하는 <del>구성 요소</del>다. 기계에서 <del>부품</del>이라고 생각하면 될 것 같다.<br>어떤 프로그램을 기능별로 나눈 후, 그 기능들을 다른 프로그램에 쓸 수 있다 = 모듈! </p>
+<p>Java 8부터 <code>default</code>와 <code>static</code> 키워드가 추가되었다. 기존에는 인터페이스에서 메소드가 어떤 기능을 하는지 구구절절 알려주는 구현부를 쓸 수 없었는데 이제부터는 <code>default</code>나 <code>static</code> 키워드로 선언하면 <del>구현부를 써도 된다</del>. Default나 static 메소드는 따로 오버라이딩하지 않아도 사용할 수 있다고 한다! 더 자세한 건 <a href="https://programmers.co.kr/learn/courses/5/lessons/241">프로그래머스</a>의 설명을 보는 게 좋을 것 같다. </p>
 </blockquote>
-<br>
+<p>구현부가 없다 보니 인터페이스는 객체화(instantiate) 할 수 없다 (무슨 기능을 해야하는지 안적혀 있으니 당연한 것 같다). 따라서 인터페이스를 사용하려면 다른 클래스가 <code>implement</code> 하거나 <code>extend</code> 해줘야 한다.</p>
+<h2 id="Implement하다"><a href="#Implement하다" class="headerlink" title="Implement하다?"></a>Implement하다?</h2><p>나는 인터페이스를 <code>implement</code> 한다는 게 제일 헷갈렸다. 내가 아는 implement의 정의는 “실행하다” 밖에 없었기 때문이다. 그러다 찾은 <code>implement</code>의 IT적 의미:</p>
+<blockquote>
+<p>To begin to use a new system<br><a href="https://dictionary.cambridge.org/ko/%EC%82%AC%EC%A0%84/%EC%98%81%EC%96%B4/implement">출처: Cambridge Dictionary</a></p>
+</blockquote>
+<p>결국 <del>“사용한다”</del>라는 뜻이었다! </p>
+<h2 id="Implement-an-Interface"><a href="#Implement-an-Interface" class="headerlink" title="Implement an Interface"></a>Implement an Interface</h2><p>어떤 클래스가 인터페이스를 <code>implement</code>하게 되면 그제서야 오버라이딩을 통해 인터페이스에 있는 메소드들을의 구현부를 쓸 수 있게 된다. </p>
+<figure class="highlight java"><figcaption><span>Implement Interface Example</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SamChunRiBicycle</span> <span class="keyword">implements</span> <span class="title">Bicycle</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> gear = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">changeGear</span><span class="params">(<span class="keyword">int</span> newValue)</span> </span>{</span><br><span class="line">         gear = newValue;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">speedUp</span><span class="params">(<span class="keyword">int</span> increment)</span> </span>{</span><br><span class="line">         speed = speed + increment;   </span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">applyBrakes</span><span class="params">(<span class="keyword">int</span> decrement)</span> </span>{</span><br><span class="line">         speed = speed - decrement;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">printStates</span><span class="params">()</span> </span>{</span><br><span class="line">         System.out.println(<span class="string">"cadence:"</span> +cadence + <span class="string">" speed:"</span> </span><br><span class="line">            + speed + <span class="string">" gear:"</span> + gear);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure> 
 
-<p>스프링에서 제공하는 모듈:</p>
+
+
+<h2 id="자료형으로써의-인터페이스"><a href="#자료형으로써의-인터페이스" class="headerlink" title="자료형으로써의 인터페이스"></a>자료형으로써의 인터페이스</h2><p>인터페이스의 가장 큰 목적은 여러 클래스들이 공통 속성을 가질 때 그 속성을 하나의 그룹으로 압축(?)하기 위해서인 것 같다. 이건 <code>List</code> 인터페이스를 보면 이해가 딱 된다.<br><img src="/img/20200401_Java-list-interface.png" alt="Collections framework"></p>
+<p><code>ArrayList</code>, <code>LinkedList</code>, <code>Stack</code>, <code>Vector</code> 모두 클래스인데, <code>List</code>를 <code>implement</code>하고 오버라이딩 해서 공통된 리스트 속성을 가지지만 각자 다른 클래스들이 나오는 것이다!🙌 이래서 인터페이스를 정의한다는 것은 새로운 참조형 (reference data type)을 만드는 것과 같다고 하나보다. </p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://docs.oracle.com/javase/tutorial/java/concepts/interface.html">Oracle Java Documentation: What Is an Interface?</a><br><a href="https://docs.oracle.com/javase/tutorial/java/IandI/interfaceAsType.html">Oracle Java Documentation: Using an Interface as a Type</a><br><a href="https://docs.oracle.com/javase/8/docs/api/java/util/List.html">Java Api: Interface List<e></e></a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/19/Spring-Framework/#more">Read More</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/TIL/" rel="tag">TIL</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -386,64 +218,45 @@
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/25/Spring-bean-scope/">
+                <span class="level-item">Bean의 범위 - Singleton과 Prototype</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 
-    
 <div class="card">
-    
-    <div class="card-content article ">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
         
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-18T13:12:02.000Z">2020-03-18</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java/">Java</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/18/Java-HashMap/">Java의 HashMap</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.1/dist/gitalk.min.js"></script>
+<script>
+    var gitalk = new Gitalk({
+        clientID: '8d463ac7ecca969a30b3',
+        clientSecret: 'be5d7c29ac4519590b8d5dd000fddf06b6d20bf0',
+        id: '431e6e877660028985e15e5f3512c7bf',
+        repo: 'itzjamie96.github.io',
+        owner: 'itzjamie96',
+        admin: "itzjamie96",
+        createIssueManually: false,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container')
+</script>
 
-<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p>Arrays store items as an ordered collection and in order to access the items an index number (<code>int</code> type) is needed. A <code>HashMap</code> however, stores items in <del>key/value</del> pairs and you can access the value using the <del>key</del>. The <code>&lt; &gt;</code> notation tells the type of object used as keys and values. </p>
-<br>
-
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Create a <code>HashMap</code> object called <em>capitalCities</em> that will store <code>String</code> keys and <code>Integer</code> values: </p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap; <span class="comment">// import the HashMap class</span></span><br><span class="line"></span><br><span class="line">HashMap&lt;String, String&gt; capitalCities = <span class="keyword">new</span> HashMap&lt;String, String&gt;();  </span><br></pre></td></tr></tbody></table></figure> 
-
-<br>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/18/Java-HashMap/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
     </div>
 </div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -526,6 +339,38 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#Interface란">
+        <span class="has-mr-6">1</span>
+        <span>Interface란?</span>
+        </a></li><li>
+        <a class="is-flex" href="#Implement하다">
+        <span class="has-mr-6">2</span>
+        <span>Implement하다?</span>
+        </a></li><li>
+        <a class="is-flex" href="#Implement-an-Interface">
+        <span class="has-mr-6">3</span>
+        <span>Implement an Interface</span>
+        </a></li><li>
+        <a class="is-flex" href="#자료형으로써의-인터페이스">
+        <span class="has-mr-6">4</span>
+        <span>자료형으로써의 인터페이스</span>
+        </a></li><li>
+        <a class="is-flex" href="#Reference">
+        <span class="has-mr-6">5</span>
+        <span>Reference</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
     
         
 <div class="card widget">
@@ -691,7 +536,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/ublog.png" alt="영문학도의 코딩로그" height="28">
+                    <img src="/images/ublog.png" alt="Java에서 Interface(인터페이스)를 Implement한다는 건" height="28">
                 
                 </a>
                 <p class="is-size-7">
