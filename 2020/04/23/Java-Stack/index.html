@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/2020/03/14/i-made-a-blog-with-hexo/"/>
+<link rel="canonical" href="https://itzjamie96.github.io/2020/04/23/java-stack/"/>
 
-<title>Hexo로 블로그를 만들어봤다 - 영문학도의 코딩로그</title>
+<title>Java의 스택(Stack) - 영문학도의 코딩로그</title>
 
 
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/ublog.png" alt="Hexo로 블로그를 만들어봤다" height="28">
+                <img src="/images/ublog.png" alt="Java의 스택(Stack)" height="28">
             
             </a>
         </div>
@@ -131,10 +131,10 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-14T14:37:29.000Z">2020-03-14</time>
+                <time class="level-item has-text-grey" datetime="2020-04-23T13:21:09.000Z">2020-04-23</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Life/">Life</a>
+                <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                 </div>
                 
                 
@@ -144,52 +144,56 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Hexo로 블로그를 만들어봤다
+                Java의 스택(Stack)
             
         </h1>
         <div class="content">
             <hr>
 
-<h3 id="나도-블로그-만들었다"><a href="#나도-블로그-만들었다" class="headerlink" title="나도 블로그 만들었다!"></a>나도 블로그 만들었다!</h3><p>개발 공부를 시작한 이후로 수 많은 기술 블로그들을 접했다. <code>완전 멋있어!</code>라고 생각했고 내가 만들 일은 없을 거라고 믿었다. 그런데 어느 날 나도 멋져보이고 싶었다! 그래서 호다닥 블로그 만드는 법을 검색해봤다.</p>
-<br>   
-
-<h4 id="플랫폼"><a href="#플랫폼" class="headerlink" title="플랫폼"></a>플랫폼</h4><p>보통 ‘블로그’라 하면 네이버와 티스토리가 흔히 떠오르겠지만, 내가 생각한 멋진 블로그는 우선 주소창이 <code>~~.github.io</code>이어야 했다 (단순히 멋있기 때문). 찾아보니 Static Website Generator로 페이지를 생성하고 GitHub Pages에 배포하면 된다고 한다! 근데 또 여기서 고민: <code>정적 페이지는 뭘로 만들지?</code></p>
-<a id="more"></a> 
-
-<br>
-여러가지 정적 사이트 생성기가 있었다. 
-
-<table>
-<thead>
-<tr>
-<th align="left">Jekyll</th>
-<th align="center">Hugo</th>
-<th align="center">Hexo</th>
-<th align="center">Gatsby</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">a Ruby generator built by Github for powering their Github pages</td>
-<td align="center">an extremly fast static generator built on top of the Go programming language</td>
-<td align="center">a fast website generator based on Node.js</td>
-<td align="center">a blazing fast static site/PWA generator built around modern web technologies such as React and GraphQL</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p><a href="https://www.techiediaries.com/jekyll-hugo-hexo/">참고: How to Choose the Right Static Generator: Jekyll vs. Hugo vs. Hexo</a></p>
-</blockquote>
-<p>근데 이ㅣ중에서 내가 고를 수 있는 건 <strong>Hexo</strong>밖에 없었다. <code>저기 있는 기술 중 node.js밖에 안써봐서ㅎ</code> 그래도 하나라도 아는 게 어딘가! 그리고 Hexo는 그 중 테마도 예쁜 게 제일 많았다! 나는 예쁜 게 좋은 사람이니 이게 제일 좋았다. </p>
+<h2 id="스택-Stack"><a href="#스택-Stack" class="headerlink" title="스택 (Stack)"></a>스택 (Stack)</h2><p><code>Stack</code>은 제한적으로 접근할 수 있는 구조다. 한 쪽 끝에서만 데이터를 넣거나 뺄 수 있는 구조로, 가장 나중에 넣은 데이터를 가장 먼저 빼낼 수 있다. 이게 바로 <del>LIFO: Last In First Out</del> 자료구조다. </p>
+<p>가장 대표적인 예시는 <code>프링글스</code>인 것 같다. 윈기둥 형태의 프링글스 통에는 과자가 빽빽히 들어있다. 과자를 한 조각 꺼내 먹으려면 맨 위에 있는 조각부터 꺼내게 된다. 통에 가장 처음 넣어진 과자는 바닥 쪽에 있고, 맨 마지막으로 통에 넣어진 조각이 가장 처음 꺼내지게 된다. 이것은 FILO:First In Last Out이기도 한, 결국 완벽한 스택이다.  </p>
 <br>
 
-<h4 id="Hexo-처음-써본-간략한-후기"><a href="#Hexo-처음-써본-간략한-후기" class="headerlink" title="Hexo 처음 써본 간략한 후기"></a>Hexo 처음 써본 간략한 후기</h4><p>내 개발실력은 “실력”이라고 할 것도 없고 그냥 이제 막 “개발”에 발가락을 담궈본 수준이다. node.js도 써본 적만 있지 잘 아는 것도 아니었다. 그 상태로 나름 따라해본다고 이것 저것 검색해보고 만든 후, 커스터마이징 하려고 테마 폴더를 열어봤는데 그냥 기절할 뻔했다. <code>하나도 모르겠어!</code> 흑흑 공부할게 아주 한참 남았구나 싶은 순간이었다. CSS도 나름 자신있다고 생각했는 데 절대 아니었다. 어디서 개발한다고 하지 말아야지…개발은 무슨 응애다. 그래도 어찌저찌 커마는 했다…<br><br></p>
-<p><strong>결론: 뭔지 모르고 그냥 만들었다</strong></p>
+<h2 id="스택-생성"><a href="#스택-생성" class="headerlink" title="스택 생성"></a>스택 생성</h2><p>스택을 생성하기 위해서 먼저 <code>java.util.Stack</code> 패키지가 import되야 한다. Import한 후 스택을 생성해보자.</p>
+<figure class="highlight java"><figcaption><span>스택 생성</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Type&gt; stacks = <span class="keyword">new</span> Stack&lt;&gt;();</span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><code>&lt;Type&gt;</code>에는 해당 스택이 어떤 타입의 데이터를 담을 것인지 지정해주면 된다. </p>
+<figure class="highlight java"><figcaption><span>스택 타입</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 정수 스택!</span></span><br><span class="line">Stack&lt;Integer&gt; stacks = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 문자열 스택!</span></span><br><span class="line">Stack&lt;String&gt; stacks = <span class="keyword">new</span> Stack&lt;&gt;();</span><br></pre></td></tr></tbody></table></figure>
+
 <br>
 
-<h3 id="앞으로의-계획"><a href="#앞으로의-계획" class="headerlink" title="앞으로의 계획"></a>앞으로의 계획</h3><p>사실 이름만 거창하게 기술 블로그지, 아직 남들에게 공유할 만한 기술 스택은 갖춘게 없다. 대신 지금부터라도 꾸준하게 TIL을 기록해보려고 한다. 보여주기 식이라도 꾸준히 쓰면 머릿속에 하나라도 남겠지! 최소한 마크다운은 제대로 알게 되지 않을까?ㅎ 작심삼일이 아니길 기도할 뿐…</p>
+<h2 id="스택의-메서드"><a href="#스택의-메서드" class="headerlink" title="스택의 메서드"></a>스택의 메서드</h2><p>스택에는 총 5가지의 메서드가 있다. </p>
+<h3 id="push"><a href="#push" class="headerlink" title="push()"></a>push()</h3><p>스택에 데이터를 추가하기 위해서는 <code>push()</code> 메서드를 쓴다. </p>
+<figure class="highlight java"><figcaption><span>push()</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Stack&lt;String&gt; animals= <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add elements to Stack</span></span><br><span class="line">        animals.push(<span class="string">"Dog"</span>);</span><br><span class="line">        animals.push(<span class="string">"Horse"</span>);</span><br><span class="line">        animals.push(<span class="string">"Cat"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"Stack: "</span> + animals);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><figcaption><span>Console</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stack: [Dog, Horse, Cat]</span><br></pre></td></tr></tbody></table></figure>
+
+<p>결과창에서 볼 수 있듯이 <del>가장 먼저</del> push한 “Dog”가 스택의 맨 처음에 있다. </p>
+<h3 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h3><p>스택의 맨 마지막 요소를 없애기 위해서는 <code>pop()</code> 메서드를 쓴다. 참고로 맨 마지막 요소는 사실 상 스택의 맨 꼭대기에 있는 요소이기 때문에 <code>top</code>이라고 부른다. </p>
+<figure class="highlight java"><figcaption><span>pop()</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Stack&lt;String&gt; animals= <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add elements to Stack</span></span><br><span class="line">        animals.push(<span class="string">"Dog"</span>);</span><br><span class="line">        animals.push(<span class="string">"Horse"</span>);</span><br><span class="line">        animals.push(<span class="string">"Cat"</span>);</span><br><span class="line">        System.out.println(<span class="string">"Initial Stack: "</span> + animals);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Remove element stacks</span></span><br><span class="line">        String element = animals.pop();</span><br><span class="line">        System.out.println(<span class="string">"Removed Element: "</span> + element);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><figcaption><span>Console</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Initial Stack: [Dog, Horse, Cat]</span><br><span class="line">Removed Element: Cat</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="peek"><a href="#peek" class="headerlink" title="peek()"></a>peek()</h3><p>스택의 맨 마지막 요소를 보고싶을 땐 <code>peek()</code> 메서드를 쓴다. </p>
+<figure class="highlight java"><figcaption><span>peek()</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Stack&lt;String&gt; animals= <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add elements to Stack</span></span><br><span class="line">        animals.push(<span class="string">"Dog"</span>);</span><br><span class="line">        animals.push(<span class="string">"Horse"</span>);</span><br><span class="line">        animals.push(<span class="string">"Cat"</span>);</span><br><span class="line">        System.out.println(<span class="string">"Stack: "</span> + animals);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Access element from the top</span></span><br><span class="line">        String element = animals.peek();</span><br><span class="line">        System.out.println(<span class="string">"Element at top: "</span> + element);</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><figcaption><span>Console</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stack: [Dog, Horse, Cat]</span><br><span class="line">Element at top: Cat</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h3><p>스택의 내용물은 아는 데, 위치를 알고 싶다면? 그럴 때는 <code>search()</code> 메서드를 쓰자. </p>
+<figure class="highlight java"><figcaption><span>Search()</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Stack&lt;String&gt; animals= <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add elements to Stack</span></span><br><span class="line">        animals.push(<span class="string">"Dog"</span>);</span><br><span class="line">        animals.push(<span class="string">"Horse"</span>);</span><br><span class="line">        animals.push(<span class="string">"Cat"</span>);</span><br><span class="line">        System.out.println(<span class="string">"Stack: "</span> + animals);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Search an element</span></span><br><span class="line">        <span class="keyword">int</span> position = animals.search(<span class="string">"Horse"</span>);</span><br><span class="line">        System.out.println(<span class="string">"Position of Horse: "</span> + position);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><figcaption><span>Console</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stack: [Dog, Horse, Cat]</span><br><span class="line">Position of Horse: <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="empty"><a href="#empty" class="headerlink" title="empty()"></a>empty()</h3><p>스택이 비었을까 안비었을까? 확인하려면 <code>empty()</code>를 통해 알아보자. 스택이 비었다면 <code>True</code>, 내용물이 하나라도 있다면 <code>False</code>를 리턴해준다. </p>
+<figure class="highlight java"><figcaption><span>empty()</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Stack&lt;String&gt; animals= <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add elements to Stack</span></span><br><span class="line">        animals.push(<span class="string">"Dog"</span>);</span><br><span class="line">        animals.push(<span class="string">"Horse"</span>);</span><br><span class="line">        animals.push(<span class="string">"Cat"</span>);</span><br><span class="line">        System.out.println(<span class="string">"Stack: "</span> + animals);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Check if stack is empty</span></span><br><span class="line">        <span class="keyword">boolean</span> result = animals.empty();</span><br><span class="line">        System.out.println(<span class="string">"Is the stack empty? "</span> + result);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><figcaption><span>Console</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stack: [Dog, Horse, Cat]</span><br><span class="line">Is the stack empty? <span class="keyword">false</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>다음엔 스택을 이용해서 알고리즘을 풀어볼 예정이다. 기억하자 프링글스!</p>
 <br>
 
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>블로그 만들 때 참고한 자료들:<br><a href="https://www.youtube.com/watch?v=Onglr1_Kgls">YouTube DesignCourse: The Hexo Static Site (Blog) Generator - Beginner’s Crash Course</a></p>
-<p><a href="https://www.youtube.com/watch?v=8uRgIwgumqA">YouTube 카인드패밀리: 오늘 부터 나도 github.io 블로그 운영자다!! | github pages , goormide, hexo</a></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.programiz.com/java-programming/stack">[Programiz] Java Stack Class</a><br><a href="http://tutorials.jenkov.com/java-collections/stack.html">[Jenkov Tutorials] Java Stack</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -215,7 +219,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Blog/" rel="tag">Blog</a>, <a class="has-link-grey -link" href="/tags/Hexo/" rel="tag">Hexo</a>, <a class="has-link-grey -link" href="/tags/Life/" rel="tag">Life</a>
+                    <a class="has-link-grey -link" href="/tags/Data-Structure/" rel="tag">Data Structure</a>, <a class="has-link-grey -link" href="/tags/Java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/TIL/" rel="tag">TIL</a>
                 </div>
             </div>
         </div>
@@ -232,13 +236,13 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/18/Java-HashMap/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Java의 HashMap</span>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/04/01/Java-Implement-an-Interface/">
+                <span class="level-item">Java에서 Interface(인터페이스)를 Implement한다는 건</span>
+                <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
-        
         
     </div>
 </div>
@@ -256,7 +260,7 @@
     var gitalk = new Gitalk({
         clientID: '8d463ac7ecca969a30b3',
         clientSecret: 'be5d7c29ac4519590b8d5dd000fddf06b6d20bf0',
-        id: '290369c40fb881fb03ea7e340f6a4ea8',
+        id: 'cd512d4ad9c0951be6a5cfba85da3104',
         repo: 'itzjamie96.github.io',
         owner: 'itzjamie96',
         admin: "itzjamie96",
@@ -358,24 +362,40 @@
                     Catalogue
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#나도-블로그-만들었다">
+        <a class="is-flex" href="#스택-Stack">
         <span class="has-mr-6">1</span>
-        <span>나도 블로그 만들었다!</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#플랫폼">
-        <span class="has-mr-6">1.1</span>
-        <span>플랫폼</span>
+        <span>스택 (Stack)</span>
         </a></li><li>
-        <a class="is-flex" href="#Hexo-처음-써본-간략한-후기">
-        <span class="has-mr-6">1.2</span>
-        <span>Hexo 처음 써본 간략한 후기</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#앞으로의-계획">
+        <a class="is-flex" href="#스택-생성">
         <span class="has-mr-6">2</span>
-        <span>앞으로의 계획</span>
+        <span>스택 생성</span>
         </a></li><li>
-        <a class="is-flex" href="#Reference">
+        <a class="is-flex" href="#스택의-메서드">
         <span class="has-mr-6">3</span>
+        <span>스택의 메서드</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#push">
+        <span class="has-mr-6">3.1</span>
+        <span>push()</span>
+        </a></li><li>
+        <a class="is-flex" href="#pop">
+        <span class="has-mr-6">3.2</span>
+        <span>pop()</span>
+        </a></li><li>
+        <a class="is-flex" href="#peek">
+        <span class="has-mr-6">3.3</span>
+        <span>peek()</span>
+        </a></li><li>
+        <a class="is-flex" href="#search">
+        <span class="has-mr-6">3.4</span>
+        <span>search()</span>
+        </a></li><li>
+        <a class="is-flex" href="#empty">
+        <span class="has-mr-6">3.5</span>
+        <span>empty()</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Reference">
+        <span class="has-mr-6">4</span>
         <span>Reference</span>
         </a></li></ul>
             </div>
@@ -555,7 +575,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/ublog.png" alt="Hexo로 블로그를 만들어봤다" height="28">
+                    <img src="/images/ublog.png" alt="Java의 스택(Stack)" height="28">
                 
                 </a>
                 <p class="is-size-7">

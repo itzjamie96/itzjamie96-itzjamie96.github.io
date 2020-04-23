@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/categories/spring/"/>
+<link rel="canonical" href="https://itzjamie96.github.io/categories/data-structure/"/>
 
-<title>Today I Learned: Spring - 영문학도의 코딩로그</title>
+<title>Today I Learned: Data Structure - 영문학도의 코딩로그</title>
 
 
 
@@ -126,7 +126,7 @@
         <ul>
             <li><a href="/categories">Today I Learned</a></li>
             
-            <li class="is-active"><a href="#" aria-current="page">Spring</a></li>
+            <li class="is-active"><a href="#" aria-current="page">Data Structure</a></li>
         </ul>
         </nav>
     </div>
@@ -139,10 +139,10 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-25T13:57:58.000Z">2020-03-25</time>
+                <time class="level-item has-text-grey" datetime="2020-04-23T13:21:09.000Z">2020-04-23</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
+                <a class="has-link-grey -link" href="/categories/Data-Structure/">Data Structure</a>
                 </div>
                 
                 
@@ -152,179 +152,77 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/03/25/Spring-bean-scope/">Bean의 범위 - Singleton과 Prototype</a>
+                <a class="has-link-black-ter" href="/2020/04/23/Java-Stack/">Java의 스택(Stack)</a>
             
         </h1>
         <div class="content">
             <hr>
 
-<h2 id="Bean의-범위-scope"><a href="#Bean의-범위-scope" class="headerlink" title="Bean의 범위(scope)"></a>Bean의 범위(scope)</h2><p>스프링에서 생성되는 bean의 범위(scope)란, 사실상 bean의 생명주기와 같다. 말 그대로 bean이 생성될 때부터 소멸할 때까지의 범위를 의미한다. 스프링은 기본적으로 모든 bean을 <del>Singleton</del>으로 생성해서 관리한다. 그렇다면 singleton이 대체 무엇인가?<br><br></p>
-<h2 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h2><p>우선 단어에서 대충 감이 잡힌다. <del>Single</del>ton. <del>SINGLE!</del> 단어 자체에서 유추할 수 있다시피 singleton은 스프링 컨테이너에서 bean이 생성될 때 그 bean을 딱! <del>한 개</del>만 생성한다. 따라서 그 bean을 사용하는 모든 request는 해당 bean만 참조하게 된다. </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/25/Spring-bean-scope/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-23T07:28:08.000Z">2020-03-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/23/Spring-Auto-DI/">Spring 의존객체 자동주입</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<h2 id="의존객체-자동-주입"><a href="#의존객체-자동-주입" class="headerlink" title="의존객체 자동 주입"></a>의존객체 자동 주입</h2><p>의존객체 자동 주입이란, Spring 2.5부터 생긴 기능으로 <code>&lt;constructor-arg&gt;</code> 또는 <code>&lt;property&gt;</code> 등의 태그로 의존 대상 객체를 명시하지 않아도 스프링 컨테이너가 자동으로 필요한 의존 대상 객체를 찾아서 객체가 필요한 객체에 주입해주는 기능이다. 구현할 때는 <code>@Autowired</code> 와 <code>@Resource</code> 어노테이션을 이용한다. </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/23/Spring-Auto-DI/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-20T13:09:02.000Z">2020-03-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/20/Spring-DI/">Spring의 DI</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<h2 id="Dependency-Injection-의존성-주입"><a href="#Dependency-Injection-의존성-주입" class="headerlink" title="Dependency Injection (의존성 주입)"></a>Dependency Injection (의존성 주입)</h2><p>스프링에서 의존성 주입이란, 말 그대로 필요한 객체를 주입한다는 뜻이다. 좀 더 쉽게 살펴보기 위해 <del>건전지를 넣어야하는 장난감</del>을 예제로 들어보자. 장난감이 작동하기 위해서는 배터리가 필수다. 다시 말해 <del>장난감이 배터리에 의존</del>하기 때문에 <del>배터리를 장난감에 주입</del>해야 한다. </p>
-<p>먼저 건전지를 분리할 수 없는 배터리 일체형 장난감을 생각해보자.</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ElectricToyCar</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> Battery battery;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ElectricToyCar</span><span class="params">()</span> </span>{</span><br><span class="line">        battery = <span class="keyword">new</span> Battery();    </span><br><span class="line">        <span class="comment">//공장에서 장난감을 만들 때 배터리를 주입한 상태로 만든다!</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/20/Spring-DI/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-19T11:02:51.000Z">2020-03-19</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Spring/">Spring</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/19/Spring-Framework/">Spring Framework 개요</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<h2 id="Spring-Framework"><a href="#Spring-Framework" class="headerlink" title="Spring Framework"></a>Spring Framework</h2><p>Spring Framework는 Java 어플리케이션을 쉽고 빠르게 개발할 수 있도록 도와주는 <del>오픈 소스 프레임워크</del>다. 스프링은 <del>lightweight = 경량</del>  프레임워크로, Java 어플리케이션을 개발할 때 필요한 다양한 모듈을 제공한다.</p>
-<blockquote>
-<p>여기서 모듈이란 프로그램을 구성하는 <del>구성 요소</del>다. 기계에서 <del>부품</del>이라고 생각하면 될 것 같다.<br>어떤 프로그램을 기능별로 나눈 후, 그 기능들을 다른 프로그램에 쓸 수 있다 = 모듈! </p>
-</blockquote>
+<h2 id="스택-Stack"><a href="#스택-Stack" class="headerlink" title="스택 (Stack)"></a>스택 (Stack)</h2><p><code>Stack</code>은 제한적으로 접근할 수 있는 구조다. 한 쪽 끝에서만 데이터를 넣거나 뺄 수 있는 구조로, 가장 나중에 넣은 데이터를 가장 먼저 빼낼 수 있다. 이게 바로 <del>LIFO: Last In First Out</del> 자료구조다. </p>
+<p>가장 대표적인 예시는 <code>프링글스</code>인 것 같다. 윈기둥 형태의 프링글스 통에는 과자가 빽빽히 들어있다. 과자를 한 조각 꺼내 먹으려면 맨 위에 있는 조각부터 꺼내게 된다. 통에 가장 처음 넣어진 과자는 바닥 쪽에 있고, 맨 마지막으로 통에 넣어진 조각이 가장 처음 꺼내지게 된다. 이것은 FILO:First In Last Out이기도 한, 결국 완벽한 스택이다.  </p>
 <br>
 
-<p>스프링에서 제공하는 모듈:</p>
+<h2 id="스택-생성"><a href="#스택-생성" class="headerlink" title="스택 생성"></a>스택 생성</h2><p>스택을 생성하기 위해서 먼저 <code>java.util.Stack</code> 패키지가 import되야 한다. Import한 후 스택을 생성해보자.</p>
+<figure class="highlight java"><figcaption><span>스택 생성</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Type&gt; stacks = <span class="keyword">new</span> Stack&lt;&gt;();</span><br></pre></td></tr></tbody></table></figure>
+
+
+<p><code>&lt;Type&gt;</code>에는 해당 스택이 어떤 타입의 데이터를 담을 것인지 지정해주면 된다. </p>
+<figure class="highlight java"><figcaption><span>스택 타입</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 정수 스택!</span></span><br><span class="line">Stack&lt;Integer&gt; stacks = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 문자열 스택!</span></span><br><span class="line">Stack&lt;String&gt; stacks = <span class="keyword">new</span> Stack&lt;&gt;();</span><br></pre></td></tr></tbody></table></figure>
+
+<br>
+
+<h2 id="스택의-메서드"><a href="#스택의-메서드" class="headerlink" title="스택의 메서드"></a>스택의 메서드</h2><p>스택에는 총 5가지의 메서드가 있다. </p>
+<h3 id="push"><a href="#push" class="headerlink" title="push()"></a>push()</h3><p>스택에 데이터를 추가하기 위해서는 <code>push()</code> 메서드를 쓴다. </p>
+<figure class="highlight java"><figcaption><span>push()</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Stack&lt;String&gt; animals= <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add elements to Stack</span></span><br><span class="line">        animals.push(<span class="string">"Dog"</span>);</span><br><span class="line">        animals.push(<span class="string">"Horse"</span>);</span><br><span class="line">        animals.push(<span class="string">"Cat"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"Stack: "</span> + animals);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><figcaption><span>Console</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stack: [Dog, Horse, Cat]</span><br></pre></td></tr></tbody></table></figure>
+
+<p>결과창에서 볼 수 있듯이 <del>가장 먼저</del> push한 “Dog”가 스택의 맨 처음에 있다. </p>
+<h3 id="pop"><a href="#pop" class="headerlink" title="pop()"></a>pop()</h3><p>스택의 맨 마지막 요소를 없애기 위해서는 <code>pop()</code> 메서드를 쓴다. 참고로 맨 마지막 요소는 사실 상 스택의 맨 꼭대기에 있는 요소이기 때문에 <code>top</code>이라고 부른다. </p>
+<figure class="highlight java"><figcaption><span>pop()</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Stack&lt;String&gt; animals= <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add elements to Stack</span></span><br><span class="line">        animals.push(<span class="string">"Dog"</span>);</span><br><span class="line">        animals.push(<span class="string">"Horse"</span>);</span><br><span class="line">        animals.push(<span class="string">"Cat"</span>);</span><br><span class="line">        System.out.println(<span class="string">"Initial Stack: "</span> + animals);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Remove element stacks</span></span><br><span class="line">        String element = animals.pop();</span><br><span class="line">        System.out.println(<span class="string">"Removed Element: "</span> + element);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><figcaption><span>Console</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Initial Stack: [Dog, Horse, Cat]</span><br><span class="line">Removed Element: Cat</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="peek"><a href="#peek" class="headerlink" title="peek()"></a>peek()</h3><p>스택의 맨 마지막 요소를 보고싶을 땐 <code>peek()</code> 메서드를 쓴다. </p>
+<figure class="highlight java"><figcaption><span>peek()</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Stack&lt;String&gt; animals= <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add elements to Stack</span></span><br><span class="line">        animals.push(<span class="string">"Dog"</span>);</span><br><span class="line">        animals.push(<span class="string">"Horse"</span>);</span><br><span class="line">        animals.push(<span class="string">"Cat"</span>);</span><br><span class="line">        System.out.println(<span class="string">"Stack: "</span> + animals);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Access element from the top</span></span><br><span class="line">        String element = animals.peek();</span><br><span class="line">        System.out.println(<span class="string">"Element at top: "</span> + element);</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><figcaption><span>Console</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stack: [Dog, Horse, Cat]</span><br><span class="line">Element at top: Cat</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="search"><a href="#search" class="headerlink" title="search()"></a>search()</h3><p>스택의 내용물은 아는 데, 위치를 알고 싶다면? 그럴 때는 <code>search()</code> 메서드를 쓰자. </p>
+<figure class="highlight java"><figcaption><span>Search()</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Stack&lt;String&gt; animals= <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add elements to Stack</span></span><br><span class="line">        animals.push(<span class="string">"Dog"</span>);</span><br><span class="line">        animals.push(<span class="string">"Horse"</span>);</span><br><span class="line">        animals.push(<span class="string">"Cat"</span>);</span><br><span class="line">        System.out.println(<span class="string">"Stack: "</span> + animals);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Search an element</span></span><br><span class="line">        <span class="keyword">int</span> position = animals.search(<span class="string">"Horse"</span>);</span><br><span class="line">        System.out.println(<span class="string">"Position of Horse: "</span> + position);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><figcaption><span>Console</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stack: [Dog, Horse, Cat]</span><br><span class="line">Position of Horse: <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="empty"><a href="#empty" class="headerlink" title="empty()"></a>empty()</h3><p>스택이 비었을까 안비었을까? 확인하려면 <code>empty()</code>를 통해 알아보자. 스택이 비었다면 <code>True</code>, 내용물이 하나라도 있다면 <code>False</code>를 리턴해준다. </p>
+<figure class="highlight java"><figcaption><span>empty()</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        Stack&lt;String&gt; animals= <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Add elements to Stack</span></span><br><span class="line">        animals.push(<span class="string">"Dog"</span>);</span><br><span class="line">        animals.push(<span class="string">"Horse"</span>);</span><br><span class="line">        animals.push(<span class="string">"Cat"</span>);</span><br><span class="line">        System.out.println(<span class="string">"Stack: "</span> + animals);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Check if stack is empty</span></span><br><span class="line">        <span class="keyword">boolean</span> result = animals.empty();</span><br><span class="line">        System.out.println(<span class="string">"Is the stack empty? "</span> + result);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight java"><figcaption><span>Console</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stack: [Dog, Horse, Cat]</span><br><span class="line">Is the stack empty? <span class="keyword">false</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>다음엔 스택을 이용해서 알고리즘을 풀어볼 예정이다. 기억하자 프링글스!</p>
+<br>
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.programiz.com/java-programming/stack">[Programiz] Java Stack Class</a><br><a href="http://tutorials.jenkov.com/java-collections/stack.html">[Jenkov Tutorials] Java Stack</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/19/Spring-Framework/#more">Read More</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
