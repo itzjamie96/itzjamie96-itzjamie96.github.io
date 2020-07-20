@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/2020/03/23/spring-auto-di/"/>
+<link rel="canonical" href="https://itzjamie96.github.io/2020/07/20/github-merge-repositories/"/>
 
-<title>Spring 의존객체 자동주입 - 영문학도의 코딩로그</title>
+<title>GitHub Repository 합치기 (commit history 포함) - 영문학도의 코딩로그</title>
 
 
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/ublog.png" alt="Spring 의존객체 자동주입" height="28">
+                <img src="/images/ublog.png" alt="GitHub Repository 합치기 (commit history 포함)" height="28">
             
             </a>
         </div>
@@ -131,10 +131,10 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-23T07:28:08.000Z">2020-03-23</time>
+                <time class="level-item has-text-grey" datetime="2020-07-20T11:10:12.000Z">2020-07-20</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java/">Java</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Java/Spring/">Spring</a>
+                <a class="has-link-grey -link" href="/categories/GitHub/">GitHub</a>
                 </div>
                 
                 
@@ -144,47 +144,69 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                Spring 의존객체 자동주입
+                GitHub Repository 합치기 (commit history 포함)
             
         </h1>
         <div class="content">
             <hr>
 
-<h2 id="의존객체-자동-주입"><a href="#의존객체-자동-주입" class="headerlink" title="의존객체 자동 주입"></a>의존객체 자동 주입</h2><p>의존객체 자동 주입이란, Spring 2.5부터 생긴 기능으로 <code>&lt;constructor-arg&gt;</code> 또는 <code>&lt;property&gt;</code> 등의 태그로 의존 대상 객체를 명시하지 않아도 스프링 컨테이너가 자동으로 필요한 의존 대상 객체를 찾아서 객체가 필요한 객체에 주입해주는 기능이다. 구현할 때는 <code>@Autowired</code> 와 <code>@Resource</code> 어노테이션을 이용한다. </p>
+<blockquote>
+<p>작년부터 자바를 위주로 공부해오다가 최근부터 본격적으로 파이썬을 공부하게 되었다. 파이썬 공부를 위해 GitHub에서 repository를 새로 생성하려다가, 오랜만에 내가 그동안 생성한 repo들을 보게 되었는데 아주 중구난방이었다. 공부를 하다만 기록들이 넘쳐났는데, 이참에 repo들을 정리할 겸 비슷한 내용의 repo들을 합치기로 했다. *repo = repository</p>
+</blockquote>
+<h2 id="합치기-전-확인할-것들"><a href="#합치기-전-확인할-것들" class="headerlink" title="합치기 전 확인할 것들"></a>합치기 전 확인할 것들</h2><ul>
+<li>합친 프로젝트들을 보관할 새로운 repo 생성하기</li>
+<li>합칠 프로젝트들 사이에 충돌이 일어날 수 있는 요소들 정리하기 (EX: 똑같은 이름의 폴더, readme.md 등)</li>
+<li>repo 안에 합쳐질 프로젝트 구조에 맞게 폴더 정리해두기. 구조를 미리 생각해놓는 것은 중요하다. 안그러면 한 repo에 뒤죽박죽 합쳐진 것들이 섞일 것이다. 내가 원한 폴더 구조:</li>
+</ul>
 <a id="more"></a>
 
-<h3 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h3><p><code>@Autowired</code>는 스프링 컨테이너에 있는 Bean 중 <del>타입이 일치</del>하는 Bean을 자동으로 주입해준다. 사용하기 위해서는 다음의 두 가지만 적어주면 된다.</p>
-<ol>
-<li>자동 주입 대상에 @Autowired 어노테이션 사용</li>
-<li>XML 파일에 <code>&lt;context:annotation-config/&gt;</code> 추가</li>
-</ol>
-<p>예시를 살펴보면 다음과 같다.</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WordRegisterService</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> WordDao wordDao;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">wordRegisterService</span><span class="params">(WordDao wordDao)</span> </span>{</span><br><span class="line">        <span class="keyword">this</span>.wordDao = wordDao;</span><br><span class="line">    }</span><br><span class="line">    ...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>이렇게 Service 클래스의 생성자에 @Autowired를 달아주면, xml 파일에서 타입이 <code>WordDao</code>인 Bean을 찾아서 생성자에 자동으로 주입해준다. </p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">&lt;context:annotaion-config /&gt;</span><br><span class="line"></span><br><span class="line">&lt;bean id=<span class="string">"wordDao"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.word.dao.WordDao"</span>/&gt;   <span class="comment">//이걸 주입한다!</span></span><br><span class="line">&lt;bean id=<span class="string">"registerService"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.word.service.WordRegisterService"</span>/&gt;</span><br><span class="line">&lt;bean id=<span class="string">"searchService"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.word.service.WordSearchService"</span>/&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="/img/20200720/folder_structure.png" alt="원하는 폴더 구조"></p>
+<h2 id="Repository-합치기-Merge"><a href="#Repository-합치기-Merge" class="headerlink" title="Repository 합치기(Merge)"></a>Repository 합치기(Merge)</h2><hr>
 
-<blockquote>
-<p>참고로 이렇게 생성자에 @Autowired 어노테이션을 쓰는 것은 상관이 없지만, 다른 메소드에 쓰기 위해서는 기본 생성자가 필수다. </p>
-</blockquote>
-<h3 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h3><p><code>@Resource</code> 어노테이션은 스프링 컨테이너에 있는 Bean 중에서 <del>이름이 일치</del>하는 Bean을 찾아서 주입해준다. 다만 @Autowired와는 달리 <del>property나 메소드</del>에만 사용이 가능하다. 그렇기 때문에 기본 생성자가 필수다 (객체가 일단 생성이 돼야 주입이든 뭐든 할 수 있다). </p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WordRegisterService</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> WordDao wordDao;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//기본 생성자</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">wordRegisterService</span><span class="params">()</span> </span>{  }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">wordRegisterService</span><span class="params">(WordDao wordDao)</span> </span>{</span><br><span class="line">        <span class="keyword">this</span>.wordDao = wordDao;</span><br><span class="line">    }</span><br><span class="line">    ...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>위와 같이 @Resource를 달아주면 xml 파일에서 이름이 <code>wordDao</code>인 Bean을 찾게 된다. </p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">&lt;context:annotaion-config /&gt;</span><br><span class="line"></span><br><span class="line">&lt;bean id=<span class="string">"wordDao"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.word.dao.WordDao"</span>/&gt;   </span><br><span class="line"><span class="comment">//id가 wordDao = 이름 일치!</span></span><br><span class="line">...</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="신규-repository-생성"><a href="#신규-repository-생성" class="headerlink" title="신규 repository 생성"></a>신규 repository 생성</h3><p>먼저 합칠 새로운 repo를 생성한다 (git init도 해준다). 편의상 <strong>NEW</strong> repo라고 하겠다. </p>
+<p><img src="/img/20200720/new_java_repo.png" alt=""></p>
+<p>나는 Java로 자료구조와 알고리즘 연습하던 각각의 두 repo를 합치기로 결정했기 때문에, 누가봐도 Java의 자료구조와 알고리즘을 위한 repo라는 것을 나타낼 수 있는 이름의 repo를 새로 만들었다.</p>
+<hr>
 
-<p><br></p><hr><p></p>
-<h2 id="의존-객체-선택"><a href="#의존-객체-선택" class="headerlink" title="의존 객체 선택"></a>의존 객체 선택</h2><p>@Autowired 어노테이션은 타입이 일치하는 Bean을 자동 주입한다고 배웠다. 근데 만약 동일한 타입을 가진 Bean이 <del>두 개 이상</del>이라면 @Autowired 어노테이션은 어떻게 작동할까? 당연히 어떤 Bean을 주입해야하는 지 알 수 없어서 Exception이 발생한다. 이럴 때는 <del>@Qualifier</del> 어노테이션을 이용해 특정 Bean을 지정해줄 수 있다.</p>
-<h3 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h3><p>@Qualifier 어노테이션을 사용하기 위해서는 두 가지를 해주면 된다.</p>
-<ol>
-<li>XMl 파일에 <code>&lt;qualifier value="valueName"&gt;</code>를 통해 특정 이름 정해주기</li>
-<li>@Autowired 밑에 <code>@Qualifier("valueName")</code> 적어주기</li>
-</ol>
-<figure class="highlight java"><figcaption><span>XML파일</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=<span class="string">"wordDao1"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.word.dao.WordDao"</span>&gt;  </span><br><span class="line">    &lt;qualifier value=<span class="string">"usedDao"</span>/&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line">&lt;bean id=<span class="string">"wordDao2"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.word.dao.WordDao"</span>/&gt;   </span><br><span class="line">&lt;bean id=<span class="string">"wordDao3"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.word.dao.WordDao"</span>/&gt;   </span><br></pre></td></tr></tbody></table></figure>
+<h3 id="합칠-repository-정리"><a href="#합칠-repository-정리" class="headerlink" title="합칠 repository 정리"></a>합칠 repository 정리</h3><p>합치기 전 확인할 부분에서 언급했듯이, <code>merge</code>하고자 하는 repo들을 좀 정리할 필요가 있다. 왜 그런지는 뒤에 나온다. 우선 편의상 내가 합치고자 하는 repo들을 <strong>OLD 1, OLD 2</strong> repo라고 하겠다. </p>
+<p><img src="/img/20200720/old_repos.png" alt="OLD repo"> </p>
+<hr>
 
-<p>XML 파일에 wordDao타입이 3개 정도 있다. 여기서 특정 Bean에 <code>&lt;qualifier&gt;</code> 태그를 통해 <code>"usedDao"</code>라는 이름을 정해주면 이 이름을 가진 bean을 자동 주입하게 된다. </p>
-<figure class="highlight java"><figcaption><span>Service 클래스</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WordRegisterService</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> WordDao wordDao;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="meta">@Qualifier</span>(<span class="string">"usedDao"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">wordRegisterService</span><span class="params">(WordDao wordDao)</span> </span>{</span><br><span class="line">        <span class="keyword">this</span>.wordDao = wordDao;</span><br><span class="line">    }</span><br><span class="line">    ...</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<br>
+<h3 id="repository-연결"><a href="#repository-연결" class="headerlink" title="repository 연결"></a>repository 연결</h3><p>NEW repo의 위치 (<code>C:\Git\Java-DataStructure-and-Algorithms&gt;</code>에서 OLD repo들을 <code>remote</code>로 추가해준다.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote add DataStructure-and-Algorithms-in-Java https://github.com/itzjamie96/DataStructure-and-Algorithms-in-Java.git</span><br><span class="line">git remote add Problem-Solving https://github.com/itzjamie96/Problem-Solving.git</span><br></pre></td></tr></tbody></table></figure>
 
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://www.baeldung.com/spring-autowire">[Baeldung] Guide to Spring @Autowired</a><br><a href="https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC_renew">[인프런] 자바 스프링 프레임워크 강의</a></p>
+<hr>
+
+<h3 id="기존-repository에서-데이터-가져오기"><a href="#기존-repository에서-데이터-가져오기" class="headerlink" title="기존 repository에서 데이터 가져오기"></a>기존 repository에서 데이터 가져오기</h3><p>각 OLD repo에서 <code>fetch</code>를 통해 원격 저장소의 데이터를 가져온다.</p>
+ <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch DataStructure-and-Algorithms-in-Java master</span><br><span class="line">git fetch Problem-Solving master</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>   
+
+<h3 id="합치기-Merge"><a href="#합치기-Merge" class="headerlink" title="합치기 (Merge)"></a>합치기 (Merge)</h3><p>NEW와 OLD repo 들을 <code>merge</code>한다. 이 때 <del>모든 commit history</del>도 가져오기 위해 <code>--allow-unrelated-histories</code>를 해준다.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git merge --allow-unrelated-histories DataStructure-and-Algorithms-in-Java/master</span><br><span class="line"></span><br><span class="line">↓ 결과 ↓</span><br><span class="line">CONFLICT (add/add): Merge conflict in README.md</span><br><span class="line">Auto-merging README.md</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br></pre></td></tr></tbody></table></figure>
+
+<p>먼저 <strong>OLD 1</strong>을 합쳤더니 readme에서 conflict가 떴다 (이래서 합치기 전에 리드미를 없애던가 수정하던가 해야하는 것…) 우선 나는 리드미에 별 내용이 없었기 때문에 <code>add</code> 후 <code>commit</code>을 강행했다 (근자감). <code>push</code>까지 완료한 후 GitHub를 가보니…</p>
+<p><img src="/img/20200720/readme_conflict.png" alt="ReadMe Conflict"></p>
+<p>생각보다 끔찍한 모양새는 아니었다. </p>
+<p><strong>OLD 2</strong>를 합치기 전에 리드미를 지운 후 합쳐보기로 했다. 그 후 다시 합치기 시작!</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git merge --allow-unrelated-histories Problem-Solving/master</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">↓ 결과 ↓</span><br><span class="line">CONFLICT (add/add): Merge conflict in .gitignore</span><br><span class="line">Auto-merging .gitignore</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br></pre></td></tr></tbody></table></figure>
+<p>^^…이번엔 .gitignore에서 문제가 생겼다…왜 자동으로 <code>merge</code>를 해주지 않는거야 git? 한 줄이던데… 간단한 수정 후 합치기 진행!</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m "MERGED REPOSITORIES"</span><br><span class="line">git push origin master</span><br></pre></td></tr></tbody></table></figure>
+
+<p>완료!!</p>
+<hr>   
+
+<h3 id="repository-연결-해제"><a href="#repository-연결-해제" class="headerlink" title="repository 연결 해제"></a>repository 연결 해제</h3><p>마지막으로 혹시라도 기존의 repo들을 건들지 않도록 <code>remote</code>를 끊어준다.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote remove DataStructure-and-Algorithms-in-Java</span><br><span class="line">git remote remove Problem-Solving</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+
+<p>다 끝난 후 GitHub에서 확인을 해봤다.</p>
+<p><img src="/img/20200720/after_merge.png" alt="After Merge"></p>
+<p>음 아주 잘됐군! 그저 파일만 합쳐진 것이 아니라 기존의 repo들에서 commit 기록까지 모두 잘 따라왔다.</p>
+<p><img src="/img/20200720/commit_log.png" alt="commit log"></p>
+<p>끝!</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="https://github.community/t/combining-repositories/2060">Combining Repositories</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -210,7 +232,7 @@
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Spring/" rel="tag">Spring</a>, <a class="has-link-grey -link" href="/tags/TIL/" rel="tag">TIL</a>
+                    <a class="has-link-grey -link" href="/tags/Git/" rel="tag">Git</a>, <a class="has-link-grey -link" href="/tags/GitHub/" rel="tag">GitHub</a>
                 </div>
             </div>
         </div>
@@ -227,17 +249,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/25/Spring-bean-scope/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Bean의 범위 - Singleton과 Prototype</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/20/Spring-DI/">
-                <span class="level-item">Spring의 DI</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/05/14/Java-Memory/">
+                <span class="level-item">Java에서 String 비교하기</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -359,30 +374,42 @@
                     Catalogue
                 </h3>
                 <ul class="menu-list"><li>
-        <a class="is-flex" href="#의존객체-자동-주입">
+        <a class="is-flex" href="#합치기-전-확인할-것들">
         <span class="has-mr-6">1</span>
-        <span>의존객체 자동 주입</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Autowired">
-        <span class="has-mr-6">1.1</span>
-        <span>@Autowired</span>
+        <span>합치기 전 확인할 것들</span>
         </a></li><li>
-        <a class="is-flex" href="#Resource">
-        <span class="has-mr-6">1.2</span>
-        <span>@Resource</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#의존-객체-선택">
+        <a class="is-flex" href="#Repository-합치기-Merge">
         <span class="has-mr-6">2</span>
-        <span>의존 객체 선택</span>
+        <span>Repository 합치기(Merge)</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Qualifier">
+        <a class="is-flex" href="#신규-repository-생성">
         <span class="has-mr-6">2.1</span>
-        <span>@Qualifier</span>
-        </a></li></ul></li><li>
+        <span>신규 repository 생성</span>
+        </a></li><li>
+        <a class="is-flex" href="#합칠-repository-정리">
+        <span class="has-mr-6">2.2</span>
+        <span>합칠 repository 정리</span>
+        </a></li><li>
+        <a class="is-flex" href="#repository-연결">
+        <span class="has-mr-6">2.3</span>
+        <span>repository 연결</span>
+        </a></li><li>
+        <a class="is-flex" href="#기존-repository에서-데이터-가져오기">
+        <span class="has-mr-6">2.4</span>
+        <span>기존 repository에서 데이터 가져오기</span>
+        </a></li><li>
+        <a class="is-flex" href="#합치기-Merge">
+        <span class="has-mr-6">2.5</span>
+        <span>합치기 (Merge)</span>
+        </a></li><li>
+        <a class="is-flex" href="#repository-연결-해제">
+        <span class="has-mr-6">2.6</span>
+        <span>repository 연결 해제</span>
+        </a></li><li>
         <a class="is-flex" href="#Reference">
-        <span class="has-mr-6">3</span>
+        <span class="has-mr-6">2.7</span>
         <span>Reference</span>
-        </a></li></ul>
+        </a></li></ul></li></ul>
             </div>
         </div>
     </div>
@@ -590,7 +617,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/ublog.png" alt="Spring 의존객체 자동주입" height="28">
+                    <img src="/images/ublog.png" alt="GitHub Repository 합치기 (commit history 포함)" height="28">
                 
                 </a>
                 <p class="is-size-7">
