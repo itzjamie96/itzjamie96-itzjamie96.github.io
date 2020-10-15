@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atelier-forest-light.css">
 
 
     
@@ -128,6 +128,113 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-10-15T02:41:40.000Z">2020-10-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Python/Algorithm/">Algorithm</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/10/15/Python-powersets-with-bitwise-operators/">[Python] 비트연산자로 부분집합 구하기</a>
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<blockquote>
+<p>비트연산자 <code>&amp;</code>와 <code>&lt;&lt;</code>를 이용해 이중 for문이라도 빠르게 부분집합을 구해보자! </p>
+</blockquote>
+<p>파이썬으로 부분집합을 구할때 보통 <code>itertools</code>를 사용한다. 하지만 <code>itertools</code> 라이브러리 사용이 불가능한 코테도 있으니(ex. 쌤썽ㅠ)… for 문을 이용해 부분집합을 빠르게 구하는 방법도 알아야한다. 이것은 바로 <del>비트연산자</del>로 계산해서 부분집합을 구하는 방법이다. </p>
+<p>먼저 코드부터 보자.</p>
+<figure class="highlight python"><figcaption><span>Finding out powersets</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">n = len(arr)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span> &lt;&lt; n):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="keyword">if</span> i &amp; (<span class="number">1</span> &lt;&lt; j):</span><br><span class="line">            print(arr[j], end=<span class="string">' '</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></tbody></table></figure>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/10/15/Python-powersets-with-bitwise-operators/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-10-14T05:22:11.000Z">2020-10-14</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Python/SWEA/">SWEA</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/10/14/SWEA-PS-Basic-List1/">[SWEA] 파이썬 SW 문제해결 기본: List1</a>
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<p><a href="https://swexpertacademy.com/main/learn/course/subjectDetail.do?courseId=AVuPDN86AAXw5UW6&amp;subjectId=AWOVFCzaqeUDFAWg&amp;&amp;">[문제링크] 파이썬 SW 문제해결 기본 - LIST1</a></p>
+<h2 id="4828-min-max"><a href="#4828-min-max" class="headerlink" title="[4828] min max"></a>[4828] min max</h2><p><strong>접근 방법</strong><br>내장 함수인 min, max를 사용하지 않고 직접 구현해서 최소와 최대값을 구하려고 했다. </p>
+<blockquote>
+<p>참고로 임의의 최대값과 최소값은 각각 <del>2147000000</del>와 <del>-2147000000</del>으로 설정했다. 일반적인 int형 변수의 최대값이 대략 <del>2147000000</del>이기 때문이다. 앞으로도 min값과 max값을 임의로 줘야하는 일이 있다면 이 숫자를 사용하려고 한다.</p>
+</blockquote>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/10/14/SWEA-PS-Basic-List1/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-07-20T11:10:12.000Z">2020-07-20</time>
                 
                 <div class="level-item">
@@ -141,7 +248,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/07/20/GitHub-Merge-Repositories/">GitHub Repository 합치기 (commit history 포함)</a>
+                <a class="has-link-black-ter" href="/2020/07/20/GitHub-Merge-Repositories/">[GitHub] Repository 합치기 (commit history 포함)</a>
             
         </h1>
         <div class="content">
@@ -197,7 +304,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/05/14/Java-Memory/">Java에서 String 비교하기</a>
+                <a class="has-link-black-ter" href="/2020/05/14/Java-Memory/">[Java] String 비교하기</a>
             
         </h1>
         <div class="content">
@@ -251,7 +358,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/04/23/Java-Stack/">Java의 스택(Stack)</a>
+                <a class="has-link-black-ter" href="/2020/04/23/Java-Stack/">[Java] 스택(Stack)</a>
             
         </h1>
         <div class="content">
@@ -301,7 +408,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/04/01/Java-Implement-an-Interface/">Java에서 Interface(인터페이스)를 Implement한다는 건</a>
+                <a class="has-link-black-ter" href="/2020/04/01/Java-Implement-an-Interface/">[Java] Interface(인터페이스)를 Implement한다는 건</a>
             
         </h1>
         <div class="content">
@@ -354,7 +461,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/03/25/Spring-bean-scope/">Bean의 범위 - Singleton과 Prototype</a>
+                <a class="has-link-black-ter" href="/2020/03/25/Spring-bean-scope/">[Spring] Bean의 범위 - Singleton과 Prototype</a>
             
         </h1>
         <div class="content">
@@ -404,7 +511,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/03/23/Spring-Auto-DI/">Spring 의존객체 자동주입</a>
+                <a class="has-link-black-ter" href="/2020/03/23/Spring-Auto-DI/">[Spring] 의존객체 자동주입</a>
             
         </h1>
         <div class="content">
@@ -453,7 +560,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/03/20/Spring-DI/">Spring의 DI</a>
+                <a class="has-link-black-ter" href="/2020/03/20/Spring-DI/">[Spring] DI</a>
             
         </h1>
         <div class="content">
@@ -504,7 +611,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/03/19/Spring-Framework/">Spring Framework 개요</a>
+                <a class="has-link-black-ter" href="/2020/03/19/Spring-Framework/">[Spring] 스프링 프레임워크 입문</a>
             
         </h1>
         <div class="content">
@@ -539,113 +646,25 @@
 
 
 
+
     
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-18T13:12:02.000Z">2020-03-18</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java/">Java</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Java/Data-Structure/">Data Structure</a>
-                </div>
-                
-                
-                
-            </div>
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/page/0/">Previous</a>
         </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+        <div class="pagination-next">
+            <a class="is-flex-grow has-text-black-ter" href="/page/2/">Next</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
             
-                <a class="has-link-black-ter" href="/2020/03/18/Java-HashMap/">Java의 HashMap</a>
+            <li><a class="pagination-link is-current" href="/">1</a></li>
             
-        </h1>
-        <div class="content">
-            <hr>
-
-<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p>Arrays store items as an ordered collection and in order to access the items an index number (<code>int</code> type) is needed. A <code>HashMap</code> however, stores items in <del>key/value</del> pairs and you can access the value using the <del>key</del>. The <code>&lt; &gt;</code> notation tells the type of object used as keys and values. </p>
-<br>
-
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Create a <code>HashMap</code> object called <em>capitalCities</em> that will store <code>String</code> keys and <code>Integer</code> values: </p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap; <span class="comment">// import the HashMap class</span></span><br><span class="line"></span><br><span class="line">HashMap&lt;String, String&gt; capitalCities = <span class="keyword">new</span> HashMap&lt;String, String&gt;();  </span><br></pre></td></tr></tbody></table></figure> 
-
-<br>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/18/Java-HashMap/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
+            <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
+            
+        </ul>
+    </nav>
 </div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-14T14:37:29.000Z">2020-03-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Life/">Life</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/14/I-made-a-blog-with-hexo/">Hexo로 블로그를 만들어봤다</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<h3 id="나도-블로그-만들었다"><a href="#나도-블로그-만들었다" class="headerlink" title="나도 블로그 만들었다!"></a>나도 블로그 만들었다!</h3><p>개발 공부를 시작한 이후로 수 많은 기술 블로그들을 접했다. <code>완전 멋있어!</code>라고 생각했고 내가 만들 일은 없을 거라고 믿었다. 그런데 어느 날 나도 멋져보이고 싶었다! 그래서 호다닥 블로그 만드는 법을 검색해봤다.</p>
-<br>   
-
-<h4 id="플랫폼"><a href="#플랫폼" class="headerlink" title="플랫폼"></a>플랫폼</h4><p>보통 ‘블로그’라 하면 네이버와 티스토리가 흔히 떠오르겠지만, 내가 생각한 멋진 블로그는 우선 주소창이 <code>~~.github.io</code>이어야 했다 (단순히 멋있기 때문). 찾아보니 Static Website Generator로 페이지를 생성하고 GitHub Pages에 배포하면 된다고 한다! 근데 또 여기서 고민: <code>정적 페이지는 뭘로 만들지?</code></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/14/I-made-a-blog-with-hexo/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -686,7 +705,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            10
+                            12
                         </p>
                     </a>
                 </div>
@@ -698,7 +717,7 @@
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
-                            5
+                            8
                         </p>
                     </a>
                 </div>
@@ -710,7 +729,7 @@
                     </p>
                     <a href="/tags">
                         <p class="title has-text-weight-normal">
-                            9
+                            11
                         </p>
                     </a>
                 </div>
@@ -777,7 +796,31 @@
             <span class="level-end">
                 <span class="level-item tag">1</span>
             </span>
-        </a></li>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Python/">
+            <span class="level-start">
+                <span class="level-item">Python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/Python/Algorithm/">
+            <span class="level-start">
+                <span class="level-item">Algorithm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Python/SWEA/">
+            <span class="level-start">
+                <span class="level-item">SWEA</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li>
             </ul>
         </div>
     </div>
@@ -793,8 +836,34 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-15T02:41:40.000Z">2020-10-15</time></div>
+                    <a href="/2020/10/15/Python-powersets-with-bitwise-operators/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Python] 비트연산자로 부분집합 구하기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python/">Python</a> / <a class="has-link-grey -link" href="/categories/Python/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-14T05:22:11.000Z">2020-10-14</time></div>
+                    <a href="/2020/10/14/SWEA-PS-Basic-List1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 파이썬 SW 문제해결 기본: List1</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python/">Python</a> / <a class="has-link-grey -link" href="/categories/Python/SWEA/">SWEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-20T11:10:12.000Z">2020-07-20</time></div>
-                    <a href="/2020/07/20/GitHub-Merge-Repositories/" class="title has-link-black-ter is-size-6 has-text-weight-normal">GitHub Repository 합치기 (commit history 포함)</a>
+                    <a href="/2020/07/20/GitHub-Merge-Repositories/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[GitHub] Repository 합치기 (commit history 포함)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/GitHub/">GitHub</a>
                     </p>
@@ -807,7 +876,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-05-14T13:00:21.000Z">2020-05-14</time></div>
-                    <a href="/2020/05/14/Java-Memory/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java에서 String 비교하기</a>
+                    <a href="/2020/05/14/Java-Memory/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Java] String 비교하기</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Java/">Java</a>
                     </p>
@@ -820,35 +889,9 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-04-23T13:21:09.000Z">2020-04-23</time></div>
-                    <a href="/2020/04/23/Java-Stack/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java의 스택(Stack)</a>
+                    <a href="/2020/04/23/Java-Stack/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Java] 스택(Stack)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/Java/">Java</a> / <a class="has-link-grey -link" href="/categories/Java/Data-Structure/">Data Structure</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-31T15:21:18.000Z">2020-04-01</time></div>
-                    <a href="/2020/04/01/Java-Implement-an-Interface/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Java에서 Interface(인터페이스)를 Implement한다는 건</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java/">Java</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-25T13:57:58.000Z">2020-03-25</time></div>
-                    <a href="/2020/03/25/Spring-bean-scope/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Bean의 범위 - Singleton과 Prototype</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Java/">Java</a> / <a class="has-link-grey -link" href="/categories/Java/Spring/">Spring</a>
                     </p>
                 </div>
             </div>
@@ -864,6 +907,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/07/">

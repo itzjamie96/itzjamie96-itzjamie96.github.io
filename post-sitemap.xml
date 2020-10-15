@@ -8,24 +8,8 @@
     </url>
 
     <url>
-        <loc>https://itzjamie96.github.io/2020/07/20/GitHub-Merge-Repositories/</loc>
-        <lastmod>2020-07-20T12:02:53.218Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/05/14/Java-Memory/</loc>
-        <lastmod>2020-07-20T12:02:37.180Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/03/18/Java-HashMap/</loc>
-        <lastmod>2020-07-20T11:58:55.543Z</lastmod>
+        <loc>https://itzjamie96.github.io/2020/10/14/SWEA-PS-Basic-List1/</loc>
+        <lastmod>2020-10-15T09:33:03.724Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -33,15 +17,7 @@
 
     <url>
         <loc>https://itzjamie96.github.io/2020/03/19/Spring-Framework/</loc>
-        <lastmod>2020-07-20T11:58:14.778Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/03/25/Spring-bean-scope/</loc>
-        <lastmod>2020-07-20T11:57:32.452Z</lastmod>
+        <lastmod>2020-10-15T04:40:49.263Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -49,15 +25,15 @@
 
     <url>
         <loc>https://itzjamie96.github.io/2020/03/20/Spring-DI/</loc>
-        <lastmod>2020-07-20T11:57:32.076Z</lastmod>
+        <lastmod>2020-10-15T04:39:56.629Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://itzjamie96.github.io/2020/04/23/Java-Stack/</loc>
-        <lastmod>2020-07-20T11:57:30.599Z</lastmod>
+        <loc>https://itzjamie96.github.io/2020/03/25/Spring-bean-scope/</loc>
+        <lastmod>2020-10-15T04:39:45.804Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -65,7 +41,23 @@
 
     <url>
         <loc>https://itzjamie96.github.io/2020/03/23/Spring-Auto-DI/</loc>
-        <lastmod>2020-07-20T11:56:48.894Z</lastmod>
+        <lastmod>2020-10-15T04:39:31.611Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/04/23/Java-Stack/</loc>
+        <lastmod>2020-10-15T04:39:10.811Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/05/14/Java-Memory/</loc>
+        <lastmod>2020-10-15T04:38:45.731Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -73,7 +65,31 @@
 
     <url>
         <loc>https://itzjamie96.github.io/2020/04/01/Java-Implement-an-Interface/</loc>
-        <lastmod>2020-04-01T14:44:15.169Z</lastmod>
+        <lastmod>2020-10-15T04:38:34.316Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/03/18/Java-HashMap/</loc>
+        <lastmod>2020-10-15T04:38:18.996Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/07/20/GitHub-Merge-Repositories/</loc>
+        <lastmod>2020-10-15T04:37:57.948Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/10/15/Python-powersets-with-bitwise-operators/</loc>
+        <lastmod>2020-10-15T04:36:52.634Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
