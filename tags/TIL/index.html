@@ -138,6 +138,58 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-11-15T03:14:56.000Z">2020-11-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Python/Algorithm/">Algorithm</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/11/15/Python-Memoization/">[Python] Memoization(메모이제이션)</a>
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<blockquote>
+<p>재귀함수로 문제를 풀다 보면 재귀를 썼음에도 불가하고 시간초과(!)가 나는 경우들이 있다. 이럴 때 시간을 단축시킬 수 있는 Memoization(메모이제이션)에 대해서 알아보자</p>
+</blockquote>
+<h2 id="Memoization이란"><a href="#Memoization이란" class="headerlink" title="Memoization이란?"></a>Memoization이란?</h2><p>Memoization은 컴퓨터 프로그램이 동일한 계산을 반복해야 할 때, <del>이전에 계산한 값을 메모리에 저장</del>함으로써 동일한 계산의 반복 수행을 제거하여 프로그램 실행 속도를 빠르게 하는 기술이다. 동적 계획법의 핵심이 되는 기술이다. (출처: 위키백과 <a href="https://ko.wikipedia.org/wiki/%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98#:~:text=%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98(memoization)%EC%9D%80%20%EC%BB%B4%ED%93%A8%ED%84%B0,%ED%95%B5%EC%8B%AC%EC%9D%B4%20%EB%90%98%EB%8A%94%20%EA%B8%B0%EC%88%A0%EC%9D%B4%EB%8B%A4.">메모이제이션</a>)</p>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/11/15/Python-Memoization/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-10-20T14:46:07.000Z">2020-10-20</time>
                 
                 <div class="level-item">
@@ -606,57 +658,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-20T13:09:02.000Z">2020-03-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/Java/">Java</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/Java/Spring/">Spring</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/03/20/Spring-DI/">[Spring] DI</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<h2 id="Dependency-Injection-의존성-주입"><a href="#Dependency-Injection-의존성-주입" class="headerlink" title="Dependency Injection (의존성 주입)"></a>Dependency Injection (의존성 주입)</h2><p>스프링에서 의존성 주입이란, 말 그대로 필요한 객체를 주입한다는 뜻이다. 좀 더 쉽게 살펴보기 위해 <del>건전지를 넣어야하는 장난감</del>을 예제로 들어보자. 장난감이 작동하기 위해서는 배터리가 필수다. 다시 말해 <del>장난감이 배터리에 의존</del>하기 때문에 <del>배터리를 장난감에 주입</del>해야 한다. </p>
-<p>먼저 건전지를 분리할 수 없는 배터리 일체형 장난감을 생각해보자.</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ElectricToyCar</span> </span>{</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> Battery battery;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ElectricToyCar</span><span class="params">()</span> </span>{</span><br><span class="line">        battery = <span class="keyword">new</span> Battery();    </span><br><span class="line">        <span class="comment">//공장에서 장난감을 만들 때 배터리를 주입한 상태로 만든다!</span></span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/20/Spring-DI/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -716,7 +717,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            14
+                            15
                         </p>
                     </a>
                 </div>
@@ -813,7 +814,7 @@
                 <span class="level-item">Python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">5</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/Python/Algorithm/">
@@ -821,7 +822,7 @@
                 <span class="level-item">Algorithm</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Python/SWEA/">
@@ -842,6 +843,19 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-15T03:14:56.000Z">2020-11-15</time></div>
+                    <a href="/2020/11/15/Python-Memoization/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Python] Memoization(메모이제이션)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Python/">Python</a> / <a class="has-link-grey -link" href="/categories/Python/Algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -895,19 +909,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-07-20T11:10:12.000Z">2020-07-20</time></div>
-                    <a href="/2020/07/20/GitHub-Merge-Repositories/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[GitHub] Repository 합치기 (commit history 포함)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/GitHub/">GitHub</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -918,6 +919,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2020/10/">

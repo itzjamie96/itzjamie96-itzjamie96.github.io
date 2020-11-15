@@ -9,8 +9,30 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Tue, 20 Oct 2020 14:58:56 GMT</pubDate>
+    <pubDate>Sun, 15 Nov 2020 05:50:33 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>[Python] Memoization(메모이제이션)</title>
+      <link>https://itzjamie96.github.io/2020/11/15/Python-Memoization/</link>
+      <guid>https://itzjamie96.github.io/2020/11/15/Python-Memoization/</guid>
+      <pubDate>Sun, 15 Nov 2020 03:14:56 GMT</pubDate>
+      <description>
+      
+        &lt;hr&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;재귀함수로 문제를 풀다 보면 재귀를 썼음에도 불가하고 시간초과(!)가 나는 경우들이 있다. 이럴 때 시간을 단축시킬 수 있는 Memoization(메모이제이션)에 대해서 알아보자&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Memoization이란&quot;&gt;&lt;a href=&quot;#Memoization이란&quot; class=&quot;headerlink&quot; title=&quot;Memoization이란?&quot;&gt;&lt;/a&gt;Memoization이란?&lt;/h2&gt;&lt;p&gt;Memoization은 컴퓨터 프로그램이 동일한 계산을 반복해야 할 때, &lt;del&gt;이전에 계산한 값을 메모리에 저장&lt;/del&gt;함으로써 동일한 계산의 반복 수행을 제거하여 프로그램 실행 속도를 빠르게 하는 기술이다. 동적 계획법의 핵심이 되는 기술이다. (출처: 위키백과 &lt;a href=&quot;https://ko.wikipedia.org/wiki/%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98#:~:text=%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98(memoization)%EC%9D%80%20%EC%BB%B4%ED%93%A8%ED%84%B0,%ED%95%B5%EC%8B%AC%EC%9D%B4%20%EB%90%98%EB%8A%94%20%EA%B8%B0%EC%88%A0%EC%9D%B4%EB%8B%A4.&quot;&gt;메모이제이션&lt;/a&gt;)&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<hr><blockquote><p>재귀함수로 문제를 풀다 보면 재귀를 썼음에도 불가하고 시간초과(!)가 나는 경우들이 있다. 이럴 때 시간을 단축시킬 수 있는 Memoization(메모이제이션)에 대해서 알아보자</p></blockquote><h2 id="Memoization이란"><a href="#Memoization이란" class="headerlink" title="Memoization이란?"></a>Memoization이란?</h2><p>Memoization은 컴퓨터 프로그램이 동일한 계산을 반복해야 할 때, <del>이전에 계산한 값을 메모리에 저장</del>함으로써 동일한 계산의 반복 수행을 제거하여 프로그램 실행 속도를 빠르게 하는 기술이다. 동적 계획법의 핵심이 되는 기술이다. (출처: 위키백과 <a href="https://ko.wikipedia.org/wiki/%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98#:~:text=%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98(memoization)%EC%9D%80%20%EC%BB%B4%ED%93%A8%ED%84%B0,%ED%95%B5%EC%8B%AC%EC%9D%B4%20%EB%90%98%EB%8A%94%20%EA%B8%B0%EC%88%A0%EC%9D%B4%EB%8B%A4.">메모이제이션</a>)</p><a id="more"></a><p>단어 <strong>Memoization</strong>만 봐도 <del>Memo</del>화하는 것이라는 걸 알 수 있다. 쉽게 말해 어떤 파라미터 A를 이용한 함수가 호출됐을 때의 <del>output을 메모</del>해뒀다가 나중에 또 A를 이용한 함수의 호출이 있을 때 메모해둔 값을 그대로 불러오는 것이다. 이렇게 되면 A에 대한 연산을 두 번 이상 할 필요가 없어져서 시간이 훅! 줄어들게 된다. </p><h2 id="Memoization-in-Python"><a href="#Memoization-in-Python" class="headerlink" title="Memoization in Python"></a>Memoization in Python</h2><p>파이썬에서는 이 <del>메모</del>를 하기 위해 <del>딕셔너리</del>를 활용한다. 딕셔너리 데이터 타입을 보면 <code>{ key : value }</code>꼴로 저장이 되는 데, key에 <em>함수(파라미터)</em>를 넣고 value에 해당 함수의 output을 넣어주면 된다. </p><p>간단하게 memoization을 활용해 팩토리얼을 구하는 법을 알아보자.</p><figure class="highlight python"><figcaption><span>Factorial Example</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">factorial_memo = {}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factorial</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n&lt;<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n <span class="keyword">not</span> <span class="keyword">in</span> factorial_memo:</span><br><span class="line">        factorial_memo[n] = n * factorial(n<span class="number">-1</span>)</span><br><span class="line">    <span class="keyword">return</span> factorial_memo[n]</span><br><span class="line"></span><br><span class="line">n = <span class="number">5</span></span><br><span class="line">print(factorial(n))</span><br></pre></td></tr></tbody></table></figure><p>위 함수가 동작하는 방법은 아래와 같다.</p><br><p><img src="https://user-images.githubusercontent.com/53888115/97662447-7a1ea500-1aba-11eb-960a-ccf73d25c9a7.gif" alt="Factorial with Memoization"></p><p>왼쪽은 시스템 스택, 오른쪽은 메모이제이션을 위해 만들어둔 메모장 딕셔너리다. <code>factorial</code> 메소드에 파라미터 <code>n</code>이 들어오면, 먼저 <strong>시스템 스택</strong>에 쌓인다.<br><code>factorial(n)</code>은 <strong>memo</strong>라는 딕셔너리에 key가 <code>n</code>일 때 value를 <code>n*factorial(n-1)</code>로 저장한다. 이렇게 되면 memo에 있는 <code>n</code>에 대해서는 <code>factorial(n)</code>을 또다시 연산할 필요 없이 그냥 memo에서 해당 key에 대한 value 값만 찾으면 된다. </p><p>이미 저장해둔 값만 찾아내면 되니 시간이 얼마나 줄어들겠는가! <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8">⭐</span>시간 줄이기 성공<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/2b50.png?v8">⭐</span></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
+      
+      <comments>https://itzjamie96.github.io/2020/11/15/Python-Memoization/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>[SWEA] 파이썬 SW 문제해결 기본: String</title>
