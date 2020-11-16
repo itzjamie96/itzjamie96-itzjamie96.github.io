@@ -8,6 +8,38 @@
     </url>
 
     <url>
+        <loc>https://itzjamie96.github.io/2020/04/23/java-stack/</loc>
+        <lastmod>2020-11-16T16:28:15.496Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/05/14/java-comparing-strings/</loc>
+        <lastmod>2020-11-16T16:28:14.718Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/04/01/java-implement-an-interface/</loc>
+        <lastmod>2020-11-16T16:22:51.832Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/03/14/i-made-a-blog-with-hexo/</loc>
+        <lastmod>2020-11-16T16:20:12.175Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://itzjamie96.github.io/2020/11/17/swea-python-1940/</loc>
         <lastmod>2020-11-16T16:11:30.349Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -122,38 +154,6 @@
     <url>
         <loc>https://itzjamie96.github.io/2020/11/15/python-memoization/</loc>
         <lastmod>2020-11-16T13:16:41.829Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/04/23/java-stack/</loc>
-        <lastmod>2020-11-16T13:16:35.797Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/05/14/java-memory/</loc>
-        <lastmod>2020-11-16T13:16:30.446Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/04/01/java-implement-an-interface/</loc>
-        <lastmod>2020-11-16T13:16:24.764Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/03/14/i-made-a-blog-with-hexo/</loc>
-        <lastmod>2020-11-16T13:16:08.270Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
