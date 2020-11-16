@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/2020/03/18/java-hashmap/"/>
+<link rel="canonical" href="https://itzjamie96.github.io/categories/python/page/2/"/>
 
-<title>[Java] HashMap - 영문학도의 코딩로그</title>
+<title>Categories: Python - 영문학도의 코딩로그</title>
 
 
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/ublog.png" alt="[Java] HashMap" height="28">
+                <img src="/images/ublog.png" alt="영문학도의 코딩로그" height="28">
             
             </a>
         </div>
@@ -107,10 +107,6 @@
             <div class="navbar-end">
                 
                 
-                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
-                    <i class="fas fa-list-ul"></i>
-                </a>
-                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -124,17 +120,29 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/categories">Categories</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">Python</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-18T13:12:02.000Z">2020-03-18</time>
+                <time class="level-item has-text-grey" datetime="2020-07-31T07:51:19.000Z">2020-07-31</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">Java</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/java/data-structure/">Data Structure</a>
+                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
                 </div>
                 
                 
@@ -144,87 +152,25 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                [Java] HashMap
+                <a class="has-link-black-ter" href="/2020/07/31/swea-python-1204/">[SWEA] 1204. 최빈수 구하기 with Python</a>
             
         </h1>
         <div class="content">
             <hr>
 
-<h2 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h2><p>Arrays store items as an ordered collection and in order to access the items an index number (<code>int</code> type) is needed. A <code>HashMap</code> however, stores items in <del>key/value</del> pairs and you can access the value using the <del>key</del>. The <code>&lt; &gt;</code> notation tells the type of object used as keys and values. </p>
-<br>
-
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Create a <code>HashMap</code> object called <em>capitalCities</em> that will store <code>String</code> keys and <code>Integer</code> values: </p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap; <span class="comment">// import the HashMap class</span></span><br><span class="line"></span><br><span class="line">HashMap&lt;String, String&gt; capitalCities = <span class="keyword">new</span> HashMap&lt;String, String&gt;();  </span><br></pre></td></tr></tbody></table></figure> 
-
-<br>
-<a id="more"></a>
-### Add Items
-To add items, use the `put()` method: 
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.put(<span class="string">"Korea"</span>, <span class="string">"Seoul"</span>);</span><br><span class="line">capitalCities.put(<span class="string">"Poland"</span>, <span class="string">"Warsaw"</span>);</span><br><span class="line">capitalCities.put(<span class="string">"Germany"</span>, <span class="string">"Berlin"</span>);</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">{Korea=Seoul, Poland=Warsaw, Germany=Berlin}</span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-
-<h3 id="Access-an-Item"><a href="#Access-an-Item" class="headerlink" title="Access an Item"></a>Access an Item</h3><p>To access a value in the <code>HashMap</code>, use the <code>get()</code> method and <del>refer to its key</del>:</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String city = capitalCities.get(<span class="string">"Korea"</span>);</span><br><span class="line">System.out.println(city);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">Seoul</span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-
-<h3 id="Remove-an-Item"><a href="#Remove-an-Item" class="headerlink" title="Remove an Item"></a>Remove an Item</h3><p>To remove an item, use the <code>remove()</code> method and <del>refer to its key</del>:</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.remove(<span class="string">"Germany"</span>);</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">{Korea=Seoul, Poland=Warsaw}</span><br></pre></td></tr></tbody></table></figure>
-
-<p>To remove <del>ALL ITEMS</del>, use the <code>clear()</code> method:</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">capitalCities.clear();</span><br><span class="line">System.out.println(capitalCities);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line">{}</span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-
-<h3 id="HashMap-Size"><a href="#HashMap-Size" class="headerlink" title="HashMap Size"></a>HashMap Size</h3><p>To find out how many items there are, use the <code>size()</code> method:</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> size = capitalCities.size();</span><br><span class="line">System.out.println(size);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-
-<h3 id="Loop-Through-a-HashMap"><a href="#Loop-Through-a-HashMap" class="headerlink" title="Loop Through a HashMap"></a>Loop Through a HashMap</h3><p>Loop through the items with a <del>for-each</del> loop.<br><strong>Note:</strong> use the <code>keySet()</code> method for <del>keys</del>, and use the <code>values()</code> method for <del>values</del>:</p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (String s : capitalCities.keySet()) {</span><br><span class="line">    <span class="comment">// process each key in turn </span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String s : capitalCities.values()) {</span><br><span class="line">    <span class="comment">// process each value in turn </span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-
-<h3 id="Loop-Through-to-FIND-a-key"><a href="#Loop-Through-to-FIND-a-key" class="headerlink" title="Loop Through to FIND a key"></a>Loop Through to FIND a key</h3><p>Check if the HashMap includes a given key with <code>containsKey()</code> method: </p>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> USA = capitalCities.containsKey(<span class="string">"USA"</span>);</span><br><span class="line">System.out.println(USA);</span><br><span class="line"></span><br><span class="line"><span class="comment">//RESULT</span></span><br><span class="line"><span class="keyword">false</span></span><br></pre></td></tr></tbody></table></figure>
-
-<br>
-
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a href="http://www.dukelearntoprogram.com/course3/doc/#hashmap">Duke Learn to Program: Java Documentation</a><br><a href="https://www.w3schools.com/java/java_hashmap.asp">w3schools.com</a></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV13zo1KAAACFAYh">1204. [S/W 문제해결 기본] 1일차 - 최빈수 구하기</a></p>
         </div>
         
-        <div class="level is-size-7 is-uppercase">
+        
+        <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/til/" rel="tag">TIL</a>
+                <a class="button is-size-7 is-light" href="/2020/07/31/swea-python-1204/#more">Read More</a>
                 </div>
             </div>
         </div>
         
         
-        
     </div>
 </div>
 
@@ -232,50 +178,27 @@ To add items, use the `put()` method:
 
 
 
+
+
+
+
+    
 <div class="card card-transparent">
-    <div class="level post-navigation is-flex-wrap is-mobile">
-        
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/03/19/spring-framework/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">[Spring] 스프링 프레임워크 입문</span>
-            </a>
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/categories/python/">Previous</a>
         </div>
-        
-        
-        <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/14/i-made-a-blog-with-hexo/">
-                <span class="level-item">Hexo로 블로그를 만들어봤다</span>
-                <i class="level-item fas fa-chevron-right"></i>
-            </a>
+        <div class="pagination-next is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/categories/python/page/3/">Next</a>
         </div>
-        
-    </div>
-</div>
-
-
-
-<div class="card">
-    <div class="card-content">
-        <!-- <h3 class="title is-5 has-text-weight-normal">Comments</h3> -->
-        
-<!-- <script src="https://utteranc.es/client.js"
-        repo="itzjamie96/blog-comments"
-        issue-term=""
-        label=""
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script> -->
-<script src="https://utteranc.es/client.js"
-        repo="itzjamie96/blog-comments"
-        issue-term="title"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-
-    </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/categories/python/">1</a></li>
+            
+            <li><a class="pagination-link is-current" href="/categories/python/page/2/">2</a></li>
+            
+        </ul>
+    </nav>
 </div>
 </div>
                 
@@ -359,50 +282,6 @@ To add items, use the `put()` method:
 </div>
     
         
-
-    <div class="card widget" id="toc">
-        <div class="card-content">
-            <div class="menu">
-                <h3 class="menu-label">
-                    Catalogue
-                </h3>
-                <ul class="menu-list"><li>
-        <a class="is-flex" href="#HashMap">
-        <span class="has-mr-6">1</span>
-        <span>HashMap</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#Example">
-        <span class="has-mr-6">1.1</span>
-        <span>Example</span>
-        </a></li><li>
-        <a class="is-flex" href="#Access-an-Item">
-        <span class="has-mr-6">1.2</span>
-        <span>Access an Item</span>
-        </a></li><li>
-        <a class="is-flex" href="#Remove-an-Item">
-        <span class="has-mr-6">1.3</span>
-        <span>Remove an Item</span>
-        </a></li><li>
-        <a class="is-flex" href="#HashMap-Size">
-        <span class="has-mr-6">1.4</span>
-        <span>HashMap Size</span>
-        </a></li><li>
-        <a class="is-flex" href="#Loop-Through-a-HashMap">
-        <span class="has-mr-6">1.5</span>
-        <span>Loop Through a HashMap</span>
-        </a></li><li>
-        <a class="is-flex" href="#Loop-Through-to-FIND-a-key">
-        <span class="has-mr-6">1.6</span>
-        <span>Loop Through to FIND a key</span>
-        </a></li><li>
-        <a class="is-flex" href="#Reference">
-        <span class="has-mr-6">1.7</span>
-        <span>Reference</span>
-        </a></li></ul></li></ul>
-            </div>
-        </div>
-    </div>
-
     
         
 <div class="card widget">
@@ -426,7 +305,7 @@ To add items, use the `put()` method:
                 <span class="level-item">Java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">7</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/java/data-structure/">
@@ -434,7 +313,7 @@ To add items, use the `put()` method:
                 <span class="level-item">Data Structure</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">1</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/java/spring/">
@@ -458,7 +337,7 @@ To add items, use the `put()` method:
                 <span class="level-item">Python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">10</span>
+                <span class="level-item tag">11</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/python/algorithm/">
@@ -474,7 +353,7 @@ To add items, use the `put()` method:
                 <span class="level-item">SWEA</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">9</span>
             </span>
         </a></li></ul></li>
             </ul>
@@ -487,6 +366,19 @@ To add items, use the `put()` method:
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-16T16:04:28.000Z">2020-11-17</time></div>
+                    <a href="/2020/11/17/swea-python-1940/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1940. 가랏! RC카! with Python</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -540,19 +432,6 @@ To add items, use the `put()` method:
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-20T00:21:42.000Z">2020-10-20</time></div>
-                    <a href="/2020/10/20/swea-ps-basic-list2/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 파이썬 SW 문제해결 기본: List2</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -570,7 +449,7 @@ To add items, use the `put()` method:
                     <span class="level-item">November 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -636,7 +515,7 @@ To add items, use the `put()` method:
                     <span class="level-item">March 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">6</span>
+                    <span class="level-item tag">5</span>
                 </span>
             </a>
         </li>
@@ -663,7 +542,7 @@ To add items, use the `put()` method:
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/ublog.png" alt="[Java] HashMap" height="28">
+                    <img src="/images/ublog.png" alt="영문학도의 코딩로그" height="28">
                 
                 </a>
                 <p class="is-size-7">
