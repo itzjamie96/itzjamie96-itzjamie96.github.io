@@ -388,6 +388,9 @@ img.thumbnail {
     margin-top: 1em !important;
   }
 }
+h1.title {
+  font-weight: 500 !important;
+}
 /* ---------------------------------
  *         Font icon fixes
  * --------------------------------- */
