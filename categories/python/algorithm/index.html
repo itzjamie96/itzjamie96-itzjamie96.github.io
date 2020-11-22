@@ -10,7 +10,7 @@
 
 <link rel="canonical" href="https://itzjamie96.github.io/categories/python/algorithm/"/>
 
-<title>Categories: Algorithm - 영문학도의 코딩로그</title>
+<title>Categories: Algorithm - Code with Jamie</title>
 
 
 
@@ -74,7 +74,7 @@
 
 
 <link rel="stylesheet" href="/css/style.css">
-<link rel="alternate" href="/rss2.xml" title="영문학도의 코딩로그" type="application/rss+xml">
+<link rel="alternate" href="/rss2.xml" title="Code with Jamie" type="application/rss+xml">
 </head>
 <body class="is-2-column">
     <nav class="navbar navbar-main">
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/ublog.png" alt="영문학도의 코딩로그" height="28">
+                <img src="/images/code_with_jamie.png" alt="Code with Jamie" height="28">
             
             </a>
         </div>
@@ -154,23 +154,22 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/11/15/python-memoization/">[Python] Memoization(메모이제이션)</a>
+                <a class="has-link-black-ter" href="/2020/11/15/python-absolute-basics-of-memoization/">[Python] Memoization(메모이제이션)</a>
             
         </h1>
         <div class="content">
             <hr>
 
 <blockquote>
-<p>재귀함수로 문제를 풀다 보면 재귀를 썼음에도 불가하고 시간초과(!)가 나는 경우들이 있다. 이럴 때 시간을 단축시킬 수 있는 Memoization(메모이제이션)에 대해서 알아보자</p>
+<p>재귀함수로 문제를 풀다 보면 재귀를 썼음에도 불가하고 시간초과(!)가 나는 경우들이 있다. 이럴 때 시간을 단축시킬 수 있는 Memoization(메모이제이션)에 대해서 알아보자.</p>
 </blockquote>
-<h2 id="Memoization이란"><a href="#Memoization이란" class="headerlink" title="Memoization이란?"></a>Memoization이란?</h2><p>Memoization은 컴퓨터 프로그램이 동일한 계산을 반복해야 할 때, <del>이전에 계산한 값을 메모리에 저장</del>함으로써 동일한 계산의 반복 수행을 제거하여 프로그램 실행 속도를 빠르게 하는 기술이다. 동적 계획법의 핵심이 되는 기술이다. (출처: 위키백과 <a href="https://ko.wikipedia.org/wiki/%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98#:~:text=%EB%A9%94%EB%AA%A8%EC%9D%B4%EC%A0%9C%EC%9D%B4%EC%85%98(memoization)%EC%9D%80%20%EC%BB%B4%ED%93%A8%ED%84%B0,%ED%95%B5%EC%8B%AC%EC%9D%B4%20%EB%90%98%EB%8A%94%20%EA%B8%B0%EC%88%A0%EC%9D%B4%EB%8B%A4.">메모이제이션</a>)</p>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/11/15/python-memoization/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2020/11/15/python-absolute-basics-of-memoization/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -206,7 +205,7 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/10/15/python-powersets-with-bitwise-operators/">[Python] 비트연산자로 부분집합 구하기</a>
+                <a class="has-link-black-ter" href="/2020/10/15/python-bitwise-powersets/">[Python] 비트연산자로 부분집합 구하기</a>
             
         </h1>
         <div class="content">
@@ -215,16 +214,13 @@
 <blockquote>
 <p>비트연산자 <code>&amp;</code>와 <code>&lt;&lt;</code>를 이용해 이중 for문이라도 빠르게 부분집합을 구해보자! </p>
 </blockquote>
-<p>파이썬으로 부분집합을 구할때 보통 <code>itertools</code>를 사용한다. 하지만 <code>itertools</code> 라이브러리 사용이 불가능한 코테도 있으니(ex. 쌤썽ㅠ)… for 문을 이용해 부분집합을 빠르게 구하는 방법도 알아야한다. 이것은 바로 <del>비트연산자</del>로 계산해서 부분집합을 구하는 방법이다. </p>
-<p>먼저 코드부터 보자.</p>
-<figure class="highlight python"><figcaption><span>Finding out powersets</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">n = len(arr)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span> &lt;&lt; n):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="keyword">if</span> i &amp; (<span class="number">1</span> &lt;&lt; j):</span><br><span class="line">            print(arr[j], end=<span class="string">' '</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></tbody></table></figure>
         </div>
         
         
         <div class="level is-mobile">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/10/15/python-powersets-with-bitwise-operators/#more">Read More</a>
+                <a class="button is-size-7 is-light" href="/2020/10/15/python-bitwise-powersets/#more">Read More</a>
                 </div>
             </div>
         </div>
@@ -265,7 +261,7 @@
                     
                     
                     <p class="is-size-6 is-block">
-                        오늘은 ___를 배웠다.
+                        Turning coffee into code
                     </p>
                     
                     
@@ -280,7 +276,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            20
+                            16
                         </p>
                     </a>
                 </div>
@@ -345,7 +341,7 @@
                 <span class="level-item">Java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">3</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/java/data-structure/">
@@ -353,15 +349,15 @@
                 <span class="level-item">Data Structure</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">1</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/java/spring/">
+        <a class="level is-marginless" href="/categories/java/java-101/">
             <span class="level-start">
-                <span class="level-item">Spring</span>
+                <span class="level-item">Java 101</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">4</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/life/">
@@ -425,7 +421,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-15T03:14:56.000Z">2020-11-15</time></div>
-                    <a href="/2020/11/15/python-memoization/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Python] Memoization(메모이제이션)</a>
+                    <a href="/2020/11/15/python-absolute-basics-of-memoization/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Python] Memoization(메모이제이션)</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/algorithm/">Algorithm</a>
                     </p>
@@ -438,7 +434,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-22T13:12:20.000Z">2020-10-22</time></div>
-                    <a href="/2020/10/22/swea-python-1926/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1926. 간단한 369 게임 with Python</a>
+                    <a href="/2020/10/22/swea-python-1926-ps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1926. 간단한 369 게임 with Python</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
                     </p>
@@ -451,7 +447,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-21T06:28:20.000Z">2020-10-21</time></div>
-                    <a href="/2020/10/21/swea-python-1859/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1859. 백만 장자 프로젝트 with Python</a>
+                    <a href="/2020/10/21/swea-python-1859-ps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1859. 백만 장자 프로젝트 with Python</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
                     </p>
@@ -464,7 +460,7 @@
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-20T14:46:07.000Z">2020-10-20</time></div>
-                    <a href="/2020/10/20/swea-ps-basic-string/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 파이썬 SW 문제해결 기본: String</a>
+                    <a href="/2020/10/20/swea-python-ps-string/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 파이썬 SW 문제해결 기본: String</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
                     </p>
@@ -555,7 +551,7 @@
                     <span class="level-item">March 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">5</span>
+                    <span class="level-item tag">1</span>
                 </span>
             </a>
         </li>
@@ -582,7 +578,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/ublog.png" alt="영문학도의 코딩로그" height="28">
+                    <img src="/images/code_with_jamie.png" alt="Code with Jamie" height="28">
                 
                 </a>
                 <p class="is-size-7">

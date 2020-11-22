@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+<link rel="canonical" href="https://itzjamie96.github.io/2020/10/15/python-bitwise-powersets/"/>
+
+<title>[Python] 비트연산자로 부분집합 구하기 - Code with Jamie</title>
+
+
+
+
+
+
+
+
+<link rel="icon" href="/images/jlogo.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atelier-forest-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154710619-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-154710619-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/rss2.xml" title="Code with Jamie" type="application/rss+xml">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/code_with_jamie.png" alt="[Python] 비트연산자로 부분집합 구하기" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-10-15T02:41:40.000Z">2020-10-15</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/algorithm/">Algorithm</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                [Python] 비트연산자로 부분집합 구하기
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<blockquote>
+<p>비트연산자 <code>&amp;</code>와 <code>&lt;&lt;</code>를 이용해 이중 for문이라도 빠르게 부분집합을 구해보자! </p>
+</blockquote>
+<a id="more"></a>
+
+<p>파이썬으로 부분집합을 구할때 보통 <code>itertools</code>를 사용한다. 하지만 <code>itertools</code> 라이브러리 사용이 불가능한 코테도 있으니(ex. 쌤썽ㅠ)… for 문을 이용해 부분집합을 빠르게 구하는 방법도 알아야한다. 이것은 바로 <del>비트연산자</del>로 계산해서 부분집합을 구하는 방법이다. </p>
+<p>먼저 코드부터 보자.</p>
+<figure class="highlight python"><figcaption><span>Finding out powersets</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">n = len(arr)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span> &lt;&lt; n):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="keyword">if</span> i &amp; (<span class="number">1</span> &lt;&lt; j):</span><br><span class="line">            print(arr[j], end=<span class="string">' '</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight bash"><figcaption><span>결과</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 </span><br><span class="line">2 </span><br><span class="line">1 2 </span><br><span class="line">3 </span><br><span class="line">1 3 </span><br><span class="line">2 3 </span><br><span class="line">1 2 3 </span><br><span class="line"></span><br><span class="line">Process finished with <span class="built_in">exit</span> code 0</span><br></pre></td></tr></tbody></table></figure>
+<p>위의 코드는 주어진 <code>arr</code> 리스트의 부분집합을 모두 출력한다. <code>n</code>은 <code>arr</code>의 길이인 3이다. 이렇게 원소가 3개인 집합의 부분집합들을 구하는 코드를 분석해보자. </p>
+<blockquote>
+<p>이 코드를 이해하기까지 정!말! 오래 걸렸다 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f62d.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f62d.png?v8">😭</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f62d.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f62d.png?v8">😭</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f62d.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f62d.png?v8">😭</span> . 다시 봐도 이해할 수 있도록 코드를 한 줄씩 쪼개서 이해한 과정을 남겨본다. </p>
+</blockquote>
+<br>
+
+<h2 id="원리"><a href="#원리" class="headerlink" title="원리"></a>원리</h2><p>이 방식은 <del>2진법</del>을 이용해 부분집합을 알아낸다. 2진법은 두 개의 숫자 <code>0</code>과 <code>1</code>만을 이용해 숫자를 나타내는 방식이다. 이걸 가지고 1은 원소가 포함 된 경우, 0은 원소가 포함되지 않은 경우로 생각한다. </p>
+<p><img src="/img/20201015/to_binary.png" alt="2진법으로 부분집합 나타내기"></p>
+<p>그림과 같이 <code>[1, 2, 3]</code>이라는 숫자 리스트가 있으면 가장 긴 부분집합은 [1, 2, 3]으로, 부분집합의 최대 길이는 주어진 리스트의 길이와 같다. 따라서 각 부분집합을 <del>리스트</del>처럼 생각해서 특정 원소가 있으면 <code>1</code>, 없으면 <code>0</code>으로 표기한다. </p>
+<br>
+
+<p><img src="/img/20201015/binary_numbers.png" alt="2진법으로 나타낸 모든 부분집합"></p>
+<p>이렇게 공집합을 제외한 모든 부분집합들을 2진법으로 나타낸 후, 각 원소의 값을 알아내기 위해서는 기존에 주어진 숫자 리스트의 인덱스를 알아야 한다. 이를 위해서 각 2진법으로 나타낸 각 부분집합의 요소들과 <del>AND(교집합)</del>가 성립하는 인덱스 번호를 알아낸다. </p>
+<blockquote>
+<p>말로 표현하면 어려우니 그림으로 확인하자. </p>
+</blockquote>
+<br>
+
+<p><img src="/img/20201015/check_AND.png" alt="AND 조건 확인하기"></p>
+<p>이렇게 교집합이 있는 인덱스 번호들을 알아낸 후, 그 인덱스의 요소를 출력하면 부분집합이 구해지는 것이다. </p>
+<br>
+
+<h2 id="코드-쪼개기"><a href="#코드-쪼개기" class="headerlink" title="코드 쪼개기"></a><strong>코드 쪼개기</strong></h2><p>위의 원리를 기반으로 코드를 한 줄씩 살펴보자. </p>
+<h3 id="for-i-in-range-1-lt-lt-n"><a href="#for-i-in-range-1-lt-lt-n" class="headerlink" title="for i in range(1 << n)"></a><strong>for i in range(1 &lt;&lt; n)</strong></h3><blockquote>
+<p>먼저 <code>&lt;&lt;</code> 비트 연산자에 대해 알아보자 </p>
+</blockquote>
+<h4 id="1-lt-lt-n"><a href="#1-lt-lt-n" class="headerlink" title="1 << n"></a><strong>1 &lt;&lt; n</strong></h4><p>왼쪽의 1을 <del>2진수</del>로 보고, n번 왼쪽으로 <del>shift</del>하라는 뜻이다. 예를 들어 <code>1 &lt;&lt; 3</code>은 <del>2진수 100</del>이 된다. </p>
+<p><img src="/img/20201015/shift.png" alt="left shift"></p>
+<p>근데 이렇게 1을 왼쪽으로 shift하고 난 결과는 <code>2^n</code>과 결과가 같다! 원래 부분집합의 총 갯수를 구하는 공식은 <code>2^원소의 갯수</code>다. 여기서 <code>n</code>은 주어진 숫자 리스트의 길이다. </p>
+<p>정리하자면 <code>1&lt;&lt;n</code>은 <code>2^n</code>과 같고, 이것은 <strong>부분집합의 총 갯수</strong>를 구하는 것이다. </p>
+<figure class="highlight python"><figcaption><span>부분집합의 총 갯수만큼 for문 돌리기</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>&lt;&lt;n):</span><br></pre></td></tr></tbody></table></figure>
+
+<p>따라서 위의 for문은 부분집합의 모든 case를 확인하겠다는 것이다. </p>
+<br>
+
+<h3 id="for-j-in-range-n"><a href="#for-j-in-range-n" class="headerlink" title="for j in range(n)"></a><strong>for j in range(n)</strong></h3><p><code>n</code>은 주어진 원소들의 갯수이다. 따라서 0 ~ <code>n-1</code>까지의 숫자들은 길이가 n인 리스트의 인덱스가 된다. n이 3인 예시의 경우, <code>0, 1, 2</code>를 하나씩 확인하는 for문이 된다. </p>
+<br>
+
+<h3 id="if-i-amp-1-lt-lt-j"><a href="#if-i-amp-1-lt-lt-j" class="headerlink" title="if i &amp; (1 << j)"></a><strong>if i &amp; (1 &lt;&lt; j)</strong></h3><p>여기에 나오는 <code>&amp;</code>는 <code>AND</code>를 찾는 비트연산자로, <code>A &amp; B</code>에서 A와 B의 2진수 형태에서 공통된 값을 10진수로 변환해 리턴해준다.</p>
+<figure class="highlight python"><figcaption><span>&amp;예시</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ex) </span></span><br><span class="line">print(<span class="number">5</span> &amp; <span class="number">4</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>위의 예시는 4를 리턴해준다. 5의 2진수 형태는 101이고, 4의 2진수 형태는 100이다. 이 두 숫자 사이의 교집합은 100이기 때문에 이것을 10진수로 변환해 4를 리턴해주는 것이다. </p>
+<br>
+
+<figure class="highlight python"><figcaption><span>핵심코드</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> i &amp; (<span class="number">1</span>&lt;&lt;j):</span><br><span class="line">	print(arr[j], end=<span class="string">' '</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+<p>이제 핵심인 코드를 살펴보자. <code>i</code>는 찾으려는 부분집합이고 (이걸 2진수로 변환해서 1,0으로 이뤄진 리스트처럼 생각) j는 리스트의 인덱스 번호다. 찾으려는 부분집합과 현재 인덱스 번호 사이의 교집합이 있다면, 원본 리스트에서 그 인덱스의 요소를 출력하라는 뜻이다. </p>
+<p>예를 들어 <code>i=3</code>일 때를 보자. j는 0 ~ 2까지의 숫자다. </p>
+<figure class="highlight python"><figcaption><span>핵심코드 풀이</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span> &amp; (<span class="number">1</span>&lt;&lt;<span class="number">0</span>) 	<span class="comment"># 011 &amp; 001 = 1 </span></span><br><span class="line"><span class="number">3</span> &amp; (<span class="number">1</span>&lt;&lt;<span class="number">1</span>)	<span class="comment"># 011 &amp; 010 = 10</span></span><br><span class="line"><span class="number">3</span> &amp; (<span class="number">1</span>&lt;&lt;<span class="number">2</span>)	<span class="comment"># 011 &amp; 100 = 0</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>j가 0, 1인 경우 2진수 1과 10이라는 결과가 나오지만 j가 2인 경우는 교집합이 없기 때문에 0이 나온다. 따라서 j=2인 경우 이외에는 if 조건을 충족하기 때문에 해당 j를 인덱스로 삼아 숫자 리스트에서 값을 꺼내면 찾고자 하는 부분집합의 원소가 나오게 된다!</p>
+<br>
+
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>이해하는 과정이 너무 힘들었다. 하지만 [1, 2, 3]의 예시에 대해 직접 위의 과정을 손으로 적어본 것을 통해 약간(?) 이해하게 되었다. 이 방법을 깨달은 사람은 누군지 모르겠지만 진짜 천재같다. </p>
+<figure class="highlight python"><figcaption><span>비트연산자로 부분집합 구하기</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">n = len(arr)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>&lt;&lt;n):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">        <span class="keyword">if</span> i &amp; (<span class="number">1</span>&lt;&lt;j):</span><br><span class="line">            print(arr[j], end=<span class="string">' '</span>)</span><br><span class="line">    print()</span><br></pre></td></tr></tbody></table></figure><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/algorithm/" rel="tag">Algorithm</a>, <a class="has-link-grey -link" href="/tags/python/" rel="tag">Python</a>, <a class="has-link-grey -link" href="/tags/til/" rel="tag">TIL</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/10/20/swea-python-ps-list2/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">[SWEA] 파이썬 SW 문제해결 기본: List2</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/10/14/swea-python-ps-list1/">
+                <span class="level-item">[SWEA] 파이썬 SW 문제해결 기본: List1</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <!-- <h3 class="title is-5 has-text-weight-normal">Comments</h3> -->
+        
+<!-- <script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term=""
+        label=""
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script> -->
+<script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/%ED%94%84%EB%A1%9C%ED%95%84zoomed.jpg" alt="Jamie.">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Jamie.
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Turning coffee into code
+                    </p>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            16
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            8
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            11
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/itzjamie96" target="_blank" rel="noopener">
+                Follow me on GitHub</a>
+        </div>
+        
+        
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#원리">
+        <span class="has-mr-6">1</span>
+        <span>원리</span>
+        </a></li><li>
+        <a class="is-flex" href="#코드-쪼개기">
+        <span class="has-mr-6">2</span>
+        <span>코드 쪼개기</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#for-i-in-range-1-lt-lt-n">
+        <span class="has-mr-6">2.1</span>
+        <span>for i in range(1 << n)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-lt-lt-n">
+        <span class="has-mr-6">2.1.1</span>
+        <span>1 << n</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#for-j-in-range-n">
+        <span class="has-mr-6">2.2</span>
+        <span>for j in range(n)</span>
+        </a></li><li>
+        <a class="is-flex" href="#if-i-amp-1-lt-lt-j">
+        <span class="has-mr-6">2.3</span>
+        <span>if i & (1 << j)</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Conclusion">
+        <span class="has-mr-6">3</span>
+        <span>Conclusion</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/github/">
+            <span class="level-start">
+                <span class="level-item">GitHub</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/java/">
+            <span class="level-start">
+                <span class="level-item">Java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/java/data-structure/">
+            <span class="level-start">
+                <span class="level-item">Data Structure</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/java/java-101/">
+            <span class="level-start">
+                <span class="level-item">Java 101</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/life/">
+            <span class="level-start">
+                <span class="level-item">Life</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/">
+            <span class="level-start">
+                <span class="level-item">Python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">11</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/python/algorithm/">
+            <span class="level-start">
+                <span class="level-item">Algorithm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/swea/">
+            <span class="level-start">
+                <span class="level-item">SWEA</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">9</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-16T16:04:28.000Z">2020-11-17</time></div>
+                    <a href="/2020/11/17/swea-python-1940/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1940. 가랏! RC카! with Python</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-15T03:14:56.000Z">2020-11-15</time></div>
+                    <a href="/2020/11/15/python-absolute-basics-of-memoization/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Python] Memoization(메모이제이션)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/algorithm/">Algorithm</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-22T13:12:20.000Z">2020-10-22</time></div>
+                    <a href="/2020/10/22/swea-python-1926-ps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1926. 간단한 369 게임 with Python</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-21T06:28:20.000Z">2020-10-21</time></div>
+                    <a href="/2020/10/21/swea-python-1859-ps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1859. 백만 장자 프로젝트 with Python</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-20T14:46:07.000Z">2020-10-20</time></div>
+                    <a href="/2020/10/20/swea-python-ps-string/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 파이썬 SW 문제해결 기본: String</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/code_with_jamie.png" alt="[Python] 비트연산자로 부분집합 구하기" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 Jamie Lee&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Follow on GitHub" href="https://github.com/itzjamie96">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://itzjamie96.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Today I Learned',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

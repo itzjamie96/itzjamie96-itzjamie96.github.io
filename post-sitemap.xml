@@ -8,8 +8,56 @@
     </url>
 
     <url>
-        <loc>https://itzjamie96.github.io/2020/04/23/java-stack/</loc>
-        <lastmod>2020-11-16T16:28:15.496Z</lastmod>
+        <loc>https://itzjamie96.github.io/2020/10/14/swea-python-ps-list1/</loc>
+        <lastmod>2020-11-22T13:41:53.173Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/10/20/swea-python-ps-list2/</loc>
+        <lastmod>2020-11-22T13:41:47.353Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/03/14/i-am-a-newbie-blogger/</loc>
+        <lastmod>2020-11-22T13:40:30.404Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/07/20/github-how-to-merge-repositories/</loc>
+        <lastmod>2020-11-22T13:40:07.425Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/10/15/python-bitwise-powersets/</loc>
+        <lastmod>2020-11-22T13:39:41.722Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/11/15/python-absolute-basics-of-memoization/</loc>
+        <lastmod>2020-11-22T09:59:47.318Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/04/01/java-what-does-implement-mean/</loc>
+        <lastmod>2020-11-22T07:56:22.940Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,23 +65,63 @@
 
     <url>
         <loc>https://itzjamie96.github.io/2020/05/14/java-comparing-strings/</loc>
-        <lastmod>2020-11-16T16:28:14.718Z</lastmod>
+        <lastmod>2020-11-22T07:56:13.284Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://itzjamie96.github.io/2020/04/01/java-implement-an-interface/</loc>
-        <lastmod>2020-11-16T16:22:51.832Z</lastmod>
+        <loc>https://itzjamie96.github.io/2020/04/23/java-stack-basics/</loc>
+        <lastmod>2020-11-22T07:56:11.223Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://itzjamie96.github.io/2020/03/14/i-made-a-blog-with-hexo/</loc>
-        <lastmod>2020-11-16T16:20:12.175Z</lastmod>
+        <loc>https://itzjamie96.github.io/2020/10/20/swea-python-ps-string/</loc>
+        <lastmod>2020-11-22T07:42:10.126Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/10/22/swea-python-1926-ps/</loc>
+        <lastmod>2020-11-22T07:37:00.561Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/10/21/swea-python-1859-ps/</loc>
+        <lastmod>2020-11-22T07:36:54.506Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/08/25/swea-python-1288-ps/</loc>
+        <lastmod>2020-11-22T07:36:41.443Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/08/11/swea-python-1284-ps/</loc>
+        <lastmod>2020-11-22T07:36:33.707Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/07/31/swea-python-1204-ps/</loc>
+        <lastmod>2020-11-22T07:36:20.909Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -42,126 +130,6 @@
     <url>
         <loc>https://itzjamie96.github.io/2020/11/17/swea-python-1940/</loc>
         <lastmod>2020-11-16T16:11:30.349Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/10/22/swea-python-1926/</loc>
-        <lastmod>2020-11-16T13:18:11.222Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/10/21/swea-python-1859/</loc>
-        <lastmod>2020-11-16T13:18:05.412Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/08/25/swea-python-1288/</loc>
-        <lastmod>2020-11-16T13:18:01.612Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/08/11/swea-python-1284/</loc>
-        <lastmod>2020-11-16T13:17:57.860Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/07/31/swea-python-1204/</loc>
-        <lastmod>2020-11-16T13:17:54.029Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/10/20/swea-ps-basic-string/</loc>
-        <lastmod>2020-11-16T13:17:43.051Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/10/20/swea-ps-basic-list2/</loc>
-        <lastmod>2020-11-16T13:17:34.771Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/10/14/swea-ps-basic-list1/</loc>
-        <lastmod>2020-11-16T13:17:22.132Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/03/19/spring-framework/</loc>
-        <lastmod>2020-11-16T13:17:12.108Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/03/20/spring-di/</loc>
-        <lastmod>2020-11-16T13:17:07.165Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/03/25/spring-bean-scope/</loc>
-        <lastmod>2020-11-16T13:16:59.493Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/03/23/spring-auto-di/</loc>
-        <lastmod>2020-11-16T13:16:55.220Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/10/15/python-powersets-with-bitwise-operators/</loc>
-        <lastmod>2020-11-16T13:16:48.445Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/11/15/python-memoization/</loc>
-        <lastmod>2020-11-16T13:16:41.829Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/07/20/github-merge-repositories/</loc>
-        <lastmod>2020-11-16T13:15:36.239Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

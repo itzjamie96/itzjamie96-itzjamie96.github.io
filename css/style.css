@@ -77,7 +77,7 @@ img.thumbnail {
 }
 .navbar-logo img,
 .footer-logo img {
-  max-height: 1.75rem;
+  max-height: 1.5rem;
 }
 .navbar-main {
   font-family: "Ubuntu";
@@ -505,10 +505,6 @@ figure.highlight pre .line {
 figure.highlight pre .hljs-comment {
   color: #76858a;
 }
-figure.highlight pre .hljs-keyword,
-figure.highlight pre .hljs-title {
-  font-weight: bolder;
-}
 figure.highlight pre .hljs-keyword {
   color: #e84393;
 }
@@ -519,7 +515,6 @@ figure.highlight pre .hljs-string,
 figure.highlight pre .hljs-symbol,
 figure.highlight pre .hljs-bullet {
   color: #00b894;
-  font-weight: bold;
 }
 figure.highlight pre .hljs-number,
 figure.highlight pre .hljs-meta,
@@ -529,7 +524,6 @@ figure.highlight pre .hljs-literal,
 figure.highlight pre .hljs-type,
 figure.highlight pre .hljs-params {
   color: #e17055;
-  font-weight: bold;
 }
 figure.highlight figcaption,
 figure.highlight .gutter {
