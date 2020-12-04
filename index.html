@@ -128,6 +128,309 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-11-18T13:51:32.000Z">2020-11-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/11/18/swea-python-1959/">[SWEA] 1959. 두 개의 숫자열 with Python</a>
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpoFaAS4DFAUq">1959. 두 개의 숫자열</a></p>
+<p><strong>접근 방법</strong></p>
+<ul>
+<li>더 긴 쪽 구하기</li>
+<li>비교 가능한 횟수 i: long-short+1</li>
+<li>for i:<ul>
+<li>short만큼 for loop (j)<ul>
+<li>short[j] * long[i+j] 누적하기</li>
+</ul>
+</li>
+<li>if 현재 누적 &gt; 기존 최대:<ul>
+<li>기존 최대 갱신</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/11/18/swea-python-1959/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-11-18T13:49:53.000Z">2020-11-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/11/18/swea-python-1954/">[SWEA] 1954. 달팽이 숫자 with Python</a>
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PobmqAPoDFAUq">1954. 달팽이 숫자</a></p>
+<p><strong>접근 방법</strong><br>방향: right, down, left, up</p>
+<ul>
+<li>N * N의 배열을 만든다</li>
+<li>반복문: 1 ~ N*N까지<ul>
+<li>현재 x, y가 유효하면 print(i)</li>
+<li>안 유효하면 방향%4로 틀기</li>
+</ul>
+</li>
+</ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/11/18/swea-python-1954/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-11-18T13:43:11.000Z">2020-11-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/11/18/swea-python-1948/">[SWEA] 1948. 날짜 계산기 with Python</a>
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PnnU6AOsDFAUq">1948. 날짜 계산기</a></p>
+<p><strong>접근 방법</strong></p>
+<ul>
+<li>모든 month(key)와 days(value)를 담은 딕셔너리 준비</li>
+<li>첫째 달(fm), 첫째 날짜(fd), 둘째 달(sm), 둘째 날짜(sd)를 입력받음</li>
+<li>같은 달 일 때 (fm==sm)<ul>
+<li>둘째 day - 첫째 day + 1</li>
+</ul>
+</li>
+<li>다른 달 일 때 (무조건 두번째 달이 더 큼)<ul>
+<li>첫 번째 전체day - 첫째 day</li>
+<li>1 증가한 달의 day ~ 두번째 달 -1까지 day</li>
+<li>두번째 day</li>
+<li>위에 세개 합치기</li>
+</ul>
+</li>
+</ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/11/18/swea-python-1948/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-11-18T13:39:23.000Z">2020-11-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/11/18/swea-python-1946/">[SWEA] 1946. 간단한 압축 풀기 with Python</a>
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PmkDKAOMDFAUq">1946. 간단한 압축 풀기</a></p>
+<p><strong>접근 방법</strong></p>
+<ul>
+<li>result는 []</li>
+<li>alpha, n으로 매핑 받기</li>
+<li>n이 10의 배수면 n//10 만큼 alpha*10를 result에 추가해주기</li>
+<li>left가 0보다 크면 alpha*left를 result[-1]에 추가 후 n -= left</li>
+<li>아니라면 n//10만큼 ‘’에 넣어두고 공백이 얼만큼 남았는지 확인 (=left)</li>
+</ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/11/18/swea-python-1946/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-11-18T10:24:05.000Z">2020-11-18</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2020/11/18/swea-python-1945/">[SWEA] 1945. 간단한 소인수분해with Python</a>
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Pl0Q6ANQDFAUq">1945. 간단한 소인수분해</a></p>
+<p><strong>접근 방법</strong></p>
+<ul>
+<li>N을 받는다</li>
+<li>2, 3, 5, 7, 11 로 N을 나눠본다<ul>
+<li>나머지가 0이면 N = N//나눈 수</li>
+<li>a, b, c, d, e 중 해당하는 수에 +1 (리스트로 구하기)</li>
+</ul>
+</li>
+</ul>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/11/18/swea-python-1945/#more">Read More</a>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2020-11-16T16:04:28.000Z">2020-11-17</time>
                 
                 <div class="level-item">
@@ -401,269 +704,6 @@
 
 
 
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-10-20T00:21:42.000Z">2020-10-20</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/10/20/swea-python-ps-list2/">[SWEA] 파이썬 SW 문제해결 기본: List2</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<p><a href="https://swexpertacademy.com/main/learn/course/subjectDetail.do?courseId=AVuPDN86AAXw5UW6&amp;subjectId=AWOVF-WqqecDFAWg&amp;&amp;">[문제링크] 파이썬 SW 문제해결 기본 - LIST2</a></p>
-<h2 id="4836-색칠하기"><a href="#4836-색칠하기" class="headerlink" title="[4836] 색칠하기"></a>[4836] 색칠하기</h2><p><strong>접근 방법</strong></p>
-<ol>
-<li>먼저 10*10 보드판 생성</li>
-<li>p1(왼쪽위), p2(오른쪽아래) 좌표 값 받기<ul>
-<li>가로: p1[0] ~ p2[0]</li>
-<li>세로: p1[0] ~ p2[1]</li>
-</ul>
-</li>
-<li>가로 세로 가지고 for문으로 색칠할 값을 “더해주기”</li>
-<li>겹치는 부분 = 빨강+파랑 = 3</li>
-<li>보드판에서 겹치는 영역 카운팅하기</li>
-</ol>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/10/20/swea-python-ps-list2/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-10-15T02:41:40.000Z">2020-10-15</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/algorithm/">Algorithm</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/10/15/python-bitwise-powersets/">[Python] 비트연산자로 부분집합 구하기</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<blockquote>
-<p>비트연산자 <code>&amp;</code>와 <code>&lt;&lt;</code>를 이용해 이중 for문이라도 빠르게 부분집합을 구해보자! </p>
-</blockquote>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/10/15/python-bitwise-powersets/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-10-14T05:22:11.000Z">2020-10-14</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/10/14/swea-python-ps-list1/">[SWEA] 파이썬 SW 문제해결 기본: List1</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<p><a href="https://swexpertacademy.com/main/learn/course/subjectDetail.do?courseId=AVuPDN86AAXw5UW6&amp;subjectId=AWOVFCzaqeUDFAWg&amp;&amp;">[문제링크] 파이썬 SW 문제해결 기본 - LIST1</a></p>
-<h2 id="4828-min-max"><a href="#4828-min-max" class="headerlink" title="[4828] min max"></a>[4828] min max</h2><p><strong>접근 방법</strong><br>내장 함수인 min, max를 사용하지 않고 직접 구현해서 최소와 최대값을 구하려고 했다. </p>
-<blockquote>
-<p>참고로 임의의 최대값과 최소값은 각각 <del>2147000000</del>와 <del>-2147000000</del>으로 설정했다. 일반적인 int형 변수의 최대값이 대략 <del>2147000000</del>이기 때문이다. 앞으로도 min값과 max값을 임의로 줘야하는 일이 있다면 이 숫자를 사용하려고 한다.</p>
-</blockquote>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/10/14/swea-python-ps-list1/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-08-25T07:43:19.000Z">2020-08-25</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/08/25/swea-python-1288-ps/">[SWEA] 1288. 새로운 불면증 치료법 with Python</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV18_yw6I9MCFAZN">1288. 새로운 불면증 치료법</a></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/08/25/swea-python-1288-ps/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-08-11T12:54:19.000Z">2020-08-11</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/08/11/swea-python-1284-ps/">[SWEA] 1284. 수도 요금 경쟁 with Python</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV189xUaI8UCFAZN">1284. 수도 요금 경쟁</a></p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/08/11/swea-python-1284-ps/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -679,6 +719,8 @@
             <li><a class="pagination-link is-current" href="/">1</a></li>
             
             <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/3/">3</a></li>
             
         </ul>
     </nav>
@@ -723,7 +765,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            16
+                            21
                         </p>
                     </a>
                 </div>
@@ -820,7 +862,7 @@
                 <span class="level-item">Python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">11</span>
+                <span class="level-item tag">16</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/python/algorithm/">
@@ -836,7 +878,7 @@
                 <span class="level-item">SWEA</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">9</span>
+                <span class="level-item tag">14</span>
             </span>
         </a></li></ul></li>
             </ul>
@@ -854,8 +896,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-16T16:04:28.000Z">2020-11-17</time></div>
-                    <a href="/2020/11/17/swea-python-1940/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1940. 가랏! RC카! with Python</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-18T13:51:32.000Z">2020-11-18</time></div>
+                    <a href="/2020/11/18/swea-python-1959/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1959. 두 개의 숫자열 with Python</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
                     </p>
@@ -867,21 +909,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-15T03:14:56.000Z">2020-11-15</time></div>
-                    <a href="/2020/11/15/python-absolute-basics-of-memoization/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Python] Memoization(메모이제이션)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/algorithm/">Algorithm</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-22T13:12:20.000Z">2020-10-22</time></div>
-                    <a href="/2020/10/22/swea-python-1926-ps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1926. 간단한 369 게임 with Python</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-18T13:49:53.000Z">2020-11-18</time></div>
+                    <a href="/2020/11/18/swea-python-1954/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1954. 달팽이 숫자 with Python</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
                     </p>
@@ -893,8 +922,8 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-21T06:28:20.000Z">2020-10-21</time></div>
-                    <a href="/2020/10/21/swea-python-1859-ps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1859. 백만 장자 프로젝트 with Python</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-18T13:43:11.000Z">2020-11-18</time></div>
+                    <a href="/2020/11/18/swea-python-1948/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1948. 날짜 계산기 with Python</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
                     </p>
@@ -906,8 +935,21 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-10-20T14:46:07.000Z">2020-10-20</time></div>
-                    <a href="/2020/10/20/swea-python-ps-string/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 파이썬 SW 문제해결 기본: String</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-18T13:39:23.000Z">2020-11-18</time></div>
+                    <a href="/2020/11/18/swea-python-1946/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1946. 간단한 압축 풀기 with Python</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-11-18T10:24:05.000Z">2020-11-18</time></div>
+                    <a href="/2020/11/18/swea-python-1945/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1945. 간단한 소인수분해with Python</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
                     </p>
@@ -932,7 +974,7 @@
                     <span class="level-item">November 2020</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">7</span>
                 </span>
             </a>
         </li>
