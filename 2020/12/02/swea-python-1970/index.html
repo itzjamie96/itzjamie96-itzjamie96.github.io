@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/archives/2020/07/"/>
+<link rel="canonical" href="https://itzjamie96.github.io/2020/12/02/swea-python-1970/"/>
 
-<title>Archives: 2020/7 - Code with Jamie</title>
+<title>[SWEA] 1970. 쉬운 거스름돈 with Python - Code with Jamie</title>
 
 
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/code_with_jamie.png" alt="Code with Jamie" height="28">
+                <img src="/images/code_with_jamie.png" alt="[SWEA] 1970. 쉬운 거스름돈 with Python" height="28">
             
             </a>
         </div>
@@ -107,6 +107,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -121,57 +125,127 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        July 2020
-        </h3>
-        <div class="timeline">
+<div class="card">
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-12-02T06:32:25.000Z">2020-12-02</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-07-31T07:51:19.000Z">2020-07-31</time>
-                        <a href="/2020/07/31/swea-python-1204-ps/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1204. 최빈수 구하기 with Python</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
                 </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-07-20T11:10:12.000Z">2020-07-20</time>
-                        <a href="/2020/07/20/github-how-to-merge-repositories/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[GitHub] Repository 합치기 (commit history 포함)</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/github/">GitHub</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
+                
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                [SWEA] 1970. 쉬운 거스름돈 with Python
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PsIl6AXIDFAUq">1970. 쉬운 거스름돈</a></p>
+<p><strong>접근 방법</strong></p>
+<blockquote>
+<p><strong>제약사항에 위배되는 input이 많음!</strong><br><del>2. N의 마지막 자릿수는 항상 0이다. (ex : 32850)</del> &lt;&lt; 이거에 해당되지 않는 input이 아주 많음 👉 그래서 모든 1의 자리 수를 0으로 바꿨다</p>
+</blockquote>
+<ul>
+<li>money: 돈 종류를 모두 담은 리스트 (큰 돈 ~ 작은 돈 순서로 정렬)</li>
+<li>result: money과 같은 길이의 리스트 (내용물 모두 0)</li>
+<li>money의 0번째부터 주어진 돈을 나눠봄<ul>
+<li>나눴을 때 0이라면 안 나눠지는 것 =&gt; i+1</li>
+<li>나눠지면 그 나머지가 N이 됨</li>
+<li>result[i]에는 몫이 들어감</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+
+<br>
+
+<figure class="highlight python"><figcaption><span>1970</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 거스름돈</span></span><br><span class="line">    N = input()</span><br><span class="line">    N = int(N[:len(N)<span class="number">-1</span>]+<span class="string">'0'</span>)</span><br><span class="line">    <span class="comment"># print(N)</span></span><br><span class="line"></span><br><span class="line">    money = [<span class="number">50000</span>, <span class="number">10000</span>, <span class="number">5000</span>, <span class="number">1000</span>, <span class="number">500</span>, <span class="number">100</span>, <span class="number">50</span>, <span class="number">10</span>]</span><br><span class="line">    result = [<span class="number">0</span>]*len(money)</span><br><span class="line"></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; len(money) <span class="keyword">or</span> N &gt; <span class="number">0</span>:</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> N // money[i] != <span class="number">0</span>:</span><br><span class="line">            result[i] += N//money[i]</span><br><span class="line">            N = N%money[i]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'#{} '</span>.format(tc))</span><br><span class="line">    print(*result)</span><br></pre></td></tr></tbody></table></figure><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/algorithm/" rel="tag">Algorithm</a>, <a class="has-link-grey -link" href="/tags/python/" rel="tag">Python</a>, <a class="has-link-grey -link" href="/tags/til/" rel="tag">TIL</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </div>
 </div>
 
 
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/11/25/swea-python-1966/">
+                <span class="level-item">[SWEA] 1966. 숫자를 정렬하자 with Python</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <!-- <h3 class="title is-5 has-text-weight-normal">Comments</h3> -->
+        
+<!-- <script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term=""
+        label=""
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script> -->
+<script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -254,6 +328,7 @@
 </div>
     
         
+
     
         
 <div class="card widget">
@@ -525,7 +600,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/code_with_jamie.png" alt="Code with Jamie" height="28">
+                    <img src="/images/code_with_jamie.png" alt="[SWEA] 1970. 쉬운 거스름돈 with Python" height="28">
                 
                 </a>
                 <p class="is-size-7">
