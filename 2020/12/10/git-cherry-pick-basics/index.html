@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/tags/data-structure/"/>
+<link rel="canonical" href="https://itzjamie96.github.io/2020/12/10/git-cherry-pick-basics/"/>
 
-<title>Tag: Data Structure - Code with Jamie</title>
+<title>[Git] cherry-pick으로 원하는 commit 가져오기 - Code with Jamie</title>
 
 
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/code_with_jamie.png" alt="Code with Jamie" height="28">
+                <img src="/images/code_with_jamie.png" alt="[Git] cherry-pick으로 원하는 commit 가져오기" height="28">
             
             </a>
         </div>
@@ -107,6 +107,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -120,115 +124,145 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-12-10T13:22:02.000Z">2020-12-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/git/">Git</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                [Git] cherry-pick으로 원하는 commit 가져오기
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<blockquote>
+<p>최근 새롭게 알고리즘 스터디를 꾸리게 되면서 git의 cherry-pick 기능을 써보게 되었다. git은 <code>add</code>, <code>commit</code>, <code>push</code> 명령어만 아는 git알못이었는데, 스터디 덕분에 새로운 git잘알에 한 발자국 다가가게 된 것 같다. 나도 git잘알이 되고 싶어서 정리해본 <code>cherry-pick</code>! </p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="cherry-pick-무슨-뜻이람"><a href="#cherry-pick-무슨-뜻이람" class="headerlink" title="cherry-pick? 무슨 뜻이람"></a>cherry-pick? 무슨 뜻이람</h2><p>git의 명령어들은 영어다. 다행히 난 영문학과 출신이다. <del>cherry-pick</del> 두 단어를 보니 체리를 고른다는 뜻 같다. 이게 뭐람? </p>
+<blockquote>
+<p>A metaphor, from the idea of picking through a bowl of cherries and seeking the best for oneself, or the idea of picking off the cherries for oneself from a cake or dessert.<sup><a href="#Reference">1</a></sup></p>
+</blockquote>
+<p>찾아보니 체리 한 바구니에서 <del>제일 좋은 체리만 고르는 것</del>에서 유래한 표현이라고 한다. git에서만 쓰는 표현인 줄 알았는데 알고 보니 그냥 동사였다. 일반적으로는 제일 좋은 걸 선별한다는 뜻으로 쓰인다고 한다. 영어공부도 하고 git 공부도 하고 진짜 일석이조다. </p>
+<p>자, 그렇다면 git에서 제일 좋은 것만 고른다는 건 무슨 뜻일까?</p>
+<br>
+
+<h2 id="git-cherry-pick"><a href="#git-cherry-pick" class="headerlink" title="git cherry-pick"></a>git cherry-pick</h2><p><code>git cherry-pick</code> 명령어는 git log에서 <del>특정한 commit 하나만 콕 찝어서</del> 현재 HEAD가 가리키는 <del>branch에 추가</del>할 수 있게 해준다. 쉽게 말해서 다른 branch에 있는 commit을 지금 내 branch에 가져와서 commit 할 수 있는 것이다. </p>
+<p>참고로 commit을 branch에서 다른 branch로 <del>옮기는 건 아니고</del>, 전체 history를 따지면 새로운 commit이 늘어나는 것이다. </p>
+<br>
+
+<h2 id="cherry-pick은-언제-써야-할까"><a href="#cherry-pick은-언제-써야-할까" class="headerlink" title="cherry-pick은 언제 써야 할까"></a>cherry-pick은 언제 써야 할까</h2><p>유용하긴 하지만 <code>cherry-pick</code>이 항상 권장되는 것은 아니라고 한다. 같은 commit이 여러 번 쌓이는 일도 발생할 수 있기 때문에 cherry-picking이 가능한 상황에서 보통은 일반적인 <code>merge</code>를 사용하는 걸 선호한다고 한다.<sup><a href="#Reference">2</a></sup> 그렇다면 cherry-pick은 어떤 상황에서 유용할까? <strong>예시 상황</strong>을 생각해 보자. </p>
+<h3 id="팀으로-협업할-때"><a href="#팀으로-협업할-때" class="headerlink" title="팀으로 협업할 때"></a>팀으로 협업할 때</h3><p>친구랑 사이드 프로젝트를 진행하고 있다. 나는 백엔드다. 현재 내가 맡은 기능이 프론트까지 더해졌을 때 어떻게 돌아가는지 확인하고 싶은데 프론트엔드를 맡은 친구가 지금 한창 작업 중이라고 한다. 아까 CSS 파일을 완성해서 commit해 뒀다고 한다. 그럼 난 <code>cherry-pick</code>을 통해 <del>그 commit 하나만 찾아서</del> 내 branch에 가져오면 된다. 오 CSS만 입혀볼 수 있게 됐다.</p>
+<h3 id="버그-수정"><a href="#버그-수정" class="headerlink" title="버그 수정"></a>버그 수정</h3><p>나는 며칠 전 A 기능을 완성한 개발자다. A가 끝나고 B 기능을 개발하는 중이었는데, 알고 보니 A 기능에 버그가 있다고 한다. 더 많은 유저들이 이 버그로 인한 현상을 겪기 전에 빠르게 버그 패치를 해서 내 branch에 commit한다. 내가 방금 commit한 이 패치는 <code>git cherry-pick</code>을 통해 <code>main</code> branch에 바로 반영되었다. 휴 문제 해결.</p>
+<h3 id="반영되지-않은-pr"><a href="#반영되지-않은-pr" class="headerlink" title="반영되지 않은 pr"></a>반영되지 않은 pr</h3><p>실수로 pull request를 <code>merge</code>하기 전에 닫아버렸다. 당황하지 않고 <code>git cherry-pick</code>을 통해 해당 commit을 가져옴으로써 살릴 수 있게 됐다. </p>
+<h3 id="알고리즘-스터디"><a href="#알고리즘-스터디" class="headerlink" title="알고리즘 스터디"></a>알고리즘 스터디</h3><p>이건 실제 나의 경우인데, 알고리즘 스터디를 하며 스터디원들의 코드를 올리는 repository에서 main branch에서 모두의 코드를 push하는 것보다 각자의 branch를 만들어서 각각 올리는 방식을 선택했다. 우리는 주어진 같은 문제를 풀어오는 것을 원칙으로 하기 때문에 각 문제별 폴더를 main에서 생성하면 <code>cherry-pick</code>을 통해 폴더를 생성한 commit만 각자 branch로 따온다. </p>
+<br>
+
+<h2 id="cherry-pick-사용법"><a href="#cherry-pick-사용법" class="headerlink" title="cherry-pick 사용법"></a>cherry-pick 사용법</h2><h3 id="가져오고-싶은-commit의-이름-확인하기"><a href="#가져오고-싶은-commit의-이름-확인하기" class="headerlink" title="가져오고 싶은 commit의 이름 확인하기"></a>가져오고 싶은 commit의 이름 확인하기</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></tbody></table></figure>
+<p>git log 명령어를 통해 내가 cherry-pick하고자 하는 commit의 이름을 확인한다. </p>
+<p><img src="/img/20201210/git_log_example.png" alt="git log example"></p>
+<p>내가 찾는 commit의 Hash 값을 복사한다. 예시에선 abc123이라고 적어뒀다. </p>
+<h3 id="cherry-pick으로-추가하려는-branch로-이동"><a href="#cherry-pick으로-추가하려는-branch로-이동" class="headerlink" title="cherry-pick으로 추가하려는 branch로 이동"></a>cherry-pick으로 추가하려는 branch로 이동</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;branch name&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="cherry-pick-진행"><a href="#cherry-pick-진행" class="headerlink" title="cherry-pick 진행"></a>cherry-pick 진행</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick abc123</span><br></pre></td></tr></tbody></table></figure>
+
+<p>끝! 잘 commit되었는지 확인하려면 <code>git log</code>를 통해 내 branch의 commit 내역을 보면 된다.</p>
+<br>
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://en.wiktionary.org/wiki/cherry-pick"><sup>1</sup> Wikipedia: cherry-pick</a><br><a href="https://www.atlassian.com/git/tutorials/cherry-pick"><sup>2</sup> Bitbucket: Git Cherry Pick</a><br><a href="https://www.merriam-webster.com/dictionary/cherry-pick">cherry-pick의 사전적 의미(Merriam Webster)</a><br><a href="https://stackoverflow.com/questions/9339429/what-does-cherry-picking-a-commit-with-git-mean#:~:text=The%20command%20git%20cherry%2Dpick%20is%20typically%20used%20to%20introduce,branch%20to%20a%20development%20branch.">Stack overflow: What does cherry-picking a commit with Git mean?</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/git/" rel="tag">Git</a>, <a class="has-link-grey -link" href="/tags/github/" rel="tag">GitHub</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/12/06/swea-python-2007/">
+                <span class="level-item">[SWEA] 2007. 패턴 마디의 길이 with Python</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">Tags</a></li>
-            <li class="is-active"><a href="#" aria-current="page">Data Structure</a></li>
-        </ul>
-        </nav>
+        <!-- <h3 class="title is-5 has-text-weight-normal">Comments</h3> -->
+        
+<!-- <script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term=""
+        label=""
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script> -->
+<script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
     </div>
 </div>
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-04-23T13:21:09.000Z">2020-04-23</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">Java</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/java/data-structure/">Data Structure</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/23/java-stack-basics/">[Java] 스택(Stack)</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<h2 id="스택-Stack"><a href="#스택-Stack" class="headerlink" title="스택 (Stack)"></a>스택 (Stack)</h2><p><code>Stack</code>은 제한적으로 접근할 수 있는 구조다. 한 쪽 끝에서만 데이터를 넣거나 뺄 수 있는 구조로, 가장 나중에 넣은 데이터를 가장 먼저 빼낼 수 있다. 이게 바로 <del>LIFO: Last In First Out</del> 자료구조다. </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/04/23/java-stack-basics/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    
-<div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-31T15:21:18.000Z">2020-04-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/java/">Java</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/java/java-101/">Java 101</a>
-                </div>
-                
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2020/04/01/java-what-does-implement-mean/">[Java] Interface(인터페이스)를 Implement한다는 건</a>
-            
-        </h1>
-        <div class="content">
-            <hr>
-
-<p>개발을 공부하다 보면 영어 단어를 들리는 그대로 우리말로 옮겨서 사용하는 경우가 많다. 보통 그 단어를 알면 개념을 이해하기 수월한데, (ex. map) 가끔 영어로도 모르는 단어가 있으면 공부하다 너무 헷갈린다. 대표적인 예가 <code>Interface</code>다. 특히 어떤 클래스가 인터페이스를 <code>implement</code> 한다는 게 너무 헷갈려서 정리해본다. </p>
-        </div>
-        
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/04/01/java-what-does-implement-mean/#more">Read More</a>
-                </div>
-            </div>
-        </div>
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 </div>
                 
 
@@ -311,6 +345,66 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#cherry-pick-무슨-뜻이람">
+        <span class="has-mr-6">1</span>
+        <span>cherry-pick? 무슨 뜻이람</span>
+        </a></li><li>
+        <a class="is-flex" href="#git-cherry-pick">
+        <span class="has-mr-6">2</span>
+        <span>git cherry-pick</span>
+        </a></li><li>
+        <a class="is-flex" href="#cherry-pick은-언제-써야-할까">
+        <span class="has-mr-6">3</span>
+        <span>cherry-pick은 언제 써야 할까</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#팀으로-협업할-때">
+        <span class="has-mr-6">3.1</span>
+        <span>팀으로 협업할 때</span>
+        </a></li><li>
+        <a class="is-flex" href="#버그-수정">
+        <span class="has-mr-6">3.2</span>
+        <span>버그 수정</span>
+        </a></li><li>
+        <a class="is-flex" href="#반영되지-않은-pr">
+        <span class="has-mr-6">3.3</span>
+        <span>반영되지 않은 pr</span>
+        </a></li><li>
+        <a class="is-flex" href="#알고리즘-스터디">
+        <span class="has-mr-6">3.4</span>
+        <span>알고리즘 스터디</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#cherry-pick-사용법">
+        <span class="has-mr-6">4</span>
+        <span>cherry-pick 사용법</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#가져오고-싶은-commit의-이름-확인하기">
+        <span class="has-mr-6">4.1</span>
+        <span>가져오고 싶은 commit의 이름 확인하기</span>
+        </a></li><li>
+        <a class="is-flex" href="#cherry-pick으로-추가하려는-branch로-이동">
+        <span class="has-mr-6">4.2</span>
+        <span>cherry-pick으로 추가하려는 branch로 이동</span>
+        </a></li><li>
+        <a class="is-flex" href="#cherry-pick-진행">
+        <span class="has-mr-6">4.3</span>
+        <span>cherry-pick 진행</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Reference">
+        <span class="has-mr-6">5</span>
+        <span>Reference</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
     
         
 <div class="card widget">
@@ -582,7 +676,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/code_with_jamie.png" alt="Code with Jamie" height="28">
+                    <img src="/images/code_with_jamie.png" alt="[Git] cherry-pick으로 원하는 commit 가져오기" height="28">
                 
                 </a>
                 <p class="is-size-7">
