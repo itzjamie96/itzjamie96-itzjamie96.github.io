@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/2020/11/18/swea-python-1948/"/>
+<link rel="canonical" href="https://itzjamie96.github.io/2020/12/30/swea-python-ps-stack1/"/>
 
-<title>[SWEA] 1948. 날짜 계산기 with Python - Code with Jamie</title>
+<title>[SWEA] 파이썬 SW 문제해결 기본: List2 - Code with Jamie</title>
 
 
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/code_with_jamie.png" alt="[SWEA] 1948. 날짜 계산기 with Python" height="28">
+                <img src="/images/code_with_jamie.png" alt="[SWEA] 파이썬 SW 문제해결 기본: List2" height="28">
             
             </a>
         </div>
@@ -131,7 +131,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-11-18T13:43:11.000Z">2020-11-18</time>
+                <time class="level-item has-text-grey" datetime="2020-12-30T12:31:40.000Z">2020-12-30</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
@@ -144,34 +144,66 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                [SWEA] 1948. 날짜 계산기 with Python
+                [SWEA] 파이썬 SW 문제해결 기본: List2
             
         </h1>
         <div class="content">
             <hr>
 
-<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PnnU6AOsDFAUq">1948. 날짜 계산기</a></p>
-<p><strong>접근 방법</strong></p>
+<p><a href="https://swexpertacademy.com/main/learn/course/subjectDetail.do?courseId=AVuPDN86AAXw5UW6&amp;subjectId=AWOVHzyqqe8DFAWg#">[문제링크] 파이썬 SW 문제해결 기본 - Stack1</a></p>
+<h2 id="4869-종이붙이기"><a href="#4869-종이붙이기" class="headerlink" title="[4869] 종이붙이기"></a>[4869] 종이붙이기</h2><p><strong>접근 방법</strong></p>
 <ul>
-<li>모든 month(key)와 days(value)를 담은 딕셔너리 준비</li>
-<li>첫째 달(fm), 첫째 날짜(fd), 둘째 달(sm), 둘째 날짜(sd)를 입력받음</li>
-<li>같은 달 일 때 (fm==sm)<ul>
-<li>둘째 day - 첫째 day + 1</li>
-</ul>
-</li>
-<li>다른 달 일 때 (무조건 두번째 달이 더 큼)<ul>
-<li>첫 번째 전체day - 첫째 day</li>
-<li>1 증가한 달의 day ~ 두번째 달 -1까지 day</li>
-<li>두번째 day</li>
-<li>위에 세개 합치기</li>
-</ul>
-</li>
+<li>점화식 구하기 = 최종적으로 어떤 경우가 남는지 확인한다</li>
+<li>가로 길이가 10인 종이와 20인 종이로 만들 수 있는 경우는 총 3가지다</li>
+<li>10짜리 종이가 끝에 오는 경우 1개, 20짜리 종이가 끝에 오는 경우 2개</li>
 </ul>
 <a id="more"></a>
 
+<blockquote>
+<p>나는 처음에 이 문제를 대체 어떻게 접근해야 할지 몰라서 좌절했었다. 다행히 점화식에 대한 접근은 어떤 친절한 분이 <a href="https://swexpertacademy.com/main/talk/solvingTalk/boardCommuView.do?searchCondition=COMMU_DETAIL-COMMU_TITLE-NICK_NAME_TAG&amp;commuId=AW1jVju6NjIDFARC&amp;searchKeyword=DP&amp;orderBy=COUNT_DESC&amp;pageSize=30&amp;pageIndex=1">SWEA Solving Talk에 답변</a>해 주신 걸 보고 이해할 수 있었다.</p>
+</blockquote>
+<p><img src="/img/20201230/4869.png" alt="4869 점화식 구하기"></p>
+<figure class="highlight python"><figcaption><span>4869</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">paste</span><span class="params">(N)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> N &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> paste(N<span class="number">-1</span>) + <span class="number">2</span>*paste(N<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">    N = int(input())//<span class="number">10</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'#{} {}'</span>.format(tc, paste(N)))</span><br></pre></td></tr></tbody></table></figure>
+
 <br>
 
-<figure class="highlight python"><figcaption><span>1948</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">days = {</span><br><span class="line">    <span class="number">1</span>:<span class="number">31</span>, <span class="number">2</span>:<span class="number">28</span>, <span class="number">3</span>:<span class="number">31</span>, <span class="number">4</span>:<span class="number">30</span>, <span class="number">5</span>:<span class="number">31</span>, <span class="number">6</span>:<span class="number">30</span>,</span><br><span class="line">    <span class="number">7</span>:<span class="number">31</span>, <span class="number">8</span>:<span class="number">31</span>, <span class="number">9</span>:<span class="number">30</span>, <span class="number">10</span>:<span class="number">31</span>, <span class="number">11</span>:<span class="number">30</span>, <span class="number">12</span>:<span class="number">31</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">    fm, fd, sm, sd = map(int, input().split())</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">'#{}'</span>.format(tc), end=<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> fm == sm:</span><br><span class="line">        print(sd-fd+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        total = days[fm]-fd</span><br><span class="line">        <span class="keyword">for</span> month <span class="keyword">in</span> range(fm+<span class="number">1</span>, sm):</span><br><span class="line">            total += days[month]</span><br><span class="line">        total += sd</span><br><span class="line">        print(total+<span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure><script>
+
+<h2 id="4866-괄호검사"><a href="#4866-괄호검사" class="headerlink" title="[4866] 괄호검사"></a>[4866] 괄호검사</h2><p><strong>접근 방법</strong></p>
+<ul>
+<li>여는 괄호(<code>{</code> or <code>(</code>)가 있으면 스택에 넣어준다</li>
+<li>닫는 괄호(<code>}</code> or <code>)</code>)가 들어오면<ul>
+<li>스택의 top이 짝이 되는 열린 괄호가 아니면 바로 리턴 0<ul>
+<li>ex) <code>}</code>이 들어왔는데 top이 <code>(</code>인 경우</li>
+</ul>
+</li>
+<li>스택의 top이 짝이 되는 열린 괄호가 맞는다면 pop 해준다</li>
+</ul>
+</li>
+<li>input의 길이만큼 for 문이 다 돌고도 스택에 뭐가 남아있으면 짝이 없는 것이기 때문에 리턴 0</li>
+<li>그동안 강제 리턴도 없었고 스택에 남은 것도 없으면 리턴 1</li>
+</ul>
+<figure class="highlight python"><figcaption><span>4866</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isPair</span><span class="params">(string)</span>:</span></span><br><span class="line">    stack = []</span><br><span class="line">    <span class="keyword">for</span> element <span class="keyword">in</span> string:</span><br><span class="line">        <span class="keyword">if</span> element == <span class="string">'{'</span> <span class="keyword">or</span> element == <span class="string">'('</span>:</span><br><span class="line">            stack.append(element)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> element == <span class="string">'}'</span>:</span><br><span class="line">            <span class="keyword">if</span> len(stack)&gt;<span class="number">0</span> <span class="keyword">and</span> stack[<span class="number">-1</span>] == <span class="string">'{'</span>:</span><br><span class="line">                stack.pop()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">elif</span> element == <span class="string">')'</span>:</span><br><span class="line">            <span class="keyword">if</span> len(stack)&gt;<span class="number">0</span> <span class="keyword">and</span> stack[<span class="number">-1</span>] == <span class="string">'('</span>:</span><br><span class="line">                stack.pop()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> len(stack) &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T+<span class="number">1</span>):</span><br><span class="line">    string = input()</span><br><span class="line">    print(<span class="string">'#{} {}'</span>.format(tc, isPair(string)))</span><br></pre></td></tr></tbody></table></figure>
+
+<br>
+
+<h2 id="4871-그래프-경로"><a href="#4871-그래프-경로" class="headerlink" title="[4871] 그래프 경로"></a>[4871] 그래프 경로</h2><p><strong>접근 방법</strong></p>
+<ul>
+<li>모든 경로의 경우를 path라는 리스트에 담아둔다</li>
+<li>path에 S~G가 다 있으면 1, 없으면 0</li>
+</ul>
+<figure class="highlight python"><figcaption><span>4871</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findRoute</span><span class="params">(vertex)</span>:</span></span><br><span class="line">    <span class="keyword">global</span> ans</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 만약 현재 들어온 vertex가 end와 동일하다면</span></span><br><span class="line">    <span class="comment"># path안에 vertex/end가 있는지 확인하고 있으면 1로 처리 후 리턴</span></span><br><span class="line">    <span class="keyword">if</span> vertex == end:</span><br><span class="line">        <span class="keyword">if</span> vertex <span class="keyword">in</span> path:</span><br><span class="line">            ans = <span class="number">1</span></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 1 ~ V까지 모든 vertex를 돌면서</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, V + <span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 현재 vertex와 연결된 다른 vertex중 아직 확인 안해본 게 있는지 찾아본다</span></span><br><span class="line">            <span class="keyword">if</span> graph[vertex][i] == <span class="number">1</span> <span class="keyword">and</span> visited[i] == <span class="number">0</span>:</span><br><span class="line">                visited[i] = <span class="number">1</span>  <span class="comment"># 있다면 방문처리 후 path에 넣어준다</span></span><br><span class="line">                path.append(i)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># vertex - i의 연결이 확인됐으니 i와 또 연결된 다른 vertex가 있는지 </span></span><br><span class="line">                <span class="comment"># 확인하기 위해 재귀로 호출</span></span><br><span class="line">                findRoute(i)</span><br><span class="line"></span><br><span class="line">                visited[i] = <span class="number">0</span></span><br><span class="line">                path.pop  <span class="comment"># 딱히 루트가 없었다면 path에서 현재 i를 뺀다</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T + <span class="number">1</span>):</span><br><span class="line">    V, E = map(int, input().split())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1 ~ V까지 있는 그래프를 만든다</span></span><br><span class="line">    graph = [[<span class="number">0</span>] * (V + <span class="number">1</span>) <span class="keyword">for</span> _ <span class="keyword">in</span> range(V + <span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1 ~ V까지 있는 리스트를 만든다 (방문처리용)</span></span><br><span class="line">    visited = [<span class="number">0</span>] * (V + <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 그래프에 edge들을 표시해준다</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(E):</span><br><span class="line">        a, b = map(int, input().split())</span><br><span class="line">        graph[a][b] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># S와 G를 받는다 (이해가 쉽도록 start와 end로 변수명을 바꿨다)</span></span><br><span class="line">    start, end = map(int, input().split())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># path라는 리스트를 만든다</span></span><br><span class="line">    <span class="comment"># start와 연결된 vertex들은 여기에 추가될 것이다</span></span><br><span class="line">    path = [start]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 시작점부터 방문처리 해준다</span></span><br><span class="line">    visited[start] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 답은 0이나 1만 가능</span></span><br><span class="line">    ans = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    findRoute(start)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'#{} {}'</span>.format(tc, ans))</span><br></pre></td></tr></tbody></table></figure>
+
+<br>
+
+<h2 id="4873-반복문자-지우기"><a href="#4873-반복문자-지우기" class="headerlink" title="[4873] 반복문자 지우기"></a>[4873] 반복문자 지우기</h2><p><strong>접근 방법</strong></p>
+<ul>
+<li>현재 문자와 바로 다음 문자가 같다면 문자 하나를 지운다</li>
+<li>지우는 방법: <code>시작-i</code> + <code>i+2-끝</code></li>
+<li>지운 후에는 다시 맨 첫번째 인덱스부터 확인할 수 있도록 인덱스 값을 0으로 바꿔준다</li>
+<li>만약 현재 문자와 다음 문자가 다르다면 그 다음 인덱스로 넘어간다</li>
+</ul>
+<figure class="highlight python"><figcaption><span>4873</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">    text = input()</span><br><span class="line"></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> i == len(text)<span class="number">-1</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> text[i] == text[i + <span class="number">1</span>]:</span><br><span class="line">                text = text[:i] + text[i + <span class="number">2</span>:]</span><br><span class="line">                i = <span class="number">0</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">    print(<span class="string">'#{} {}'</span>.format(tc, len(text)))</span><br></pre></td></tr></tbody></table></figure>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -213,17 +245,10 @@
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2020/11/18/swea-python-1954/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">[SWEA] 1954. 달팽이 숫자 with Python</span>
-            </a>
-        </div>
-        
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2020/11/18/swea-python-1946/">
-                <span class="level-item">[SWEA] 1946. 간단한 압축 풀기 with Python</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/12/10/git-cherry-pick-basics/">
+                <span class="level-item">[Git] cherry-pick으로 원하는 commit 가져오기</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -337,6 +362,33 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#4869-종이붙이기">
+        <span class="has-mr-6">1</span>
+        <span>[4869] 종이붙이기</span>
+        </a></li><li>
+        <a class="is-flex" href="#4866-괄호검사">
+        <span class="has-mr-6">2</span>
+        <span>[4866] 괄호검사</span>
+        </a></li><li>
+        <a class="is-flex" href="#4871-그래프-경로">
+        <span class="has-mr-6">3</span>
+        <span>[4871] 그래프 경로</span>
+        </a></li><li>
+        <a class="is-flex" href="#4873-반복문자-지우기">
+        <span class="has-mr-6">4</span>
+        <span>[4873] 반복문자 지우기</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
 
     
         
@@ -609,7 +661,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/code_with_jamie.png" alt="[SWEA] 1948. 날짜 계산기 with Python" height="28">
+                    <img src="/images/code_with_jamie.png" alt="[SWEA] 파이썬 SW 문제해결 기본: List2" height="28">
                 
                 </a>
                 <p class="is-size-7">
