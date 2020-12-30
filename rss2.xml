@@ -9,11 +9,11 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Wed, 30 Dec 2020 13:50:30 GMT</pubDate>
+    <pubDate>Wed, 30 Dec 2020 13:53:26 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>[SWEA] 파이썬 SW 문제해결 기본: List2</title>
+      <title>[SWEA] 파이썬 SW 문제해결 기본: Stack1</title>
       <link>https://itzjamie96.github.io/2020/12/30/swea-python-ps-stack1/</link>
       <guid>https://itzjamie96.github.io/2020/12/30/swea-python-ps-stack1/</guid>
       <pubDate>Wed, 30 Dec 2020 12:31:40 GMT</pubDate>
