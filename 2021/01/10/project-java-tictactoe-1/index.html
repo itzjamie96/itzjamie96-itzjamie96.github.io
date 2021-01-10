@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="utf-8" />
+
+<meta name="generator" content="Hexo 4.2.0" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+
+<link rel="canonical" href="https://itzjamie96.github.io/2021/01/10/project-java-tictactoe-1/"/>
+
+<title>[Java Project] 간단한 Tic Tac Toe -1- - Code with Jamie</title>
+
+
+
+
+
+
+
+
+<link rel="icon" href="/images/jlogo.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atelier-forest-light.css">
+
+
+    
+    
+<style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+
+    
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+    
+    
+    
+    
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154710619-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-154710619-1');
+</script>
+
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+    
+    
+    
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/rss2.xml" title="Code with Jamie" type="application/rss+xml">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/code_with_jamie.png" alt="[Java Project] 간단한 Tic Tac Toe -1-" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">Home</a>
+                
+                <a class="navbar-item"
+                href="/categories">Categories</a>
+                
+                <a class="navbar-item"
+                href="/archives">Archives</a>
+                
+                <a class="navbar-item"
+                href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2021-01-10T10:33:57.000Z">2021-01-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/projects/">Projects</a>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                [Java Project] 간단한 Tic Tac Toe -1-
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<blockquote>
+<p>자바 공부를 다시 시작하며 프로젝트라고 부르기도 애매한🙈 아주 <strong>작고!!</strong> 귀여운(ㅎ) tic tac toe 프로그램을 만들어봤다. 기본 문법만 호다닥 떼고 만들어서 아직 엉성한 부분도 많지만 직접 필요한 클래스와 메소드를 만들어보며 즐겁게 개발할 수 있던 프로젝트인만큼 정리해두면 좋을 것 같아서 남겨본다.<br><em>*참고: 이 프로젝트의 명세는 HyperSkill의 Tic-Tac-Toe with AI 프로젝트를 참고했다.</em></p>
+</blockquote>
+<a id="more"></a>
+
+<br>
+
+<p><img src="https://user-images.githubusercontent.com/53888115/104121217-eef64100-537f-11eb-9763-b61d7dd8ee13.gif?style=centerme" alt="나의 아주 작고 귀엽고 간단한 Tic Tac Toe"></p>
+<h2 id="프로젝트-소개"><a href="#프로젝트-소개" class="headerlink" title="프로젝트 소개"></a>프로젝트 소개</h2><p>Tic Tac Toe는 오목과 비슷한 게임으로 3x3판 위에 O나 X로 표시할 수 있다. 오목처럼 가로/세로/대각선으로 연속된 똑같은 모양이 나오면 해당 모양의 플레이어가 우승을 하는 방식이다. </p>
+<p><strong>프로젝트의 기본 규칙:</strong></p>
+<ol>
+<li>게임이 시작할 때와 각 플레이어가 자신의 좌표를 입력한 후 테이블을 출력한다.</li>
+<li>플레이어(=사용자)가 X로 첫 순서를 가져간다.</li>
+<li>플레이어는 자기 순서가 되면 가능한 좌표의 x, y 값을 한 칸 띄고 숫자로 입력한다. (ex: 1 1)</li>
+<li>플레이어가 자신의 좌표를 입력한 다음은 항상 컴퓨터의 차례다.</li>
+<li>게임이 끝나면 어떤 플레이어가 이겼는지 알려준다.</li>
+</ol>
+<h2 id="접근-방법"><a href="#접근-방법" class="headerlink" title="접근 방법"></a>접근 방법</h2><h3 id="테이블-생성"><a href="#테이블-생성" class="headerlink" title="테이블 생성"></a>테이블 생성</h3><p>파이썬으로 알고리즘을 연습하면서 기본적인 2차원 배열을 생성할 때 <code>[[0]*N for _ in range(N)]</code> 이런 식으로 간단하게 코드를 짜는 게 습관이 돼 있었는데 자바는 <del>배열의 크기를 직접 지정</del>해서 선언 후 초기화 작업을 해줘야 했기 때문에 고민하다 그냥 처음부터 <code>{0, 0, 0}</code>의 형식으로 초기화를 해줬다. </p>
+<figure class="highlight java"><figcaption><span>initialize table</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[][] table = {{<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>},{<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>},{<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>}};</span><br></pre></td></tr></tbody></table></figure>
+
+<p><del>int 배열로 생성한 이유</del>는 나중에 bingo(가로/세로/대각선에 연속으로 같은 값이 있는 것. 편의상 빙고라고 부를 예정)를 찾아야 하는 데 <code>O</code>나 <code>X</code>인 string 형태를 일일이 비교하는 것보다 <code>O</code>는 <code>-1</code>, <code>X</code>는 <code>1</code>로 두고 합을 찾아다니는 게 훨씬 효율적일 것이라고 생각했기 때문이다. 이 부분에 대해서는 뒤의 우승자를 찾는 <code>checkWinner()</code> 메서드를 설명할 때 더 자세히 다룰 것이다. </p>
+<br>
+
+<h3 id="테이블-출력"><a href="#테이블-출력" class="headerlink" title="테이블 출력"></a>테이블 출력</h3><p>각 플레이어의 턴이 될 때마다 테이블을 출력해 줘야한다. 게임이 언제 끝날지도 모르는 데 모든 턴마다 for문으로 테이블을 프린트하고 있을 수는 없기 때문에 <code>printTable()</code> 메서드를 만들었다. 참고로 내 테이블과 그 안의 값들은 <code>int</code>꼴이기 때문에 <code>O</code>와 <code>X</code>로 바꿔주는 과정을 거쳤다. </p>
+<figure class="highlight java"><figcaption><span>print table</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printTable</span><span class="params">(<span class="keyword">int</span>[][] table)</span> </span>{</span><br><span class="line">        System.out.println(<span class="string">"---------"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++){</span><br><span class="line">            System.out.print(<span class="string">"| "</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) {</span><br><span class="line">                <span class="keyword">if</span> (table[i][j] == <span class="number">0</span>) {</span><br><span class="line">                    System.out.print(<span class="string">" "</span>);</span><br><span class="line">                } <span class="keyword">else</span> <span class="keyword">if</span> (table[i][j] == <span class="number">1</span>){</span><br><span class="line">                    System.out.print(<span class="string">"X"</span>);</span><br><span class="line">                } <span class="keyword">else</span> {</span><br><span class="line">                    System.out.print(<span class="string">"O"</span>);</span><br><span class="line">                }</span><br><span class="line">                System.out.print(<span class="string">" "</span>);</span><br><span class="line">            }</span><br><span class="line">            System.out.println(<span class="string">"|"</span>);</span><br><span class="line">        }</span><br><span class="line">        System.out.println(<span class="string">"---------"</span>);</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+
+<br>
+
+<h3 id="좌표-입력받기"><a href="#좌표-입력받기" class="headerlink" title="좌표 입력받기"></a>좌표 입력받기</h3><h4 id="좌표-클래스-생성"><a href="#좌표-클래스-생성" class="headerlink" title="좌표 클래스 생성"></a>좌표 클래스 생성</h4><p>자바에는 <code>tuple</code>이 없다 (뚜둥. 나는 이걸 몰랐었다). 따라서 처음에는 길이가 2인 <code>int</code> 배열을 만들어서 array[0]은 x, array[1]은 y의 형태로 각 좌표를 담았었다. 근데 이 좌표들을 <code>ArrayList</code>에 담아서 보관하려 했더니 구현은 되지만 옳지 않다는 조언<sup><a href="#Reference">1</a></sup>을 듣고(코드 리뷰가 절실…🥺) 직접 <code>Coordinate</code> 클래스를 만들어서 객체를 생성하는 형식으로 바꿨다. </p>
+<figure class="highlight java"><figcaption><span>the coordinate class</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Coordinate</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> x;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> y;</span><br><span class="line"></span><br><span class="line">    Coordinate(<span class="keyword">int</span> x, <span class="keyword">int</span> y) {</span><br><span class="line">        <span class="keyword">this</span>.x = x;</span><br><span class="line">        <span class="keyword">this</span>.y = y;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getX</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getY</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> y;</span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<p>특별히 좌표의 값을 새롭게 지정할 일은 없을 것 같아서 <code>setter</code>는 만들지 않았다. 이렇게 만든 좌표들을 <strong>visited</strong>라는 <code>ArrayList</code>에 담아서 이미 입력된 좌표는 아닌지 확인할 수 있도록 했다. </p>
+<figure class="highlight java"><figcaption><span>visited</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Coordinate&gt; visited = <span class="keyword">new</span> ArrayList&lt;Coordinate&gt;();</span><br></pre></td></tr></tbody></table></figure>
+
+<br>
+
+<h4 id="플레이어-좌표-입력받기"><a href="#플레이어-좌표-입력받기" class="headerlink" title="플레이어 좌표 입력받기"></a>플레이어 좌표 입력받기</h4><p>게임이 시작하며(=게임 loop 시작) 사용자에게 input을 입력받게 된다. 사용자가 직접 입력해야 하는 만큼 잘못된 input이 들어올 수 있다고 생각했다. 따라서 이 부분은 <code>try-catch</code>를 이용해 잘못된 input이 입력되면 에러 메세지를 띄우도록 했다.</p>
+<p>올바른 좌표를 입력받게 되면 <code>Coordinate</code> 객체를 생성해 해당 좌표를 생성하고, 아까 만들어둔 visited 배열에 이번 좌표가 있는지 확인 후 <code>boolean</code>을 리턴하는 <code>contains()</code> 메서드를 만들었다. </p>
+<figure class="highlight java"><figcaption><span>contains</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(List&lt;Coordinate&gt; visited, Coordinate xy)</span> </span>{</span><br><span class="line">    <span class="keyword">for</span> (Coordinate c : visited) {</span><br><span class="line">        <span class="keyword">if</span> (c.getX() == xy.getX() &amp;&amp; c.getY() == xy.getY()) {</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;    <span class="comment">//만약 좌표가 visited에 있으면 true</span></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>visited에 없는 좌표라면 당연히 입력 가능한 좌표기 때문에 table에 플레이어의 표시인 <code>1</code>을 해당 위치에 넣어주고 visited에 추가를 해준다. </p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Coordinate playerXY = <span class="keyword">new</span> Coordinate(sc.nextInt() - <span class="number">1</span>, sc.nextInt() - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!contains(visited, playerXY)) {</span><br><span class="line">    table[playerXY.getX()][playerXY.getY()] = <span class="number">1</span>;    <span class="comment">//플레이어 표시</span></span><br><span class="line">    visited.add(playerXY);  <span class="comment">//방문처리</span></span><br><span class="line">    cnt++;  </span><br><span class="line">    printTable(table);</span><br><span class="line">} <span class="keyword">else</span> {</span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<br>
+
+<h3 id="컴퓨터-좌표-생성하기"><a href="#컴퓨터-좌표-생성하기" class="headerlink" title="컴퓨터 좌표 생성하기"></a>컴퓨터 좌표 생성하기</h3><p>자, 이제 나름 이 프로그램의 핵심인 컴퓨터의 좌표를 생성해야 한다. 이 프로그램이 <strong>작고 귀여운</strong> 이유는 컴퓨터가 우승하려는 의지가 전혀 없기 때문이다ㅎ. 우리의 상대방인 컴퓨터는 남은 빈칸들 중에서 <del>랜덤으로</del> 좌표를 선택한다. 간단하게 visited에 없는 좌표가 나올 때까지 <code>random.nextInt(3)</code>을 통해 좌표를 생성하고 플레이어와 반대로 <code>-1</code>을 값으로 넣어준다.</p>
+<figure class="highlight java"><figcaption><span>computer's turn</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="keyword">true</span>) {</span><br><span class="line">    Coordinate randomXY = <span class="keyword">new</span> Coordinate(random.nextInt(<span class="number">3</span>), random.nextInt(<span class="number">3</span>));</span><br><span class="line">    <span class="keyword">if</span> (!contains(visited, randomXY)) {</span><br><span class="line">        table[randomXY.getX()][randomXY.getY()] = -<span class="number">1</span>;</span><br><span class="line">        visited.add(randomXY);</span><br><span class="line">        cnt++;</span><br><span class="line">        printTable(table);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>비록 지금은 조금 덜 똑똑해 보이는 opponent지만 앞으로 더 똑똑해지도록 발전시킬 예정이다 (이 포스트의 제목 뒤에 -1-이 붙어있는 이유🤘). </p>
+<br>
+
+<h3 id="우승자-확인하기"><a href="#우승자-확인하기" class="headerlink" title="우승자 확인하기"></a>우승자 확인하기</h3><p>각 턴이 지난 후 우승자가 있는지 확인하는 것도 좋지만, 굳이 모든 턴마다 빙고를 확인하는 메서드를 실행할 필요는 없다고 생각했다. 따라서 각 턴이 지날 때마다 증가하는 <code>cnt</code> 변수를 생성해두고, 게임이 5턴 이상 진행되었을 때부터 빙고를 확인하도록 했다 (나름의 효율성과 시간을 고려한 전략). </p>
+<figure class="highlight java"><figcaption><span>check for bingo</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (cnt &gt; <span class="number">4</span>) {</span><br><span class="line">    <span class="comment">// 9회차 = 가능한 게임의 마지막 턴</span></span><br><span class="line">    <span class="keyword">if</span> (cnt == <span class="number">9</span>) {</span><br><span class="line">        System.out.println(checkWinner(table));</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    }</span><br><span class="line">    result = checkWinner(table);    <span class="comment">//아직 우승자가 나오지 않은 경우 Draw라 리턴된다</span></span><br><span class="line">    <span class="keyword">if</span> (!result.equals(<span class="string">"Draw"</span>)) {   <span class="comment">//우승자가 나오면 결과 바로 프린트하기</span></span><br><span class="line">        System.out.println(result);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>만약 아직 테이블에 빈칸이 남아있지만 그전에 우승자가 나온다면 바로 게임이 끝날 수 있도록 했다. </p>
+<p>이제 우승자를 찾아내는 메서드를 보자. 앞서 플레이어는 <code>1</code>이고 컴퓨터가 <code>-1</code>이라고 설계했는데, 이것은 빙고를 조금 더 빠르게 찾아내기 위해서였다. 만약 연속으로 <code>111</code>이 있다면 그 줄의 합은 <code>3</code>일 것이기 때문에 각 방향의 합만 찾으면 우승자가 있는지 없는지 알 수 있다. </p>
+<figure class="highlight java"><figcaption><span>check for winner</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">checkWinner</span><span class="params">(<span class="keyword">int</span>[][] table)</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> leftSum = <span class="number">0</span>, rightSum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) {</span><br><span class="line">        <span class="keyword">int</span> rowSum = <span class="number">0</span>, colSum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) {</span><br><span class="line">            rowSum += table[i][j];</span><br><span class="line">            colSum += table[j][i];</span><br><span class="line">            rightSum += table[j][<span class="number">2</span> - j];</span><br><span class="line">        }</span><br><span class="line">        leftSum += table[i][i];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (rowSum == <span class="number">3</span> || colSum == <span class="number">3</span> || leftSum == <span class="number">3</span> || rightSum == <span class="number">3</span>) {</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"X wins"</span>;</span><br><span class="line">        } <span class="keyword">else</span> <span class="keyword">if</span> (rowSum == -<span class="number">3</span> || colSum == -<span class="number">3</span> || leftSum == -<span class="number">3</span> || rightSum == -<span class="number">3</span>) {</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"O wins"</span>;</span><br><span class="line">        }</span><br><span class="line">        rightSum = <span class="number">0</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Draw"</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>가로, 세로, 대각선으로 돌면서 각 방향의 합이 <code>3</code>이 나오면 플레이어가 우승, <code>-3</code>이 나오면 컴퓨터가 우승하는 것이다. </p>
+<br>
+
+<h2 id="프로젝트를-마무리하며"><a href="#프로젝트를-마무리하며" class="headerlink" title="프로젝트를 마무리하며"></a>프로젝트를 마무리하며</h2><p>나의 작고 귀여운 tic tac toe 프로젝트는 아직 끝나지 않았다. 아직 상대편인 컴퓨터가 덜 똑똑하기 때문이다ㅋㅋㅋㅋ. </p>
+<p>정말 간단할 거라고 생각해서 시작한 사이드 프로젝트였는데, 생각 이상으로 많은 것을 배울 수 있었다. 분명 코드로 옮기기 전에 나름 논리적으로 로직을 설계했다고 생각했는데, 막상 코드로 옮겨 적고 나니 삼백만 개의 문제에 부딪혔다🤦‍♀️. 하지만 문제들을 해결하면서 전보다 자바를 더 이해할 수 있게 된 것 같아서 아주 뿌듯하다. </p>
+<p>또한, 코드 리뷰가 정말 정말 중요하다는 것을 깨달았다. 아무리 내가 혼자 열심히 생각하고 구현해도 이게 잘 쓴 코드인지 알 수가 없었다. 이때 너무 감사하게도 <a href="http://linkedin.com/in/종현-이-a413a1ab">현 스푼 라디오 이종현 개발자님</a>이 한 줄기 빛과 같은 코드 리뷰를 해주셨다(🙇‍♀️🙇‍♀️🙇‍♀️). 리뷰를 받고 다시 한번 깨달았다. 코드 리뷰가 진짜 중요하다는 것을…그리고 앞으로 공부할 게 정말 많다는 것을…</p>
+<p>여러모로 재밌는 프로젝트였다. 다음엔 더 똑똑해진 컴퓨터를 만들어봐야지!</p>
+<p><em>전체 코드를 보려면 <a href="https://github.com/itzjamie96/Studying-Java/blob/master/Tic-Tac-Toe/TicTackToe/src/stage2/Main.java">여기</a>로!</em></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://stackoverflow.com/questions/788433/can-you-pass-an-int-array-to-a-generic-method-in-java">Can you pass an int array to a generic method in java?</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/project/" rel="tag">Project</a>, <a class="has-link-grey -link" href="/tags/side-project/" rel="tag">Side Project</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/12/30/swea-python-ps-stack1/">
+                <span class="level-item">[SWEA] 파이썬 SW 문제해결 기본: Stack1</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <!-- <h3 class="title is-5 has-text-weight-normal">Comments</h3> -->
+        
+<!-- <script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term=""
+        label=""
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script> -->
+<script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-4-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
+                <div>
+                    
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="" src="/images/%ED%94%84%EB%A1%9C%ED%95%84zoomed.jpg" alt="Jamie.">
+                    </figure>
+                    
+                    <p class="is-size-4 is-block">
+                        Jamie.
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Turning coffee into code
+                    </p>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <a href="/archives">
+                        <p class="title has-text-weight-normal">
+                            36
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <a href="/categories">
+                        <p class="title has-text-weight-normal">
+                            9
+                        </p>
+                    </a>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <a href="/tags">
+                        <p class="title has-text-weight-normal">
+                            13
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/itzjamie96" target="_blank" rel="noopener">
+                Follow me on GitHub</a>
+        </div>
+        
+        
+        
+    </div>
+</div>
+    
+        
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#프로젝트-소개">
+        <span class="has-mr-6">1</span>
+        <span>프로젝트 소개</span>
+        </a></li><li>
+        <a class="is-flex" href="#접근-방법">
+        <span class="has-mr-6">2</span>
+        <span>접근 방법</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#테이블-생성">
+        <span class="has-mr-6">2.1</span>
+        <span>테이블 생성</span>
+        </a></li><li>
+        <a class="is-flex" href="#테이블-출력">
+        <span class="has-mr-6">2.2</span>
+        <span>테이블 출력</span>
+        </a></li><li>
+        <a class="is-flex" href="#좌표-입력받기">
+        <span class="has-mr-6">2.3</span>
+        <span>좌표 입력받기</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#좌표-클래스-생성">
+        <span class="has-mr-6">2.3.1</span>
+        <span>좌표 클래스 생성</span>
+        </a></li><li>
+        <a class="is-flex" href="#플레이어-좌표-입력받기">
+        <span class="has-mr-6">2.3.2</span>
+        <span>플레이어 좌표 입력받기</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#컴퓨터-좌표-생성하기">
+        <span class="has-mr-6">2.4</span>
+        <span>컴퓨터 좌표 생성하기</span>
+        </a></li><li>
+        <a class="is-flex" href="#우승자-확인하기">
+        <span class="has-mr-6">2.5</span>
+        <span>우승자 확인하기</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#프로젝트를-마무리하며">
+        <span class="has-mr-6">3</span>
+        <span>프로젝트를 마무리하며</span>
+        </a></li><li>
+        <a class="is-flex" href="#Reference">
+        <span class="has-mr-6">4</span>
+        <span>Reference</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/git/">
+            <span class="level-start">
+                <span class="level-item">Git</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/java/">
+            <span class="level-start">
+                <span class="level-item">Java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">3</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/java/data-structure/">
+            <span class="level-start">
+                <span class="level-item">Data Structure</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/java/java-101/">
+            <span class="level-start">
+                <span class="level-item">Java 101</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/life/">
+            <span class="level-start">
+                <span class="level-item">Life</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/projects/">
+            <span class="level-start">
+                <span class="level-item">Projects</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/">
+            <span class="level-start">
+                <span class="level-item">Python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">29</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/python/algorithm/">
+            <span class="level-start">
+                <span class="level-item">Algorithm</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/swea/">
+            <span class="level-start">
+                <span class="level-item">SWEA</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">27</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-01-10T10:33:57.000Z">2021-01-10</time></div>
+                    <a href="/2021/01/10/project-java-tictactoe-1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Java Project] 간단한 Tic Tac Toe -1-</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/projects/">Projects</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-30T12:31:40.000Z">2020-12-30</time></div>
+                    <a href="/2020/12/30/swea-python-ps-stack1/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 파이썬 SW 문제해결 기본: Stack1</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-10T13:22:02.000Z">2020-12-10</time></div>
+                    <a href="/2020/12/10/git-cherry-pick-basics/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Git] cherry-pick으로 원하는 commit 가져오기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/git/">Git</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-06T05:36:49.000Z">2020-12-06</time></div>
+                    <a href="/2020/12/06/swea-python-2007/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 2007. 패턴 마디의 길이 with Python</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-12-05T05:31:08.000Z">2020-12-05</time></div>
+                    <a href="/2020/12/05/swea-python-2005/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 2005. 파스칼의 삼각형 with Python</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">12</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">9</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/10/">
+                <span class="level-start">
+                    <span class="level-item">October 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/08/">
+                <span class="level-start">
+                    <span class="level-item">August 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen is-sticky">
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/code_with_jamie.png" alt="[Java Project] 간단한 Tic Tac Toe -1-" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2021 Jamie Lee&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
+                        href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Follow on GitHub" href="https://github.com/itzjamie96">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+<script>
+var IcarusThemeSettings = {
+    site: {
+        url: 'https://itzjamie96.github.io',
+        external_link: {"enable":true,"exclude":[]}
+    },
+    article: {
+        highlight: {
+            clipboard: true,
+            fold: 'unfolded'
+        }
+    }
+};
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+
+
+
+
+
+<script src="/js/animation.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+<script src="/js/gallery.js" defer></script>
+
+
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Today I Learned',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
