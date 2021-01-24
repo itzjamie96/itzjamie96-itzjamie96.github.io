@@ -8,6 +8,22 @@
     </url>
 
     <url>
+        <loc>https://itzjamie96.github.io/2021/01/24/spring-service-and-serviceimpl/</loc>
+        <lastmod>2021-01-24T14:49:41.944Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2020/12/10/git-cherry-pick-basics/</loc>
+        <lastmod>2021-01-24T13:27:12.335Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://itzjamie96.github.io/2021/01/10/project-java-tictactoe-1/</loc>
         <lastmod>2021-01-10T13:27:18.699Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -18,14 +34,6 @@
     <url>
         <loc>https://itzjamie96.github.io/2020/12/30/swea-python-ps-stack1/</loc>
         <lastmod>2020-12-30T13:53:26.253Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://itzjamie96.github.io/2020/12/10/git-cherry-pick-basics/</loc>
-        <lastmod>2020-12-10T15:40:58.524Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
