@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/archives/2020/04/"/>
+<link rel="canonical" href="https://itzjamie96.github.io/2021/02/07/java-what-are-wrapper-classes/"/>
 
-<title>Archives: 2020/4 - Code with Jamie</title>
+<title>[Java] Wrapper 클래스란? (Feat. int vs. Integer) - Code with Jamie</title>
 
 
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/code_with_jamie.png" alt="Code with Jamie" height="28">
+                <img src="/images/code_with_jamie.png" alt="[Java] Wrapper 클래스란? (Feat. int vs. Integer)" height="28">
             
             </a>
         </div>
@@ -107,6 +107,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -121,57 +125,129 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
-
-<div class="card widget">
-    <div class="card-content">
-        <h3 class="tag is-link">
-        April 2020
-        </h3>
-        <div class="timeline">
+<div class="card">
+    
+    <div class="card-content article ">
         
-            <article class="media">
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2021-02-07T12:57:00.000Z">2021-02-07</time>
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-04-23T13:21:09.000Z">2020-04-23</time>
-                        <a href="/2020/04/23/java-stack-basics/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Java] 스택(Stack)</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/java/">Java</a> / <a class="has-link-grey -link" href="/categories/java/data-structure/">Data Structure</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/java/">Java</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/java/java-101/">Java 101</a>
                 </div>
-            </article>
-        
-            <article class="media">
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-03-31T15:21:18.000Z">2020-04-01</time>
-                        <a href="/2020/04/01/java-what-does-implement-mean/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Java] Interface(인터페이스)를 Implement한다는 건</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/java/">Java</a> / <a class="has-link-grey -link" href="/categories/java/java-101/">Java 101</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
+                
+                
+            </div>
         </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                [Java] Wrapper 클래스란? (Feat. int vs. Integer)
+            
+        </h1>
+        <div class="content">
+            <hr>
+
+<blockquote>
+<p>별생각 없이 <code>int</code>를 쓰다 보니, 대체 <code>int</code>와 <code>Integer</code>의 차이가 뭔가 싶었다. <code>int</code>가 <code>Integer</code>의 약자인가?ㅎ 싶었지만 놉! Wrapper 클래스라는 개념이 있었다 (머쓱). Wrapper 클래스, 뭘 감싸는 녀석인지 알아보자!</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="Java의-자료형들"><a href="#Java의-자료형들" class="headerlink" title="Java의 자료형들"></a>Java의 자료형들</h2><p>Java☕를 배우는 극 초반에 두 가지의 자료형에 대해 배우게 된다. 바로 <del>Primitive type</del>(기본형)과 <del>Reference type</del>(참조형)이다. Java에는 총 8개의 기본형이 있다:<br><code>byte</code>, <code>short</code>, <code>int</code>, <code>long</code>, <code>float</code>, <code>double</code>, <code>char</code>, <code>boolean</code>. </p>
+<p>기본형들은 자료형과는 달리 스택에 바로 값이 저장되기 때문에 값이 저장되어 있는 공간을 찾아가야 하는 자료형보다는 연산 등에 있어서 조금 더 빠른 속도를 보여준다. 또한, 불필요한 객체가 생성되는 것은 피하는 게 좋기 때문에 <code>Object</code> 형태가 꼭 필요한 상황이 아니라면 기본형을 쓰는 것이 권장된다<sup><a href="#Reference">1</a></sup>.</p>
+<p>하지만! 개발을 하다 보면 그냥 기본형만 쓸 수는 없는 상황이 생기기 마련이다. 이때 쓸 수 있는 게 바로 <del>Wrapper 클래스</del>다.<br><br></p>
+<h2 id="Wrapper-클래스란"><a href="#Wrapper-클래스란" class="headerlink" title="Wrapper 클래스란?"></a>Wrapper 클래스란?</h2><p>Wrapper 클래스는 Java의 기본 자료형들을 <del>Object(객체)</del>로 만들어 주는 클래스다.  기본형을 <del>WRAP</del>, 즉 <del>감싸서</del> 해당 기본형의 객체 타입으로 만들어 주는 것이다. 치킨은 샌드위치가 아니지만 또띠아로 감싸서 치킨랩을 만들면 샌드위치가 되는 것과 비슷한다😋.<br><img src="/img/20210207/chicken_wrap.png" alt="Chicken Wrap!"></p>
+<p>자바의 모든 8개의 기본형에 맞는 Wrapper 클래스가 존재한다.<br><img src="/img/20210207/wrappers.png" alt=""></p>
+<h3 id="Wrapper-클래스-적용해보기"><a href="#Wrapper-클래스-적용해보기" class="headerlink" title="Wrapper 클래스 적용해보기"></a>Wrapper 클래스 적용해보기</h3><figure class="highlight java"><figcaption><span>primitive to wrapper object</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 먼저 기본 자료형을 만들어준다</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">double</span> b = <span class="number">5.65</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// wrapper 객체로 변환하기</span></span><br><span class="line">    Integer aObj = Integer.valueOf(a);</span><br><span class="line">    Double bObj = Double.valueOf(b);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(aObj <span class="keyword">instanceof</span> Integer) {</span><br><span class="line">      System.out.println(<span class="string">"aObj는 Integer 타입 객체!"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(bObj <span class="keyword">instanceof</span> Double) {</span><br><span class="line">      System.out.println(<span class="string">"bObj는 Double 타입 객체!"</span>);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight bash"><figcaption><span>result</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">aObj는 Integer 타입 객체!</span><br><span class="line">bObj는 Double 타입 객체!</span><br></pre></td></tr></tbody></table></figure>
+<br>
+
+<h2 id="그럼-언제-쓰는-걸까"><a href="#그럼-언제-쓰는-걸까" class="headerlink" title="그럼 언제 쓰는 걸까?"></a>그럼 언제 쓰는 걸까?</h2><p>Wrapper 클래스를 사용하는 이유는 다양하다. 하지만 대표적인 상황들은 다음과 같다.</p>
+<ul>
+<li><code>Collections</code>에 사용하기 위해서</li>
+<li><code>null</code> 값도 받을 수 있기 위해서</li>
+<li><code>Object</code>로써의 유용한 메소드들을 사용할 수 있기 위해서</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://dev.to/kylec32/effective-java-tuesday-avoid-creating-unnecessary-objects-4nn8"><sup>1</sup>Effective Java Tuesday! Avoid Creating Unnecessary Objects!</a><br><a href="https://www.baeldung.com/java-initialization">Baledung: A Guide to Creating Objects in Java</a><br><a href="https://stackoverflow.com/questions/3579035/why-are-there-wrapper-classes-in-java">Why are there wrapper classes in Java?</a><br><a href="https://www.programiz.com/java-programming/wrapper">Java Wrapper Class</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/java/" rel="tag">Java</a>, <a class="has-link-grey -link" href="/tags/til/" rel="tag">TIL</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </div>
 </div>
 
 
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2021/01/24/spring-service-and-serviceimpl/">
+                <span class="level-item">[Spring] Service와 ServiceImpl</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <!-- <h3 class="title is-5 has-text-weight-normal">Comments</h3> -->
+        
+<!-- <script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term=""
+        label=""
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script> -->
+<script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -254,6 +330,38 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#Java의-자료형들">
+        <span class="has-mr-6">1</span>
+        <span>Java의 자료형들</span>
+        </a></li><li>
+        <a class="is-flex" href="#Wrapper-클래스란">
+        <span class="has-mr-6">2</span>
+        <span>Wrapper 클래스란?</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Wrapper-클래스-적용해보기">
+        <span class="has-mr-6">2.1</span>
+        <span>Wrapper 클래스 적용해보기</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#그럼-언제-쓰는-걸까">
+        <span class="has-mr-6">3</span>
+        <span>그럼 언제 쓰는 걸까?</span>
+        </a></li><li>
+        <a class="is-flex" href="#Reference">
+        <span class="has-mr-6">4</span>
+        <span>Reference</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
     
         
 <div class="card widget">
@@ -563,7 +671,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/code_with_jamie.png" alt="Code with Jamie" height="28">
+                    <img src="/images/code_with_jamie.png" alt="[Java] Wrapper 클래스란? (Feat. int vs. Integer)" height="28">
                 
                 </a>
                 <p class="is-size-7">
