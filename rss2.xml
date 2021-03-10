@@ -9,8 +9,103 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sun, 07 Feb 2021 15:03:02 GMT</pubDate>
+    <pubDate>Wed, 10 Mar 2021 14:53:41 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>[SWEA] 1213. String with Python</title>
+      <link>https://itzjamie96.github.io/2021/02/12/swea-python-1213/</link>
+      <guid>https://itzjamie96.github.io/2021/02/12/swea-python-1213/</guid>
+      <pubDate>Fri, 12 Feb 2021 14:51:50 GMT</pubDate>
+      <description>
+      
+        &lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV14P0c6AAUCFAYi&quot;&gt;1213. String&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;접근 방법&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;주어진 문자열을 기준으로 문장을 split 한다&lt;/li&gt;
+&lt;li&gt;split된 리스트의 길이에서 1을 뺀게 답 (주어진 문자열의 갯수를 구해야하니까)&lt;/li&gt;
+&lt;/ul&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<hr><p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV14P0c6AAUCFAYi">1213. String</a></p><p><strong>접근 방법</strong></p><ul><li>주어진 문자열을 기준으로 문장을 split 한다</li><li>split된 리스트의 길이에서 1을 뺀게 답 (주어진 문자열의 갯수를 구해야하니까)</li></ul><a id="more"></a><br><figure class="highlight python"><figcaption><span>1213</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    n = int(input())</span><br><span class="line">    find = input()</span><br><span class="line">    text = list(input().split(find))    <span class="comment">#특정 문자열을 기준으로 split한 후 </span></span><br><span class="line">    print(<span class="string">f'#<span class="subst">{n}</span> <span class="subst">{len(text)<span class="number">-1</span>}</span>'</span>)        <span class="comment">#리스트의 길이에서 1을 뺀 값이 답</span></span><br></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
+      
+      <comments>https://itzjamie96.github.io/2021/02/12/swea-python-1213/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>[SWEA] 1209. Sum with Python</title>
+      <link>https://itzjamie96.github.io/2021/02/10/swea-python-1209/</link>
+      <guid>https://itzjamie96.github.io/2021/02/10/swea-python-1209/</guid>
+      <pubDate>Wed, 10 Feb 2021 14:50:16 GMT</pubDate>
+      <description>
+      
+        &lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV13_BWKACUCFAYh&quot;&gt;1209. Sum&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;접근 방법&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;가로, 세로, 대각선의 합들을 각각 구한다&lt;/li&gt;
+&lt;li&gt;합들 중에서 최대값을 구한다&lt;/li&gt;
+&lt;/ul&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<hr><p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV13_BWKACUCFAYh">1209. Sum</a></p><p><strong>접근 방법</strong></p><ul><li>가로, 세로, 대각선의 합들을 각각 구한다</li><li>합들 중에서 최대값을 구한다</li></ul><a id="more"></a><br><figure class="highlight python"><figcaption><span>1209</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findMaxSum</span><span class="params">(arr)</span>:</span></span><br><span class="line">    rowMax, colMax, rightDown, leftDown = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">        <span class="comment"># find rowMax</span></span><br><span class="line">        <span class="keyword">if</span> sum(arr[i]) &gt; rowMax:</span><br><span class="line">            rowMax = sum(arr[i])</span><br><span class="line">        <span class="comment">#colMax</span></span><br><span class="line">        tmpCol = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">            tmpCol += arr[j][i]</span><br><span class="line">        <span class="keyword">if</span> tmpCol &gt; colMax:</span><br><span class="line">            colMax = tmpCol</span><br><span class="line">        <span class="comment"># diagonals</span></span><br><span class="line">        rightDown += arr[i][i]</span><br><span class="line">        leftDown += arr[i][<span class="number">99</span>-i]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> max(rowMax, colMax, rightDown, leftDown)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">    N = int(input())</span><br><span class="line">    board = [list(map(int, input().split())) <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">100</span>)]</span><br><span class="line">    print(<span class="string">f'#<span class="subst">{N}</span> <span class="subst">{findMaxSum(board)}</span>'</span>)</span><br></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
+      
+      <comments>https://itzjamie96.github.io/2021/02/10/swea-python-1209/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>[SWEA] 1208. Flatten with Python</title>
+      <link>https://itzjamie96.github.io/2021/02/10/swea-python-1208/</link>
+      <guid>https://itzjamie96.github.io/2021/02/10/swea-python-1208/</guid>
+      <pubDate>Wed, 10 Feb 2021 14:28:47 GMT</pubDate>
+      <description>
+      
+        &lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV139KOaABgCFAYh&quot;&gt;1208. Flatten&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;접근 방법&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;주어진 횟수동안 max-1, min+1을 수행한다&lt;/li&gt;
+&lt;li&gt;최종적으로 max-min을 리턴한다&lt;/li&gt;
+&lt;/ul&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<hr><p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV139KOaABgCFAYh">1208. Flatten</a></p><p><strong>접근 방법</strong></p><ul><li>주어진 횟수동안 max-1, min+1을 수행한다</li><li>최종적으로 max-min을 리턴한다</li></ul><a id="more"></a><br><figure class="highlight python"><figcaption><span>1208</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 직접 min, max의 인덱스를 리턴하는 함수를 짰다</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findMinMax</span><span class="params">(numList)</span>:</span></span><br><span class="line">    min = max = numList[<span class="number">0</span>]</span><br><span class="line">    minIdx, maxIdx = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(numList)):</span><br><span class="line">        <span class="keyword">if</span> min &gt; numList[i]:</span><br><span class="line">            min = numList[i]</span><br><span class="line">            minIdx = i</span><br><span class="line">        <span class="keyword">if</span> max &lt; numList[i]:</span><br><span class="line">            max = numList[i]</span><br><span class="line">            maxIdx = i</span><br><span class="line">    <span class="keyword">return</span> (minIdx, maxIdx)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>):</span><br><span class="line">    dump = int(input())</span><br><span class="line">    numList = list(map(int, input().split()))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 각 턴마다 max, min을 찾아서 값에서 1씩 빼줌</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(dump):</span><br><span class="line">        minIdx = findMinMax(numList)[<span class="number">0</span>]</span><br><span class="line">        maxIdx = findMinMax(numList)[<span class="number">1</span>]</span><br><span class="line">        numList[minIdx] += <span class="number">1</span></span><br><span class="line">        numList[maxIdx] -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    minmax = findMinMax(numList)</span><br><span class="line">    print(<span class="string">f"#<span class="subst">{tc}</span> <span class="subst">{numList[minmax[<span class="number">1</span>]] - numList[minmax[<span class="number">0</span>]]}</span>"</span>)</span><br></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
+      
+      <comments>https://itzjamie96.github.io/2021/02/10/swea-python-1208/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>[SWEA] 1206. View with Python</title>
+      <link>https://itzjamie96.github.io/2021/02/10/swea-python-1206/</link>
+      <guid>https://itzjamie96.github.io/2021/02/10/swea-python-1206/</guid>
+      <pubDate>Wed, 10 Feb 2021 14:22:06 GMT</pubDate>
+      <description>
+      
+        &lt;hr&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV134DPqAA8CFAYh&quot;&gt;1206. View&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;접근 방법&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;각 건물 양 옆으로 1, 2칸씩 떨어진 건물들의 높이를 비교한다&lt;/li&gt;
+&lt;/ul&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<hr><p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV134DPqAA8CFAYh">1206. View</a></p><p><strong>접근 방법</strong></p><ul><li>각 건물 양 옆으로 1, 2칸씩 떨어진 건물들의 높이를 비교한다</li></ul><a id="more"></a><br><figure class="highlight python"><figcaption><span>1206</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 테스트 케이스는 총 10번이다</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 입력될 건물들의 갯수</span></span><br><span class="line">    T = int(input())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 건물들을 입력받아 b(buildings) 리스트에 넣는다</span></span><br><span class="line">    b = list(map(int, input().split()))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 확보된 조망권의 갯수</span></span><br><span class="line">    result = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 전체 리스트에서 맨 앞, 뒤 두칸은 아무것도 없기 때문에 2부터 전체 길이-2까지 for문을 돌림</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, len(b) - <span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">        <span class="comment"># i번째 건물의 양쪽다 i보다 작을 때</span></span><br><span class="line">        <span class="keyword">if</span> b[i - <span class="number">1</span>] &lt; b[i] <span class="keyword">and</span> b[i + <span class="number">1</span>] &lt; b[i]:</span><br><span class="line">            <span class="comment"># 더 작은 difference를 keep함</span></span><br><span class="line">            diff = b[i] - b[i - <span class="number">1</span>] <span class="keyword">if</span> b[i] - b[i - <span class="number">1</span>] &lt; b[i] - b[i + <span class="number">1</span>] <span class="keyword">else</span> b[i] - b[i + <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">            <span class="comment"># i번째의 양쪽다 작다면 한칸 더 옆까지 확인해야함</span></span><br><span class="line">            <span class="comment"># i번째의 두칸으로? 양옆까지 i보다 작은지 확인</span></span><br><span class="line">            <span class="keyword">if</span> b[i - <span class="number">2</span>] &lt; b[i] <span class="keyword">and</span> b[i + <span class="number">2</span>] &lt; b[i]:</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 여기서 더 작은 difference를 keep함</span></span><br><span class="line">                new_diff = b[i] - b[i - <span class="number">2</span>] <span class="keyword">if</span> b[i] - b[i - <span class="number">2</span>] &lt; b[i] - b[i + <span class="number">2</span>] <span class="keyword">else</span> b[i] - b[i + <span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 양 옆과 옆옆까지 비교했을 때 더 작은 difference가 조망권 확보된 칸의 갯수</span></span><br><span class="line">                <span class="comment"># result에 더해준다</span></span><br><span class="line">                <span class="keyword">if</span> new_diff &lt; diff:</span><br><span class="line">                    result += new_diff</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    result += diff</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 애초에 양옆의 건물들이 i번째보다 크면 패쓰</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">f"#<span class="subst">{n + <span class="number">1</span>}</span> <span class="subst">{result}</span>"</span>)</span><br></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
+      
+      <comments>https://itzjamie96.github.io/2021/02/10/swea-python-1206/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>[Java] Wrapper 클래스란? (Feat. int vs. Integer)</title>
@@ -408,134 +503,6 @@
       <content:encoded><![CDATA[<hr><p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PrmyKAWEDFAUq">1966. 숫자를 정렬하자</a></p><p><strong>접근 방법</strong></p><ul><li>그냥 정렬한다! 라이브러리 만세</li></ul><a id="more"></a><br><figure class="highlight python"><figcaption><span>1966</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T+<span class="number">1</span>):</span><br><span class="line">    N = int(input())</span><br><span class="line">    arr = sorted(list(map(int, input().split())))</span><br><span class="line">    print(<span class="string">'#{}'</span>.format(tc), end=<span class="string">' '</span>)</span><br><span class="line">    print(*arr)</span><br></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
       
       <comments>https://itzjamie96.github.io/2020/11/25/swea-python-1966/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>[SWEA] 1961. 숫자 배열 회전 with Python</title>
-      <link>https://itzjamie96.github.io/2020/11/25/swea-python-1961/</link>
-      <guid>https://itzjamie96.github.io/2020/11/25/swea-python-1961/</guid>
-      <pubDate>Tue, 24 Nov 2020 15:02:05 GMT</pubDate>
-      <description>
-      
-        &lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Pq-OKAVYDFAUq&quot;&gt;1961. 숫자 배열 회전&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;접근 방법&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;N*N 리스트 입력받기&lt;/li&gt;
-&lt;li&gt;배열을 입력받아서 90도씩 회전시킨다&lt;/li&gt;
-&lt;li&gt;회전 시킬 때&lt;ul&gt;
-&lt;li&gt;새로운 배열을 항상 만든다 (답에서 회전한 모든 결과를 보여야하기 때문)&lt;/li&gt;
-&lt;li&gt;i는 0부터 N까지 증가 &amp;amp; j는 N-1에서 0까지 감소할 때&lt;/li&gt;
-&lt;li&gt;j번째 row의 N-1-i번째 col에 arr[i][j]값 넣기&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<hr><p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5Pq-OKAVYDFAUq">1961. 숫자 배열 회전</a></p><p><strong>접근 방법</strong></p><ul><li>N*N 리스트 입력받기</li><li>배열을 입력받아서 90도씩 회전시킨다</li><li>회전 시킬 때<ul><li>새로운 배열을 항상 만든다 (답에서 회전한 모든 결과를 보여야하기 때문)</li><li>i는 0부터 N까지 증가 &amp; j는 N-1에서 0까지 감소할 때</li><li>j번째 row의 N-1-i번째 col에 arr[i][j]값 넣기</li></ul></li></ul><a id="more"></a><br><figure class="highlight python"><figcaption><span>1961</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(arr)</span>:</span></span><br><span class="line">    newArr = [[<span class="number">0</span>]*N <span class="keyword">for</span> _ <span class="keyword">in</span> range(N)]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(N):</span><br><span class="line">            newArr[j][N<span class="number">-1</span>-i] = arr[i][j]</span><br><span class="line">    <span class="keyword">return</span> newArr</span><br><span class="line"></span><br><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">    N = int(input())</span><br><span class="line">    arr = [list(map(int, input().split())) <span class="keyword">for</span> _ <span class="keyword">in</span> range(N)]</span><br><span class="line"></span><br><span class="line">    a = rotate(arr)</span><br><span class="line">    b = rotate(a)</span><br><span class="line">    c = rotate(b)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'#{}'</span>.format(tc))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">        print(<span class="string">''</span>.join(map(str,a[i])), <span class="string">''</span>.join(map(str,b[i])), <span class="string">''</span>.join(map(str,c[i])))</span><br></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
-      
-      <comments>https://itzjamie96.github.io/2020/11/25/swea-python-1961/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>[SWEA] 1959. 두 개의 숫자열 with Python</title>
-      <link>https://itzjamie96.github.io/2020/11/18/swea-python-1959/</link>
-      <guid>https://itzjamie96.github.io/2020/11/18/swea-python-1959/</guid>
-      <pubDate>Wed, 18 Nov 2020 13:51:32 GMT</pubDate>
-      <description>
-      
-        &lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpoFaAS4DFAUq&quot;&gt;1959. 두 개의 숫자열&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;접근 방법&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;더 긴 쪽 구하기&lt;/li&gt;
-&lt;li&gt;비교 가능한 횟수 i: long-short+1&lt;/li&gt;
-&lt;li&gt;for i:&lt;ul&gt;
-&lt;li&gt;short만큼 for loop (j)&lt;ul&gt;
-&lt;li&gt;short[j] * long[i+j] 누적하기&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;if 현재 누적 &amp;gt; 기존 최대:&lt;ul&gt;
-&lt;li&gt;기존 최대 갱신&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<hr><p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PpoFaAS4DFAUq">1959. 두 개의 숫자열</a></p><p><strong>접근 방법</strong></p><ul><li>더 긴 쪽 구하기</li><li>비교 가능한 횟수 i: long-short+1</li><li>for i:<ul><li>short만큼 for loop (j)<ul><li>short[j] * long[i+j] 누적하기</li></ul></li><li>if 현재 누적 &gt; 기존 최대:<ul><li>기존 최대 갱신</li></ul></li></ul></li></ul><a id="more"></a><br><figure class="highlight python"><figcaption><span>1959</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">    N, M = map(int, input().split())</span><br><span class="line">    nList = list(map(int, input().split()))</span><br><span class="line">    mList = list(map(int, input().split()))</span><br><span class="line"></span><br><span class="line">    maxi = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> N &gt; M:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(N-M+<span class="number">1</span>):</span><br><span class="line">            tmp = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(M):</span><br><span class="line">                tmp += mList[j] * nList[i+j]</span><br><span class="line">            <span class="keyword">if</span> tmp &gt; maxi:</span><br><span class="line">                maxi = tmp</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(M - N+<span class="number">1</span>):</span><br><span class="line">            tmp = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(N):</span><br><span class="line">                tmp += nList[j] * mList[i + j]</span><br><span class="line">            <span class="keyword">if</span> tmp &gt; maxi:</span><br><span class="line">                maxi = tmp</span><br><span class="line"></span><br><span class="line">    print(<span class="string">'#{} {}'</span>.format(tc,maxi))</span><br></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
-      
-      <comments>https://itzjamie96.github.io/2020/11/18/swea-python-1959/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>[SWEA] 1954. 달팽이 숫자 with Python</title>
-      <link>https://itzjamie96.github.io/2020/11/18/swea-python-1954/</link>
-      <guid>https://itzjamie96.github.io/2020/11/18/swea-python-1954/</guid>
-      <pubDate>Wed, 18 Nov 2020 13:49:53 GMT</pubDate>
-      <description>
-      
-        &lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PobmqAPoDFAUq&quot;&gt;1954. 달팽이 숫자&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;접근 방법&lt;/strong&gt;&lt;br&gt;방향: right, down, left, up&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;N * N의 배열을 만든다&lt;/li&gt;
-&lt;li&gt;반복문: 1 ~ N*N까지&lt;ul&gt;
-&lt;li&gt;현재 x, y가 유효하면 print(i)&lt;/li&gt;
-&lt;li&gt;안 유효하면 방향%4로 틀기&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<hr><p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PobmqAPoDFAUq">1954. 달팽이 숫자</a></p><p><strong>접근 방법</strong><br>방향: right, down, left, up</p><ul><li>N * N의 배열을 만든다</li><li>반복문: 1 ~ N*N까지<ul><li>현재 x, y가 유효하면 print(i)</li><li>안 유효하면 방향%4로 틀기</li></ul></li></ul><a id="more"></a><br><figure class="highlight python"><figcaption><span>1954</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">dx = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>]</span><br><span class="line">dy = [<span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">    N = int(input())</span><br><span class="line">    snail = [[<span class="number">0</span>]*N <span class="keyword">for</span> _ <span class="keyword">in</span> range(N)]</span><br><span class="line"></span><br><span class="line">    x, y = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">    i = <span class="number">2</span></span><br><span class="line">    d = <span class="number">0</span></span><br><span class="line">    snail[x][y] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> i &lt;= N*N:</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="number">-1</span>&lt;x+dx[d%<span class="number">4</span>]&lt;N <span class="keyword">and</span> <span class="number">-1</span>&lt;y+dy[d%<span class="number">4</span>]&lt;N <span class="keyword">and</span> snail[x+dx[d%<span class="number">4</span>]][y+dy[d%<span class="number">4</span>]] == <span class="number">0</span>:</span><br><span class="line">            x = x+dx[d%<span class="number">4</span>]</span><br><span class="line">            y = y+dy[d%<span class="number">4</span>]</span><br><span class="line">            snail[x][y] = i</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            d += <span class="number">1</span></span><br><span class="line">    print(<span class="string">'#{}'</span>.format(tc))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">        print(*snail[i])</span><br></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
-      
-      <comments>https://itzjamie96.github.io/2020/11/18/swea-python-1954/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>[SWEA] 1948. 날짜 계산기 with Python</title>
-      <link>https://itzjamie96.github.io/2020/11/18/swea-python-1948/</link>
-      <guid>https://itzjamie96.github.io/2020/11/18/swea-python-1948/</guid>
-      <pubDate>Wed, 18 Nov 2020 13:43:11 GMT</pubDate>
-      <description>
-      
-        &lt;hr&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PnnU6AOsDFAUq&quot;&gt;1948. 날짜 계산기&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;접근 방법&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;모든 month(key)와 days(value)를 담은 딕셔너리 준비&lt;/li&gt;
-&lt;li&gt;첫째 달(fm), 첫째 날짜(fd), 둘째 달(sm), 둘째 날짜(sd)를 입력받음&lt;/li&gt;
-&lt;li&gt;같은 달 일 때 (fm==sm)&lt;ul&gt;
-&lt;li&gt;둘째 day - 첫째 day + 1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;다른 달 일 때 (무조건 두번째 달이 더 큼)&lt;ul&gt;
-&lt;li&gt;첫 번째 전체day - 첫째 day&lt;/li&gt;
-&lt;li&gt;1 증가한 달의 day ~ 두번째 달 -1까지 day&lt;/li&gt;
-&lt;li&gt;두번째 day&lt;/li&gt;
-&lt;li&gt;위에 세개 합치기&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<hr><p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PnnU6AOsDFAUq">1948. 날짜 계산기</a></p><p><strong>접근 방법</strong></p><ul><li>모든 month(key)와 days(value)를 담은 딕셔너리 준비</li><li>첫째 달(fm), 첫째 날짜(fd), 둘째 달(sm), 둘째 날짜(sd)를 입력받음</li><li>같은 달 일 때 (fm==sm)<ul><li>둘째 day - 첫째 day + 1</li></ul></li><li>다른 달 일 때 (무조건 두번째 달이 더 큼)<ul><li>첫 번째 전체day - 첫째 day</li><li>1 증가한 달의 day ~ 두번째 달 -1까지 day</li><li>두번째 day</li><li>위에 세개 합치기</li></ul></li></ul><a id="more"></a><br><figure class="highlight python"><figcaption><span>1948</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">days = {</span><br><span class="line">    <span class="number">1</span>:<span class="number">31</span>, <span class="number">2</span>:<span class="number">28</span>, <span class="number">3</span>:<span class="number">31</span>, <span class="number">4</span>:<span class="number">30</span>, <span class="number">5</span>:<span class="number">31</span>, <span class="number">6</span>:<span class="number">30</span>,</span><br><span class="line">    <span class="number">7</span>:<span class="number">31</span>, <span class="number">8</span>:<span class="number">31</span>, <span class="number">9</span>:<span class="number">30</span>, <span class="number">10</span>:<span class="number">31</span>, <span class="number">11</span>:<span class="number">30</span>, <span class="number">12</span>:<span class="number">31</span></span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">    fm, fd, sm, sd = map(int, input().split())</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">'#{}'</span>.format(tc), end=<span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> fm == sm:</span><br><span class="line">        print(sd-fd+<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        total = days[fm]-fd</span><br><span class="line">        <span class="keyword">for</span> month <span class="keyword">in</span> range(fm+<span class="number">1</span>, sm):</span><br><span class="line">            total += days[month]</span><br><span class="line">        total += sd</span><br><span class="line">        print(total+<span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content:encoded>
-      
-      <comments>https://itzjamie96.github.io/2020/11/18/swea-python-1948/#disqus_thread</comments>
     </item>
     
   </channel>
