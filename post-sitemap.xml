@@ -8,8 +8,8 @@
     </url>
 
     <url>
-        <loc>https://itzjamie96.github.io/2021/02/12/swea-python-1213/</loc>
-        <lastmod>2021-03-10T14:53:41.319Z</lastmod>
+        <loc>https://itzjamie96.github.io/2021/04/18/git-flow-tryout/</loc>
+        <lastmod>2021-04-18T14:48:53.362Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -17,7 +17,15 @@
 
     <url>
         <loc>https://itzjamie96.github.io/2021/02/10/swea-python-1209/</loc>
-        <lastmod>2021-03-10T14:51:23.376Z</lastmod>
+        <lastmod>2021-03-19T14:50:52.543Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://itzjamie96.github.io/2021/02/12/swea-python-1213/</loc>
+        <lastmod>2021-03-10T14:53:41.319Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

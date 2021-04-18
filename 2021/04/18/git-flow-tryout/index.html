@@ -8,9 +8,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/categories/python/swea/page/4/"/>
+<link rel="canonical" href="https://itzjamie96.github.io/2021/04/18/git-flow-tryout/"/>
 
-<title>Categories: SWEA - Code with Jamie</title>
+<title>[Git] 팀 프로젝트에 git flow 적용해보기 - Code with Jamie</title>
 
 
 
@@ -82,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/code_with_jamie.png" alt="Code with Jamie" height="28">
+                <img src="/images/code_with_jamie.png" alt="[Git] 팀 프로젝트에 git flow 적용해보기" height="28">
             
             </a>
         </div>
@@ -107,6 +107,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="Search" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -120,31 +124,17 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/categories">Categories</a></li>
-            
-            <li><a href="/categories/python/">Python</a></li>
-            
-            <li class="is-active"><a href="#" aria-current="page">SWEA</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-8-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-07-31T07:51:19.000Z">2020-07-31</time>
+                <time class="level-item has-text-grey" datetime="2021-04-18T13:43:46.000Z">2021-04-18</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">Python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                <a class="has-link-grey -link" href="/categories/git/">Git</a>
                 </div>
                 
                 
@@ -154,23 +144,62 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/07/31/swea-python-1204-ps/">[SWEA] 1204. 최빈수 구하기 with Python</a>
+                [Git] 팀 프로젝트에 git flow 적용해보기
             
         </h1>
         <div class="content">
             <hr>
 
-<p><a href="https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV13zo1KAAACFAYh">1204. [S/W 문제해결 기본] 1일차 - 최빈수 구하기</a></p>
+<blockquote>
+<p>그동안 나의 commit 메세지들은 [ADD], [UPDATE], [DELETE] 세 가지만 포함했다. 하지만 6인 팀 프로젝트를 진행하며 다 같이 <code>origin master</code>를 쓰는 건 말도 안된다는 것을 알게 되었고…🤣 협업을 위한 git branch 전략이 있다는 것을 알게 되어 정리해보는 나의 git flow 적응기!</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="Git-Flow"><a href="#Git-Flow" class="headerlink" title="Git Flow"></a>Git Flow</h2><p>Git Flow는 다양한 branch를 효율적으로 관리하기 위한 전략이다. Vincent Driessen<sup><a href="#Reference">1</a></sup>가 2010년에 처음 제안한 브랜치 관리 모델로, 이후 유명해져 너도나도 쓰게 되었다고 한다. 현재는 Github Flow, Gitlab Flow등 더 많은 전략들이 있다고 하지만, 오늘은 가장 기본인 <del>Git Flow</del> 전략을 살펴보도록 하자.</p>
+<p><img src="/img/20210418/gitflow-model.png" alt="Git Flow 전략"></p>
+<p>이게 바로 그 유명한 Git Flow 전략을 시각화한 그림이다. Git Flow에는 feature, develop, release, hotfix, master라는 총 5가지 브랜치들이 존재한다. 각 브랜치들이 어떤 역할을 하는지 살펴보자. </p>
+<h2 id="feature"><a href="#feature" class="headerlink" title="feature"></a>feature</h2><p>새로운 기능을 개발하기 위해 생성되는 브랜치가 바로 feature다. 예를 들어 게시판 서비스를 개발할 때 “댓글” 기능을 추가한다면 <code>feature/comment</code>라는 브랜치를 생성한 후 해당 브랜치에서 댓글 관련 기능을 개발하면 된다. 팀 프로젝트를 진행하며 우리 팀의 경우 <code>FE/BE</code>로 브랜치를 더 세분화하기로 해서 <code>feature/comment_fe</code>, <code>feature/comment_be</code>의 형식으로 브랜치를 생성한 후 개발을 진행했다. </p>
+<h3 id="develop"><a href="#develop" class="headerlink" title="develop"></a>develop</h3><p><code>master</code>로 최종 merge하기 전, 가장 최신의 코드들을 가지고 있는 브랜치다. “최신”이라고 하는 이유는 서비스의 신규 기능들을 우선 <code>develop</code>에서 전체적으로 합쳐보기 때문이다. 예를 들어 <code>feature</code> 브랜치에서 댓글 관련 기능을 모두 개발 완료한 후, develop 브랜치에 merge시킴으로써 전체 서비스에 댓글 기능이 잘 작동하는지 확인해보면 된다. develop 브랜치 없이 바로 master로 merge 시켰다가는 어떤 버그가 일어날지 절대 모르기 때문에 develop에서 한번 합쳐보는 과정이 필수다. 여기서는 개발이 이뤄지지 않는다. 기능에 대한 개발은 <code>feature</code>에서!</p>
+<h3 id="release"><a href="#release" class="headerlink" title="release"></a>release</h3><p><code>develop</code>에 merge된 기능을 이제 출시해도 된다는 판단이 들었을 때 <code>release</code> 브랜치를 생성하게 된다. <code>master</code>로 merge하기 전의 준비 과정이라고 생각하면 된다. 혹시라도 최종 배포를 준비하던 중 버그가 발견되면 어떤 버그가 있어서 수정했는지에 대한 사항만 추가된다. 여기서도 개발은 이뤄지지 않는다!</p>
+<h3 id="hotfix"><a href="#hotfix" class="headerlink" title="hotfix"></a>hotfix</h3><p>이미 배포된 서비스에서 버그를 발견했다면😨?! 재빨리 <code>hotfix</code> 브랜치를 생성한 후 버그를 잡는다 (🐛👊). 버그 수정이 완료된 후 <code>hotfix</code>는 <code>master</code>와 <code>develop</code> 모두에 merge 시킨다.  </p>
+<h3 id="master"><a href="#master" class="headerlink" title="master"></a>master</h3><p><code>진짜_진짜_최종_final</code>. 배포해서 세상에 내놓을 <del>최종</del> 코드들을 가진 브랜치다 (최근 GitHub에서는 <code>main</code>으로 불리고 있다). 이미 개발이 완료돼서 안정적이다!고 검증된 코드들만 있게 된다 (feature-develop-release를 거쳤으니 정말 안정적이어야 할 듯). </p>
+<h2 id="실제로-프로젝트에-적용해보기"><a href="#실제로-프로젝트에-적용해보기" class="headerlink" title="실제로 프로젝트에 적용해보기"></a>실제로 프로젝트에 적용해보기</h2><p>팀 프로젝트를 진행하며 git flow를 적용해봤다. 이를 위해서 우선 commit 메세지의 규칙을 먼저 세웠다. </p>
+<figure class="highlight markdown"><figcaption><span>우리의 Commit Message Convention</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Feat] 새로운 기능에 대한 커밋</span><br><span class="line">[Fix] 버그 수정에 대한 커밋 </span><br><span class="line">[Build] 빌드 관련 파일 수정에 대한 커밋</span><br><span class="line">[Chore] 그 외 자잘한 수정에 대한 커밋</span><br><span class="line">[Ci] CI 관련 설정 수정에 대한 커밋</span><br><span class="line">[Docs] 도큐먼트 수정에 대한 커밋</span><br><span class="line">[Style] 코드 문법 또는 포맷에 대한 수정에 대한 커밋</span><br><span class="line">[Test] 테스트 코드 수정에 대한 커밋</span><br></pre></td></tr></tbody></table></figure>
+
+<p>이 규칙은 인터넷에 검색하면 가장 쉽게 찾을 수 있는 규칙이다. 그리고 이렇게 메세지와 git flow를 적용한 결과는 아래와 같다. </p>
+<p><img src="/img/20210418/our-gitflow.png" alt="실제 적용 사례"></p>
+<p>보다시피 각 기능의 개발은 <code>feature</code>에서 이뤄지고, 해당 기능이 어느 정도 완료되거나 수정되면 <code>develop</code>에 merge를 시켰다. 실제 git flow를 완벽히 적용시키지는 못했지만 (ex. <code>release</code> 브랜치 생성하기) 처음 적용해보고, 이를 통해 수월한 협업이 진행됐다는 점에서 꽤 큰 배움과 성과를 얻었다고 생각한다. </p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://nvie.com/posts/a-successful-git-branching-model/"><sup>1</sup> A successful Git branching model</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/07/31/swea-python-1204-ps/#more">Read More</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/git/" rel="tag">Git</a>, <a class="has-link-grey -link" href="/tags/til/" rel="tag">TIL</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -180,31 +209,43 @@
 
 
 
-
-
-
-
-    
 <div class="card card-transparent">
-    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
-        <div class="pagination-previous">
-            <a class="is-flex-grow has-text-black-ter" href="/categories/python/swea/page/3/">Previous</a>
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2021/02/12/swea-python-1213/">
+                <span class="level-item">[SWEA] 1213. String with Python</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
         </div>
-        <div class="pagination-next is-invisible is-hidden-mobile">
-            <a class="is-flex-grow has-text-black-ter" href="/categories/python/swea/page/5/">Next</a>
-        </div>
-        <ul class="pagination-list is-hidden-mobile">
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/python/swea/">1</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/python/swea/page/2/">2</a></li>
-            
-            <li><a class="pagination-link has-text-black-ter" href="/categories/python/swea/page/3/">3</a></li>
-            
-            <li><a class="pagination-link is-current" href="/categories/python/swea/page/4/">4</a></li>
-            
-        </ul>
-    </nav>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <!-- <h3 class="title is-5 has-text-weight-normal">Comments</h3> -->
+        
+<!-- <script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term=""
+        label=""
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script> -->
+<script src="https://utteranc.es/client.js"
+        repo="itzjamie96/blog-comments"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+    </div>
 </div>
 </div>
                 
@@ -246,7 +287,7 @@
                     </p>
                     <a href="/archives">
                         <p class="title has-text-weight-normal">
-                            42
+                            43
                         </p>
                     </a>
                 </div>
@@ -258,7 +299,7 @@
                     </p>
                     <a href="/categories">
                         <p class="title has-text-weight-normal">
-                            10
+                            12
                         </p>
                     </a>
                 </div>
@@ -288,6 +329,50 @@
 </div>
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    Catalogue
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#Git-Flow">
+        <span class="has-mr-6">1</span>
+        <span>Git Flow</span>
+        </a></li><li>
+        <a class="is-flex" href="#feature">
+        <span class="has-mr-6">2</span>
+        <span>feature</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#develop">
+        <span class="has-mr-6">2.1</span>
+        <span>develop</span>
+        </a></li><li>
+        <a class="is-flex" href="#release">
+        <span class="has-mr-6">2.2</span>
+        <span>release</span>
+        </a></li><li>
+        <a class="is-flex" href="#hotfix">
+        <span class="has-mr-6">2.3</span>
+        <span>hotfix</span>
+        </a></li><li>
+        <a class="is-flex" href="#master">
+        <span class="has-mr-6">2.4</span>
+        <span>master</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#실제로-프로젝트에-적용해보기">
+        <span class="has-mr-6">3</span>
+        <span>실제로 프로젝트에 적용해보기</span>
+        </a></li><li>
+        <a class="is-flex" href="#Reference">
+        <span class="has-mr-6">4</span>
+        <span>Reference</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
     
         
 <div class="card widget">
@@ -303,7 +388,7 @@
                 <span class="level-item">Git</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">3</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/java/">
@@ -338,6 +423,22 @@
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/problem-solving/">
+            <span class="level-start">
+                <span class="level-item">Problem Solving</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/problem-solving/swea-python/">
+            <span class="level-start">
+                <span class="level-item">SWEA/Python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/projects/">
             <span class="level-start">
                 <span class="level-item">Projects</span>
@@ -351,7 +452,7 @@
                 <span class="level-item">Python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">33</span>
+                <span class="level-item tag">32</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/python/algorithm/">
@@ -367,7 +468,7 @@
                 <span class="level-item">SWEA</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">31</span>
+                <span class="level-item tag">30</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/spring/">
@@ -393,6 +494,19 @@
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-04-18T13:43:46.000Z">2021-04-18</time></div>
+                    <a href="/2021/04/18/git-flow-tryout/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Git] 팀 프로젝트에 git flow 적용해보기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/git/">Git</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-02-12T14:51:50.000Z">2021-02-12</time></div>
                     <a href="/2021/02/12/swea-python-1213/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1213. String with Python</a>
                     <p class="is-size-7 is-uppercase">
@@ -409,7 +523,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-02-10T14:50:16.000Z">2021-02-10</time></div>
                     <a href="/2021/02/10/swea-python-1209/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[SWEA] 1209. Sum with Python</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/python/">Python</a> / <a class="has-link-grey -link" href="/categories/python/swea/">SWEA</a>
+                        <a class="has-link-grey -link" href="/categories/problem-solving/">Problem Solving</a> / <a class="has-link-grey -link" href="/categories/problem-solving/swea-python/">SWEA/Python</a>
                     </p>
                 </div>
             </div>
@@ -441,19 +555,6 @@
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2021-02-07T12:57:00.000Z">2021-02-07</time></div>
-                    <a href="/2021/02/07/java-what-are-wrapper-classes/" class="title has-link-black-ter is-size-6 has-text-weight-normal">[Java] Wrapper 클래스란? (Feat. int vs. Integer)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/java/">Java</a> / <a class="has-link-grey -link" href="/categories/java/java-101/">Java 101</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
     
@@ -464,6 +565,17 @@
             Archives
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2021/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2021</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2021/02/">
@@ -597,7 +709,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/code_with_jamie.png" alt="Code with Jamie" height="28">
+                    <img src="/images/code_with_jamie.png" alt="[Git] 팀 프로젝트에 git flow 적용해보기" height="28">
                 
                 </a>
                 <p class="is-size-7">
