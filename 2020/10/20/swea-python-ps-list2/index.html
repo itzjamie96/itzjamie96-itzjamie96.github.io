@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
-<link rel="canonical" href="https://itzjamie96.github.io/2020/10/20/swea-python-ps-list2/"/>
+<link rel="canonical" href="https://jamieintech.github.io/2020/10/20/swea-python-ps-list2/"/>
 
 <title>[SWEA] 파이썬 SW 문제해결 기본: List2 - Code with Jamie</title>
 
@@ -188,7 +188,7 @@
 
 <h2 id="4837-부분집합의-합"><a href="#4837-부분집합의-합" class="headerlink" title="[4837] 부분집합의 합"></a>[4837] 부분집합의 합</h2><p><strong>접근 방법</strong></p>
 <ol>
-<li>부분집합을 빠르게 구한다 (<a href="https://itzjamie96.github.io/2020/10/15/Python-powersets-with-bitwise-operators/">비트연산자로 부분집합 구하기</a>)</li>
+<li>부분집합을 빠르게 구한다 (<a href="https://jamieintech.github.io/2020/10/15/Python-powersets-with-bitwise-operators/">비트연산자로 부분집합 구하기</a>)</li>
 <li>만약 현재 부분집합의 갯수가 N, 합이 K면 cnt+1</li>
 </ol>
 <figure class="highlight python"><figcaption><span>부분집합의 합</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> tc <span class="keyword">in</span> range(<span class="number">1</span>, T+<span class="number">1</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1 ~ 12까지 있는 리스트</span></span><br><span class="line">    A = list(range(<span class="number">1</span>, <span class="number">13</span>))</span><br><span class="line">    N, K = map(int, input().split())</span><br><span class="line"></span><br><span class="line">    cnt = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span> &lt;&lt; len(A)):</span><br><span class="line">        <span class="comment"># 부분집합의 케이스 마다 empty list 생성</span></span><br><span class="line">        currentSet = []</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(A)):</span><br><span class="line">            <span class="keyword">if</span> i &amp; (<span class="number">1</span> &lt;&lt; j):</span><br><span class="line">                currentSet.append(A[j])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 현재 부분집합의 길이가 N과 같고 합이 K랑 같다면 우리가 찾는 부분집합!</span></span><br><span class="line">        <span class="keyword">if</span> len(currentSet) == N <span class="keyword">and</span> sum(currentSet) == K:</span><br><span class="line">            cnt += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'#{} {}'</span>.format(tc, cnt))</span><br></pre></td></tr></tbody></table></figure>
@@ -272,7 +272,7 @@
         <!-- <h3 class="title is-5 has-text-weight-normal">Comments</h3> -->
         
 <!-- <script src="https://utteranc.es/client.js"
-        repo="itzjamie96/blog-comments"
+        repo="jamieintech/blog-comments"
         issue-term=""
         label=""
         theme="github-light"
@@ -280,7 +280,7 @@
         async>
 </script> -->
 <script src="https://utteranc.es/client.js"
-        repo="itzjamie96/blog-comments"
+        repo="jamieintech/blog-comments"
         issue-term="title"
         theme="github-light"
         crossorigin="anonymous"
@@ -361,7 +361,7 @@
         </nav>
         
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/itzjamie96" target="_blank" rel="noopener">
+            <a class="level-item button is-link is-rounded" href="https://github.com/jamieintech" target="_blank" rel="noopener">
                 Follow me on GitHub</a>
         </div>
         
@@ -766,7 +766,7 @@
                 </p>
                 
                 <p class="control">
-                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Follow on GitHub" href="https://github.com/itzjamie96">
+                    <a class="button is-white is-large" target="_blank" rel="noopener" title="Follow on GitHub" href="https://github.com/jamieintech">
                         
                         <i class="fab fa-github"></i>
                         
@@ -787,7 +787,7 @@
 <script>
 var IcarusThemeSettings = {
     site: {
-        url: 'https://itzjamie96.github.io',
+        url: 'https://jamieintech.github.io',
         external_link: {"enable":true,"exclude":[]}
     },
     article: {
